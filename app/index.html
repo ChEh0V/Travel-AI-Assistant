@@ -1,53 +1,64 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Travel AI Assistant</title>
-<style>
-  :root { --bg:#f4f6fb; --card:#fff; --text:#1d2433; --muted:#6b7385; --accent:#2f6fed; --bot:#eef2fb; --border:#e1e5ee; }
-  * { box-sizing:border-box; }
-  body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); }
-  .app { max-width:760px; height:100vh; margin:0 auto; display:flex; flex-direction:column; background:var(--card); border-left:1px solid var(--border); border-right:1px solid var(--border); }
-  header { padding:16px 20px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:12px; }
-  header .logo { font-size:28px; }
-  header h1 { margin:0; font-size:18px; }
-  header p { margin:2px 0 0; font-size:13px; color:var(--muted); }
-  #chat { flex:1; overflow-y:auto; padding:20px; display:flex; flex-direction:column; gap:12px; }
-  .msg { max-width:80%; padding:10px 14px; border-radius:14px; line-height:1.45; white-space:pre-wrap; font-size:15px; }
-  .user { align-self:flex-end; background:var(--accent); color:#fff; border-bottom-right-radius:4px; }
-  .bot { align-self:flex-start; background:var(--bot); border-bottom-left-radius:4px; }
-  .typing { color:var(--muted); font-style:italic; }
-  .chips { display:flex; flex-wrap:wrap; gap:8px; padding:0 20px 12px; }
-  .chips[hidden] { display:none; }
-  .chip { border:1px solid var(--border); background:#fff; border-radius:999px; padding:6px 12px; font-size:13px; cursor:pointer; }
-  .chip:hover { border-color:var(--accent); color:var(--accent); }
-  form { display:flex; gap:8px; padding:12px 20px 20px; border-top:1px solid var(--border); }
-  input { flex:1; padding:12px 14px; border:1px solid var(--border); border-radius:10px; font-size:15px; }
-  input:focus { outline:2px solid var(--accent); border-color:transparent; }
-  button[type=submit] { padding:0 18px; border:0; border-radius:10px; background:var(--accent); color:#fff; font-size:15px; cursor:pointer; }
-  button:disabled { opacity:.5; cursor:default; }
-  .demo { font-size:12px; color:var(--muted); text-align:center; padding-bottom:8px; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Попутчик — Чат</title>
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="features.css"><link rel="stylesheet" href="companion.css">
 </head>
 <body>
-<div class="app">
-  <header>
-    <div class="logo">🧭</div>
-    <div>
-      <h1>Travel AI Assistant</h1>
-      <p>Советчик по путешествиям: достопримечательности, маршруты, лайфхаки</p>
-    </div>
-  </header>
-  <main id="chat" aria-live="polite"></main>
-  <div class="chips" id="chips"></div>
-  <form id="form">
-    <input id="input" placeholder="Например: что посмотреть в Риме за 2 дня?" autocomplete="off">
-    <button type="submit" id="send">Отправить</button>
-  </form>
-  <div class="demo">Демо-версия: ответы генерирует заглушка, ИИ подключим на следующем этапе</div>
-</div>
-<script src="mock.js"></script>
-<script src="app.js"></script>
-</body>
-</html>
+  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-8 8H4l1.3-4A8 8 0 1 1 20 11.5Z"/><path d="M8 9h8m-8 4h5"/></symbol>
+    <symbol id="icon-route" viewBox="0 0 24 24"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 6h8a4 4 0 0 1 0 8H9a2 2 0 0 0 0 4h8"/></symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24"><path d="M12 6C9 4 6 4 3 5v14c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1Zm0 0v14"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol>
+  </defs></svg>
+  <aside class="sidebar">
+    <a class="logo" href="#chat" aria-label="Попутчик — перейти в чат"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="19" stroke="currentColor" stroke-width="1.8"/><path d="M24 5v4m0 30v4M5 24h4m30 0h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="m24 12 6 12-6-2-6 2Z" fill="currentColor"/><path d="m24 36 6-12-6 2-6-2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span><span class="brand-name">Попутчик</span></a>
+    <button id="new-trip" class="new-chat"><span>＋</span> Новая поездка <span class="new-arrow">↗</span></button>
+    <div class="nav-caption">ВАШЕ ПРОСТРАНСТВО</div>
+    <nav aria-label="Разделы">
+      <a href="#chat" data-page="chat"><svg class="icon"><use href="#icon-chat"/></svg> Ассистент</a>
+      <a href="#trips" data-page="trips"><svg class="icon"><use href="#icon-book"/></svg> Мои поездки</a>
+    </nav>
+    <section class="history-section" aria-label="Сохранённые диалоги"><div class="nav-caption">НЕДАВНИЕ ПОЕЗДКИ <span id="history-count">00</span></div><div id="thread-list"></div></section>
+  </aside>
+  <div class="app-shell">
+    <header class="topbar"><div class="page-identity"><span class="header-number">01</span><strong id="page-label">Ассистент</strong></div><div class="header-right"><button id="trip-date-button" type="button" class="trip-date-button">Даты поездки</button><span id="active-trip" class="active-trip" hidden></span><span class="region"><span></span> Европа</span></div></header>
+    <main id="chat-page" class="page chat-page">
+      <div id="welcome" class="welcome">
+        <div class="welcome-kicker"><span></span> НОВЫЙ ДИАЛОГ</div>
+        <h1>Куда <em>отправимся?</em></h1>
+        <p>Расскажите о поездке. Разберёмся с маршрутом,<br>интересными местами и вашими пожеланиями.</p>
+        <div class="suggestions" aria-label="Примеры запросов">
+          <button data-prompt="Составь маршрут по Парижу на 2 дня"><div class="ticket-top"><span>FR</span><svg class="icon"><use href="#icon-arrow"/></svg></div><strong>Париж на выходные</strong><small>Составить маршрут на два дня</small><div class="ticket-stub"><span>ПЛАН ПОЕЗДКИ</span><span>01 — 02</span></div></button>
+          <button data-prompt="Что посмотреть в Праге за 3 дня?"><div class="ticket-top"><span>CZ</span><svg class="icon"><use href="#icon-arrow"/></svg></div><strong>Открыть Прагу</strong><small>Что посмотреть за три дня</small><div class="ticket-stub"><span>МЕСТА И ПРОГУЛКИ</span><span>01 — 03</span></div></button>
+          <button data-prompt="Бесплатные места в Барселоне"><div class="ticket-top"><span>ES</span><svg class="icon"><use href="#icon-arrow"/></svg></div><strong>Барселона без спешки</strong><small>Найти бесплатные места</small><div class="ticket-stub"><span>БЮДЖЕТНОЕ ПУТЕШЕСТВИЕ</span><span>€ 0</span></div></button>
+        </div>
+      </div>
+      <div id="chat" class="chat-history" aria-live="polite" aria-label="История диалога"></div>
+      <div class="composer-wrap">
+        <div class="assistant-suggestions"><span class="suggestions-label">ИДЕИ ДЛЯ ЗАПРОСА</span><div class="suggestion-actions"><button id="city-finder" class="instagram-prompt" type="button">⌁ Подобрать город по описанию</button><button data-prompt="Покажи инстаграмные места" class="instagram-prompt">✧ Инстаграмные места </button><div class="followups" id="followups" hidden><button data-prompt="Больше бесплатного">Больше бесплатного ↗</button><button data-prompt="Сделай спокойнее">Спокойнее ↗</button><button data-prompt="Замени музеи на прогулки">Больше прогулок ↗</button></div></div></div>
+        <form id="chat-form"><label class="sr-only" for="input">Сообщение ассистенту</label><textarea id="input" rows="2" placeholder="Например: еду в Лиссабон на три дня. С чего начать?"></textarea><div class="composer-bottom"><div class="composer-settings"><button id="open-wishlist" type="button" class="wishlist-trigger">♡ Хочу сюда <span id="wishlist-count">0</span></button><details id="trip-preferences" class="trip-preferences"><summary><span aria-hidden="true">☷</span> Настройки поездки <span id="preference-summary"></span></summary><div class="preferences-panel"><div class="preferences-title"><strong>Что вам подходит?</strong><span>Выберите формат для каждой категории</span></div><div id="preference-options"></div><button id="preferences-done" type="button">Готово</button></div></details></div><button id="send" type="submit" aria-label="Отправить сообщение">↑</button></div></form>
+        <p class="composer-note"><span>Shift + Enter — новая строка</span><span>Enter — отправить <b>↵</b></span></p>
+      </div>
+    </main>
+    <main id="trips-page" class="page feature-page trips-page" hidden>
+      <div class="feature-heading"><div><span class="eyebrow">СОХРАНЁННОЕ</span><h1>Мои поездки<span class="title-dot">.</span></h1></div><button id="trips-new" class="primary-action">＋ Новая поездка</button></div>
+      <div class="trips-tools"><label class="trip-search"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="trip-search" type="search" placeholder="Найти город или поездку" aria-label="Поиск по поездкам"></label><span id="trips-total" role="status"></span></div>
+      <div id="trips-grid" class="trips-grid"></div>
+    </main>
+    <main id="packing-page" class="page feature-page" hidden><a href="#trips" class="route-back">← Мои поездки</a><div class="feature-heading"><div><span class="eyebrow">ПЕРЕД ДОРОГОЙ</span><h1>Собираем чемодан<span class="title-dot">.</span></h1></div><span id="packing-city" class="active-trip"></span></div><div class="packing-trip-ticket"><div><span class="eyebrow">ДАТЫ ВАШЕЙ ПОЕЗДКИ</span><strong id="packing-date-summary"></strong></div><button id="packing-edit-dates" type="button" class="secondary">Изменить даты</button><button id="packing-weather-refresh" type="button" class="primary-action">Обновить погоду ↻</button></div><div class="weather-panel"><p id="weather-status" role="status"></p><div id="weather-days" class="weather-days"></div><a class="weather-credit" href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Погода: Open-Meteo ↗</a></div><section class="clothing-section"><span class="eyebrow">ЧТО НАДЕТЬ</span><h2>Одежда на вашу поездку</h2><div id="clothing-tips" class="clothing-tips"></div></section><div class="packing-heading"><h2>Чек-лист</h2><span id="packing-count"></span></div><div id="packing-list"></div><form id="packing-add" class="packing-add"><label class="sr-only" for="packing-item">Свой пункт</label><input id="packing-item" maxlength="120" placeholder="Добавить свою вещь или дело" required><button type="submit" class="secondary">＋ Добавить</button></form></main>
+    <main id="route-page" class="page feature-page" hidden><a href="#trips" class="route-back">← Мои поездки</a>
+      <div class="feature-heading"><div><span class="eyebrow">ИЗ ВАШЕГО ДИАЛОГА</span><h1 id="plan-title">Маршрут</h1></div><div class="route-header-actions"><button id="delete-route" class="delete-link" type="button">Удалить маршрут</button><button id="export" class="secondary">Скачать план ↓</button></div></div>
+      <div id="route-empty" class="empty-state"><svg class="icon"><use href="#icon-route"/></svg><h2>Здесь появится ваш маршрут</h2><p>Попросите ассистента составить план поездки в чате.</p><a href="#chat">Перейти в чат ↗</a></div>
+      <div id="route-content" hidden><div class="plan-meta"><span id="plan-summary"></span><span id="save-state"></span></div><div id="day-tabs" class="day-tabs" role="tablist" aria-label="Дни поездки"></div><div class="day-intro"><h2 id="day-title"></h2><span id="day-count"></span></div><a id="day-map" class="day-map" target="_blank" rel="noopener noreferrer">Открыть день на карте ↗</a><div id="places"></div></div>
+    </main>
+  </div>
+  <dialog id="finder-dialog" class="companion-dialog"><button type="button" class="dialog-close" data-close="finder-dialog" aria-label="Закрыть">×</button><span class="eyebrow">ЕЩЁ НЕ РЕШИЛИ КУДА?</span><h2>Опишите вашу поездку</h2><p>Что хочется увидеть, какой темп и на сколько дней? Бюджет тоже можно указать.</p><form id="finder-form"><label class="sr-only" for="finder-input">Описание поездки</label><textarea id="finder-input" required rows="3" placeholder="Море, до 200 евро за 2 дня, спокойно…"></textarea><button type="submit" class="primary-action">Подобрать направления ↗</button></form></dialog>
+  <dialog id="wishlist-dialog" class="companion-dialog wishes-dialog"><button type="button" class="dialog-close" data-close="wishlist-dialog" aria-label="Закрыть">×</button><span class="eyebrow">ИЗ ВАШИХ ОБСУЖДЕНИЙ</span><h2>Хочу сюда<span class="title-dot">.</span></h2><p>Отметьте места — соберём новый маршрут только из выбранного. Текущий план будет заменён, выбранные места закрепим.</p><label class="wishlist-day">Разделить на<select id="wishlist-route-days"><option value="1">1 день</option><option value="2">2 дня</option><option value="3">3 дня</option></select></label><div id="wishlist-list"></div><div class="wishlist-build"><span id="wishlist-selection-count"></span><button id="wishlist-build" type="button" class="primary-action">Собрать маршрут из выбранного ↗</button></div></dialog>
+  <dialog id="trip-dates-dialog" class="companion-dialog"><button type="button" class="dialog-close" data-close="trip-dates-dialog" aria-label="Закрыть">×</button><span class="eyebrow">ОДИН РАЗ ДЛЯ ВСЕЙ ПОЕЗДКИ</span><h2>Когда отправляемся?</h2><p>Эти даты используются в маршруте, погоде и сборах. Сейчас планируем короткие поездки на 1–3 дня.</p><form id="trip-dates-form" class="shared-dates-form"><label>Первый день<input id="trip-start" type="date" required></label><label>Последний день<input id="trip-end" type="date" required></label><p id="trip-dates-error" role="status"></p><button type="submit" class="primary-action">Сохранить даты ↗</button></form></dialog>
+  <dialog id="delete-dialog" class="companion-dialog delete-dialog"><button type="button" class="dialog-close" data-close="delete-dialog" aria-label="Закрыть">×</button><span class="eyebrow">УПРАВЛЕНИЕ ПОЕЗДКОЙ</span><h2 id="delete-title"></h2><p id="delete-description"></p><div class="delete-dialog-actions"><button type="button" id="delete-cancel" class="secondary">Отмена</button><button type="button" id="delete-confirm" class="danger-action">Удалить</button></div></dialog>
+  <div id="toast" role="status"></div>
+  <script src="companion.js"></script><script src="travel-tools.js"></script><script src="budget.js"></script><script src="planner.js"></script><script src="companion-ui.js"></script><script src="app.js"></script>
+</body></html>

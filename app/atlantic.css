@@ -1,0 +1,49 @@
+/* Single production palette: Atlantic. */
+:root { --atlantic-base:#A4C5D4; --atlantic-accent:#1C4D78; --atlantic-neutral:#E5F4F8; --atlantic-ink:#16374F; --atlantic-secondary:#6C98B3; --atlantic-button-text:#FFFFFF; }
+html:root {
+  --bg:color-mix(in srgb,var(--atlantic-base) 26%,white);
+  --paper:#fff; --sidebar:var(--atlantic-base); --ink:#25313b; --muted:#465460;
+  --blue:#334755; --rust:#334755; --sage:#334755;
+  --line:color-mix(in srgb,var(--atlantic-base) 65%,#54616a);
+  --soft:color-mix(in srgb,var(--atlantic-base) 38%,white);
+}
+html:root .sidebar { background:var(--sidebar); border-color:var(--line); }
+html:root :is(.logo,.logo small,.logo-icon,.nav-caption,nav a,.region,.welcome-kicker,.welcome h1 em,.welcome>p,.ticket-top,.suggestions small,.ticket-stub,.thread strong,.thread .trip-detail,.trip-preview,.trip-arrow,.history-empty,.sidebar-note,.local-label,.active-trip,.composer-bottom .icon,.user .message-label,.followups button,.followups span,.place-tag,.trip-card-top,.trip-card-meta,.trip-card-preview,.trip-card-actions button,.trip-search input,#trips-total,.trips-empty p,.instagram-prompt,.instagram-prompt>span,.delete-link,.delete-trip-button) { color:var(--ink); }
+html:root :is(.new-chat,.primary-action,#send,nav a.active,.thread.active) { background:var(--atlantic-accent); color:var(--ink); border-color:transparent; box-shadow:none; }
+html:root :is(.new-chat:hover,.primary-action:hover,#send:hover,nav a.active:hover) { background:color-mix(in srgb,var(--atlantic-accent) 85%,white); color:var(--ink); }
+html:root :is(.thread.active strong,.thread.active .trip-detail,.thread.active .trip-preview,.thread.active .trip-arrow) { color:var(--ink); }
+html:root :is(.thread,nav a:hover,.active-trip,.followups button,.place-tag,.place-tag.free,.message.user) { background:var(--soft); border-color:var(--line); }
+html:root .thread:hover { background:var(--atlantic-neutral); border-color:var(--line); }
+html:root :is(.suggestions button,.trip-card) { background:var(--atlantic-base); border-color:var(--line); }
+html:root :is(.suggestions button:nth-child(2),.trip-card.tone-1) { background:var(--atlantic-accent); border-color:var(--line); }
+html:root :is(.suggestions button:nth-child(3),.trip-card.tone-2) { background:var(--atlantic-neutral); border-color:var(--line); }
+html:root :is(.suggestions button .ticket-top,.suggestions strong,.suggestions button:nth-child(2) .ticket-top,.suggestions button:nth-child(3) .ticket-top) { color:var(--ink); }
+html:root :is(.ticket-stub,.ticket-stub::before,.ticket-stub::after,.trip-card-actions,.trip-search,.place-body,.trips-empty) { border-color:var(--line); }
+html:root #chat-form { background:white; border-color:var(--line); box-shadow:0 8px 30px #25313b08; }
+html:root #chat-form:focus-within { border-color:var(--ink); box-shadow:0 0 0 3px color-mix(in srgb,var(--atlantic-base) 65%,transparent); }
+html:root :is(textarea::placeholder,.trip-search input::placeholder) { color:#596570; }
+html:root :is(.status-dot,.region>span,.welcome-kicker>span,.trip-card.current::before) { background:var(--atlantic-accent); }
+html:root .title-dot { color:var(--ink); }
+html:root .day-tab.active { background:var(--atlantic-accent); color:var(--ink); border-color:var(--ink); }
+html:root :is(.followups button:hover,.trip-card-actions button:hover) { background:var(--atlantic-neutral); color:var(--ink); border-color:var(--ink); }
+html:root .reply-place { border-left-color:var(--atlantic-accent); }
+html:root #toast { background:var(--ink); color:white; }
+html:root :is(.photo-banner,.spot-cover) { background:var(--atlantic-base); color:var(--ink); border-color:var(--line); }
+html:root .trip-card-actions button { background:var(--paper); border:1px solid var(--line); color:var(--ink); }
+
+/* Final Atlantic component colors. */
+html:root {
+  --bg:var(--atlantic-neutral); --paper:#fff; --sidebar:var(--atlantic-base);
+  --ink:var(--atlantic-ink); --blue:var(--atlantic-ink); --rust:var(--atlantic-ink);
+  --muted:color-mix(in srgb,var(--atlantic-ink) 85%,white);
+  --soft:color-mix(in srgb,var(--atlantic-base) 40%,white);
+  --line:color-mix(in srgb,var(--atlantic-base) 75%,var(--atlantic-ink));
+}
+html:root :is(.new-chat,.primary-action,#send,nav a.active,.thread.active,.day-tab.active) { background:var(--atlantic-accent); color:var(--atlantic-button-text); border-color:var(--atlantic-accent); }
+html:root :is(.new-chat:hover,.primary-action:hover,#send:hover,nav a.active:hover) { background:var(--atlantic-accent); color:var(--atlantic-button-text); box-shadow:0 0 0 3px color-mix(in srgb,var(--atlantic-accent) 20%,transparent); }
+html:root :is(.thread.active strong,.thread.active .trip-detail,.thread.active .trip-preview,.thread.active .trip-arrow) { color:var(--atlantic-button-text); }
+html:root :is(.suggestions button:nth-child(2),.trip-card.tone-1) { background:color-mix(in srgb,var(--atlantic-secondary) 55%,white); }
+html:root :is(.suggestions button:nth-child(3),.trip-card.tone-2) { background:color-mix(in srgb,var(--atlantic-base) 35%,white); }
+html:root :is(.logo,.welcome h1 em,.title-dot,.ticket-top) { color:var(--atlantic-ink); }
+html:root #chat-form:focus-within { border-color:var(--atlantic-accent); box-shadow:0 0 0 3px color-mix(in srgb,var(--atlantic-accent) 15%,transparent); }
+html:root .trip-card.current::before { background:var(--atlantic-accent); }

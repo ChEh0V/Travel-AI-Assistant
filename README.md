@@ -108,13 +108,17 @@ node --check app/companion-ui.js
 
 Один раз обновить SQLite: `python rag/server.py refresh`. Для автоматического обновления при запуске и затем каждые 24 часа: `python rag/server.py serve --refresh-hours 24`. Снимок в Git и benchmark сохраняют исходные данные.
 
-Для GGUF и llama.cpp команда запускает модель и приложение вместе:
+### Первый запуск с Qwen на Windows
+
+Установите Python 3.10+ и [Ollama](https://ollama.com/download/windows), затем запустите приложение Ollama. В PowerShell из корня клона выполните:
 
 ```powershell
-python rag/server.py serve --gguf "D:/Poputchik-models/qwen2.5-3b-instruct-q4_k_m.gguf" --llama-server "D:/Poputchik-models/runtime/llama-server.exe" --refresh-hours 24
+ollama pull qwen2.5:3b
+$env:RAG_MODEL = "qwen2.5:3b"
+python rag/server.py serve
 ```
 
-Для локальной Ollama запустите модель, например `ollama run qwen2.5:3b`, и задайте переменную PowerShell `$env:RAG_MODEL="qwen2.5:3b"` перед запуском Python. Другой сервер задаётся переменной RAG_LLM_URL (полный адрес chat/completions), ключ при необходимости — RAG_API_KEY. Значения доступны только серверу. При недоступности модели ответ собирается непосредственно из полей источников.
+Первая команда один раз скачивает [веса модели (около 1,9 ГБ)](https://ollama.com/library/qwen2.5:3b). Для повторного запуска в новом терминале достаточно последних двух команд. Откройте http://127.0.0.1:8000/#chat. Снимок корпуса входит в Git, SQLite создаётся автоматически. Для проверки самой генерации используйте `python rag/benchmark.py --llm` в терминале с заданным RAG_MODEL. Обычный запуск без этой переменной показывает ответы напрямую из документов.
 
 Пример диалога: «Адрес музея Орсе?» → «Какие там события?». Категория стоимости события относится к опубликованной афише. Наличие билетов, часы открытия и точная стоимость требуют других источников.
 

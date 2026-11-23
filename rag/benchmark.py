@@ -15,6 +15,25 @@ def run(llm=False):
     index=Index(documents)
     digest=hashlib.sha256(json.dumps(documents,ensure_ascii=False,sort_keys=True,separators=(",",":")).encode()).hexdigest()
     report={"snapshot_sha256":digest,"k":5,"mode":os.environ["RAG_MODEL"] if llm else "extractive","runs":[]}
+    # Evaluate the index itself before application filters, rewriting or generation.
+    raw=[]
+    covered=set()
+    for case in cases:
+        relevant=set(case["relevant"])
+        if not relevant:
+            continue
+        if len(relevant)<3 or not relevant.issubset(index.docs):
+            raise ValueError("Invalid relevance labels for "+case["id"])
+        covered.update(relevant)
+        ranked=index.rank(case["messages"][-1],index.docs,len(documents))
+        first=next((rank for rank,key in enumerate(ranked,1) if key in relevant),None)
+        raw.append(dict(id=case["id"],top5=ranked[:5],first_relevant_rank=first,
+                        recall=len(relevant.intersection(ranked[:5]))/len(relevant),
+                        rr=1/first if first else 0))
+    if covered!=set(index.docs):
+        raise ValueError("Missing benchmark coverage: "+str(sorted(set(index.docs)-covered)))
+    report["index_only"]=dict(covered=len(covered),recall_at_5=sum(r["recall"] for r in raw)/len(raw),
+                              mrr=sum(r["rr"] for r in raw)/len(raw),cases=raw)
     for rewrite,expand in ([(True,True)] if llm else [(False,False),(True,False),(True,True)]):
         rows=[]
         for case in cases:
@@ -48,6 +67,7 @@ if __name__=="__main__":
     report=run(args.llm)
     if args.out:
         args.out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    print("Index only:",{k:v for k,v in report["index_only"].items() if k!="cases"})
     for row in report["runs"]:
         print({k:v for k,v in row.items() if k!="cases"})
 

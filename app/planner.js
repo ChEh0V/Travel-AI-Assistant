@@ -20,6 +20,17 @@ function createPlan(city,days,pace,interests=[],previous=[]){
 function replacePlace(state,day,index){const old=state.plan[day][index];if(old.pinned)return false;const used=new Set(state.plan.flat().map(p=>p.id));const alternatives=createPlan(state.city,3,'active',[]).flat();const next=alternatives.find(p=>!used.has(p.id));if(!next)return false;state.plan[day][index]=next;return true;}
 async function getReply(messages,context){
  const q=messages[messages.length-1].content.toLowerCase();
+ const routeCommand=/маршрут|составь план|почему.*план|инстаграм|instagram|больше бесплатного|сделай спокойнее|замени музеи|замен.*на прогул|без музеев/.test(q);
+ const factual=/адрес|наход|как найти|координат|тематик|располож|сайт|музе|орсе|лувр|событи|афиш|выставк|мастер.класс|концерт|мероприяти|коллекци|источник|откуда|билет|скидк|там|\?/.test(q);
+ const clarifying=/^(Уточните название|Какой из упомянутых)/.test(messages.at(-2)?.content || "");
+ if(!routeCommand && (factual || clarifying)){
+   const history=messages.slice(-8).map(m=>({role:m.role,content:m.content.slice(0,3000)}));
+   const response=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},
+     body:JSON.stringify({messages:history,city:context.city}),signal:AbortSignal.timeout(105000)});
+   if(!response.ok)throw new Error('Справочник недоступен');
+   const data=await response.json();
+   return {reply:data.reply,sources:data.sources,reference:true,city:null,action:null};
+ }
  const city=Object.keys(DESTINATIONS).find(k=>DESTINATIONS[k].keys.some(key=>q.includes(key)));
  const result={reply:'',action:null,city:null};
  if(/инстаграм|instagram/.test(q)){if(city||context.plan?.length){result.city=city||context.city;result.action='instagram';}else result.reply='Для какого города ищем инстаграмные места? Напишите направление — подберём уголки для вашей ленты.';}

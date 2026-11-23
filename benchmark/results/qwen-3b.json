@@ -1,0 +1,237 @@
+{
+  "snapshot_sha256": "b726f9d333573a378d7b25cf33529045f3870f142cdd475526e97b03e79032a7",
+  "k": 5,
+  "mode": "qwen2.5-3b-instruct-q4_k_m",
+  "runs": [
+    {
+      "rewrite": true,
+      "expand": true,
+      "recall": 1.0,
+      "mrr": 1.0,
+      "accuracy": 1.0,
+      "correct_rejection_rate": 1.0,
+      "cases": [
+        {
+          "id": "Q01",
+          "hits": [
+            "D16",
+            "D18",
+            "D17"
+          ],
+          "mode": "extractive-fallback",
+          "answer": "Орсе — Событие: Вюйар. Интимные театры / Vuillard. Théâtres intimes. Категория стоимости: платный. Период по афише: 2027-03-25 — 2027-07-25 [D16]\nОрсе — Событие: Дженни Хольцер. Я видела / Jenny Holzer. J’ai vu. Категория стоимости: платный. Период по афише: 2026-10-20 — 2027-02-21 [D18]\nОрсе — Событие: Огюст Бартольди. Свобода, озаряющая мир / Auguste Bartholdi. La Liberté éclairant le monde. Категория стоимости: платный. Период по афише: 2026-09-15 — 2027-01-31 [D17]",
+          "sources": [
+            "D16",
+            "D18",
+            "D17"
+          ],
+          "recall": 1.0,
+          "rr": 1.0,
+          "correct": true
+        },
+        {
+          "id": "Q02",
+          "hits": [
+            "D19",
+            "D20",
+            "D21"
+          ],
+          "mode": "extractive-fallback",
+          "answer": "Бурделя — Событие: Посещение музея Бурделя с малышами / Baby-visite au musée Bourdelle. Категория стоимости: платный. Период по афише: 2026-10-14 — 2026-12-16 [D19]\nБурделя — Событие: Юный стилист: семейная текстильная мастерская / Styliste en herbe : atelier textile en famille autour de l'exposition « L’étoffe de l’artiste ». Категория стоимости: платный. Период по афише: 2026-10-11 — 2026-12-29 [D20]\nБурделя — Событие: Моя рабочая шапочка: семейная текстильная мастерская / Ma toque d'atelier : atelier textile en famille autour de l'exposition « L’étoffe de l’artiste ». Категория стоимости: платный. Период по афише: 2026-10-25 — 2026-12-27 [D21]",
+          "sources": [
+            "D19",
+            "D20",
+            "D21"
+          ],
+          "recall": 1.0,
+          "rr": 1.0,
+          "correct": true
+        },
+        {
+          "id": "Q03",
+          "hits": [
+            "D22",
+            "D24",
+            "D23"
+          ],
+          "mode": "extractive-fallback",
+          "answer": "Цадкина — Событие: Экскурсия по коллекциям музея Цадкина / Musée Zadkine : Visite guidée des collections. Категория стоимости: платный. Период по афише: 2026-12-11 — 2027-02-05 [D22]\nЦадкина — Событие: Создай свой комикс в музее Цадкина / \"Crée ta bande dessinée\" : Atelier BD au musée Zadkine. Категория стоимости: платный. Период по афише: 2026-11-28 — 2027-02-28 [D24]\nЦадкина — Событие: Семейная мастерская цианотипии / Atelier cyanotype au musée Zadkine en famille. Категория стоимости: платный. Период по афише: 2026-11-18 — 2027-02-19 [D23]",
+          "sources": [
+            "D22",
+            "D24",
+            "D23"
+          ],
+          "recall": 1.0,
+          "rr": 1.0,
+          "correct": true
+        },
+        {
+          "id": "Q04",
+          "hits": [
+            "D03",
+            "D01",
+            "D02"
+          ],
+          "mode": "llm",
+          "answer": "музея Цадкина — 100bis rue d'Assas [D03]\nмузея Орсе — 1 rue de Bellechasse [D01]\nмузея Бурделя — 16 rue Antoine Bourdelle [D02]",
+          "sources": [
+            "D03",
+            "D01",
+            "D02"
+          ],
+          "recall": 1.0,
+          "rr": 1.0,
+          "correct": true
+        },
+        {
+          "id": "Q05",
+          "hits": [
+            "D09",
+            "D11",
+            "D14"
+          ],
+          "mode": "llm",
+          "answer": "Оранжери — [D09] jardin des Tuileries [ID]\nКарнавале — [D11] 23 rue de Sévigné [ID]\nПикассо — [D14] 5 rue Thorigny [ID]",
+          "sources": [
+            "D09",
+            "D11",
+            "D14"
+          ],
+          "recall": 1.0,
+          "rr": 1.0,
+          "correct": true
+        },
+        {
+          "id": "Q06",
+          "hits": [
+            "D07",
+            "D10",
+            "D08"
+          ],
+          "mode": "extractive-fallback",
+          "answer": "Гюстава Моро — Сайт: musee-moreau.fr/ [D07]\nБранли — Сайт: www.quaibranly.fr/fr/ [D10]\nГиме — Сайт: www.museeguimet.fr [D08]",
+          "sources": [
+            "D07",
+            "D10",
+            "D08"
+          ],
+          "recall": 1.0,
+          "rr": 1.0,
+          "correct": true
+        },
+        {
+          "id": "Q07",
+          "hits": [
+            "D05",
+            "D06",
+            "D01"
+          ],
+          "mode": "llm",
+          "answer": "Лувр — 48.86079459806906, 2.3378156596817785 [D05]\nРодена — 48.855868, 2.31598 [D06]\nОрсе — 48.859157, 2.323672 [D01]",
+          "sources": [
+            "D05",
+            "D06",
+            "D01"
+          ],
+          "recall": 1.0,
+          "rr": 1.0,
+          "correct": true
+        },
+        {
+          "id": "Q08",
+          "hits": [
+            "D13",
+            "D12",
+            "D02"
+          ],
+          "mode": "llm",
+          "answer": "Бальзака — 47 rue Raynouard [D12]  \nВиктора Гюго — 6 place des Vosges [D13]  \nБурделя — 16 rue Antoine Bourdelle [D02]",
+          "sources": [
+            "D13",
+            "D12",
+            "D02"
+          ],
+          "recall": 1.0,
+          "rr": 1.0,
+          "correct": true
+        },
+        {
+          "id": "Q09",
+          "hits": [
+            "D15",
+            "D11",
+            "D01"
+          ],
+          "mode": "extractive-fallback",
+          "answer": "Малый дворец — Тематика: декоративное искусство, современное искусство, изобразительное искусство, фотография [D15]\nКарнавале — Тематика: археология, декоративное искусство, современное искусство, изобразительное искусство, история, фотография [D11]\nОрсе — Тематика: декоративное искусство, изобразительное искусство, история [D01]",
+          "sources": [
+            "D15",
+            "D11",
+            "D01"
+          ],
+          "recall": 1.0,
+          "rr": 1.0,
+          "correct": true
+        },
+        {
+          "id": "Q10",
+          "hits": [
+            "D04",
+            "D06",
+            "D03"
+          ],
+          "mode": "extractive-fallback",
+          "answer": "Коньяк-Жэ — Адрес: 8 rue Elzévir [D04]\nРодена — Адрес: 77 rue de Varenne [D06]\nЦадкина — Адрес: 100bis rue d'Assas [D03]",
+          "sources": [
+            "D04",
+            "D06",
+            "D03"
+          ],
+          "recall": 1.0,
+          "rr": 1.0,
+          "correct": true
+        },
+        {
+          "id": "Q11",
+          "hits": [],
+          "mode": "extractive",
+          "answer": "В парижском корпусе нет подтверждённого ответа на этот вопрос.",
+          "sources": [],
+          "rejected": true
+        },
+        {
+          "id": "Q12",
+          "hits": [],
+          "mode": "extractive",
+          "answer": "В парижском корпусе нет подтверждённого ответа на этот вопрос.",
+          "sources": [],
+          "rejected": true
+        },
+        {
+          "id": "Q13",
+          "hits": [],
+          "mode": "extractive",
+          "answer": "В парижском корпусе нет подтверждённого ответа на этот вопрос.",
+          "sources": [],
+          "rejected": true
+        },
+        {
+          "id": "Q14",
+          "hits": [],
+          "mode": "extractive",
+          "answer": "В парижском корпусе нет подтверждённого ответа на этот вопрос.",
+          "sources": [],
+          "rejected": true
+        },
+        {
+          "id": "Q15",
+          "hits": [],
+          "mode": "extractive",
+          "answer": "В парижском корпусе нет подтверждённого ответа на этот вопрос.",
+          "sources": [],
+          "rejected": true
+        }
+      ]
+    }
+  ]
+}

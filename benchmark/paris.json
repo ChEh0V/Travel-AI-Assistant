@@ -1,0 +1,214 @@
+[
+  {
+    "id": "Q01",
+    "messages": [
+      "Какие события в музее Орсе?"
+    ],
+    "relevant": [
+      "D16",
+      "D17",
+      "D18"
+    ],
+    "expected": [
+      "Vuillard. Théâtres intimes",
+      "Auguste Bartholdi. La Liberté éclairant le monde",
+      "Jenny Holzer. J’ai vu"
+    ]
+  },
+  {
+    "id": "Q02",
+    "messages": [
+      "Где находится музей Бурделя?",
+      "Что там проходит?"
+    ],
+    "relevant": [
+      "D19",
+      "D20",
+      "D21"
+    ],
+    "expected": [
+      "Baby-visite au musée Bourdelle",
+      "Styliste en herbe : atelier textile en famille autour de l'exposition « L’étoffe de l’artiste »",
+      "Ma toque d'atelier : atelier textile en famille autour de l'exposition « L’étoffe de l’artiste »"
+    ]
+  },
+  {
+    "id": "Q03",
+    "messages": [
+      "Укажи адрес музея Цадкина",
+      "Какие там платные мероприятия?"
+    ],
+    "relevant": [
+      "D22",
+      "D23",
+      "D24"
+    ],
+    "expected": [
+      "Musée Zadkine : Visite guidée des collections",
+      "Atelier cyanotype au musée Zadkine en famille",
+      "\"Crée ta bande dessinée\" : Atelier BD au musée Zadkine"
+    ]
+  },
+  {
+    "id": "Q04",
+    "messages": [
+      "Адреса музеев Орсе, Цадкина и Бурделя"
+    ],
+    "relevant": [
+      "D01",
+      "D02",
+      "D03"
+    ],
+    "expected": [
+      "1 rue de Bellechasse",
+      "16 rue Antoine Bourdelle",
+      "100bis rue d'Assas"
+    ]
+  },
+  {
+    "id": "Q05",
+    "messages": [
+      "Где расположены музеи Карнавале, Пикассо и Оранжери?"
+    ],
+    "relevant": [
+      "D11",
+      "D14",
+      "D09"
+    ],
+    "expected": [
+      "23 rue de Sévigné",
+      "5 rue Thorigny",
+      "jardin des Tuileries"
+    ]
+  },
+  {
+    "id": "Q06",
+    "messages": [
+      "Сайты музеев Бранли, Гиме и Гюстава Моро"
+    ],
+    "relevant": [
+      "D10",
+      "D08",
+      "D07"
+    ],
+    "expected": [
+      "www.quaibranly.fr/fr/",
+      "www.museeguimet.fr",
+      "musee-moreau.fr/"
+    ]
+  },
+  {
+    "id": "Q07",
+    "messages": [
+      "Координаты музеев Родена, Лувра и Орсе"
+    ],
+    "relevant": [
+      "D06",
+      "D05",
+      "D01"
+    ],
+    "expected": [
+      "48.855868, 2.31598",
+      "48.86079459806906, 2.3378156596817785",
+      "48.859157, 2.323672"
+    ]
+  },
+  {
+    "id": "Q08",
+    "messages": [
+      "Где находятся дома-музеи Бальзака, Виктора Гюго и Бурделя?"
+    ],
+    "relevant": [
+      "D12",
+      "D13",
+      "D02"
+    ],
+    "expected": [
+      "47 rue Raynouard",
+      "6 place des Vosges",
+      "16 rue Antoine Bourdelle"
+    ]
+  },
+  {
+    "id": "Q09",
+    "messages": [
+      "Тематика коллекций Орсе, Карнавале и Малого дворца"
+    ],
+    "relevant": [
+      "D01",
+      "D11",
+      "D15"
+    ],
+    "expected": [
+      "декоративное искусство, изобразительное искусство, история",
+      "археология, декоративное искусство, современное искусство, изобразительное искусство, история, фотография",
+      "декоративное искусство, современное искусство, изобразительное искусство, фотография"
+    ]
+  },
+  {
+    "id": "Q10",
+    "messages": [
+      "Как найти музеи Коньяк-Жэ, Цадкина и Родена?"
+    ],
+    "relevant": [
+      "D04",
+      "D03",
+      "D06"
+    ],
+    "expected": [
+      "8 rue Elzévir",
+      "100bis rue d'Assas",
+      "77 rue de Varenne"
+    ]
+  },
+  {
+    "id": "Q11",
+    "messages": [
+      "Сколько стоит билет в Лувр сегодня?"
+    ],
+    "relevant": [],
+    "expected": [
+      "нет подтверждённого ответа"
+    ]
+  },
+  {
+    "id": "Q12",
+    "messages": [
+      "Есть ли скидка на выставку Орсе для детей?"
+    ],
+    "relevant": [],
+    "expected": [
+      "нет подтверждённого ответа"
+    ]
+  },
+  {
+    "id": "Q13",
+    "messages": [
+      "В котором часу открыт музей Родена?"
+    ],
+    "relevant": [],
+    "expected": [
+      "нет подтверждённого ответа"
+    ]
+  },
+  {
+    "id": "Q14",
+    "messages": [
+      "Есть ли в наличии билеты в музей Цадкина?"
+    ],
+    "relevant": [],
+    "expected": [
+      "нет подтверждённого ответа"
+    ]
+  },
+  {
+    "id": "Q15",
+    "messages": [
+      "Какая завтра погода в Париже?"
+    ],
+    "relevant": [],
+    "expected": [
+      "нет подтверждённого ответа"
+    ]
+  }
+]

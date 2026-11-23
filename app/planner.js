@@ -20,18 +20,21 @@ function createPlan(city,days,pace,interests=[],previous=[]){
 function replacePlace(state,day,index){const old=state.plan[day][index];if(old.pinned)return false;const used=new Set(state.plan.flat().map(p=>p.id));const alternatives=createPlan(state.city,3,'active',[]).flat();const next=alternatives.find(p=>!used.has(p.id));if(!next)return false;state.plan[day][index]=next;return true;}
 async function getReply(messages,context){
  const q=messages[messages.length-1].content.toLowerCase();
+ const city=Object.keys(DESTINATIONS).find(k=>DESTINATIONS[k].keys.some(key=>q.includes(key)));
+ const outsideRoute=!city && /маршрут.*(?: по | в )/i.test(q);
  const routeCommand=/маршрут|составь план|почему.*план|инстаграм|instagram|больше бесплатного|сделай спокойнее|замени музеи|замен.*на прогул|без музеев/.test(q);
- const factual=/адрес|наход|как найти|координат|тематик|располож|сайт|музе|орсе|лувр|событи|афиш|выставк|мастер.класс|концерт|мероприяти|коллекци|источник|откуда|билет|скидк|там|\?/.test(q);
+ const newDestination=!city && /(?:еду|хочу|поеду) в |поездка в /.test(q);
+ const factual=/куда сходить|что посетить|что интересного|расскажи|путеводител|кухн|что попробовать|что посмотреть|достопримечательност|куда съездить|адрес|наход|как найти|координат|тематик|располож|сайт|музе|орсе|лувр|событи|афиш|выставк|мастер.класс|концерт|мероприяти|коллекци|источник|откуда|билет|скидк|там|\?/.test(q);
  const clarifying=/^(Уточните название|Какой из упомянутых)/.test(messages.at(-2)?.content || "");
- if(!routeCommand && (factual || clarifying)){
+ if(outsideRoute || newDestination || (!routeCommand && (factual || clarifying))){
    const history=messages.slice(-8).map(m=>({role:m.role,content:m.content.slice(0,3000)}));
    const response=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},
      body:JSON.stringify({messages:history,city:context.city}),signal:AbortSignal.timeout(105000)});
    if(!response.ok)throw new Error('Справочник недоступен');
    const data=await response.json();
-   return {reply:data.reply,sources:data.sources,reference:true,city:null,action:null};
+   const reply=outsideRoute && data.status==="answered" ? "По путеводителю для этого направления можно рассмотреть следующие места.\n"+data.reply : data.reply;
+   return {reply,sources:data.sources,reference:true,city:null,action:null};
  }
- const city=Object.keys(DESTINATIONS).find(k=>DESTINATIONS[k].keys.some(key=>q.includes(key)));
  const result={reply:'',action:null,city:null};
  if(/инстаграм|instagram/.test(q)){if(city||context.plan?.length){result.city=city||context.city;result.action='instagram';}else result.reply='Для какого города ищем инстаграмные места? Напишите направление — подберём уголки для вашей ленты.';}
  else if(city&&city!==context.city){result.city=city;result.action='city';result.reply='Переключаю поездку: '+DESTINATIONS[city].name+'. Подготовил маршрут с вашими пожеланиями.';}
@@ -41,7 +44,7 @@ async function getReply(messages,context){
  else if(/почему/.test(q)){result.reply='План использует выбранный город, число дней, темп и интересы. Сначала идут места, подходящие вашим предпочтениям. ';}
  else if(/источник|откуда/.test(q)){result.reply='Сейчас ответы и карточки подготовлены заранее. Поиск по документам и цитирование пока не подключены.';}
  else if(/маршрут|план|собер|посмотр/.test(q)){result.action='rebuild';result.reply='Подготовил маршрут. Можно обсудить изменения здесь.';}
- else{result.reply='Расскажите, в какой европейский город хотите поехать. Можем обсудить Рим, Париж, Барселону, Прагу, Вену и Лиссабон, попросить маршрут на 1–3 дня, больше бесплатных мест или спокойный темп. Расскажите о своих пожеланиях, и мы уточним поездку.';}
+ else{result.reply='Назовите европейское направление и что вам интересно. Например: «Что посмотреть в Германии?» или «Какая кухня в Грузии?». Маршруты на 1–3 дня можно собрать для Рима, Парижа, Барселоны, Праги, Вены и Лиссабона.';}
  return new Promise(resolve=>setTimeout(()=>resolve(result),500));
 }
 if(typeof module!=='undefined')module.exports={DESTINATIONS,createPlan,replacePlace,getReply};

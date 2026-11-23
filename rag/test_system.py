@@ -19,11 +19,41 @@ class SystemTests(unittest.TestCase):
         return self.index.ask([{"role":"user","content":q} for q in questions],
                               now=datetime(year,11,23,tzinfo=timezone.utc))
     def test_snapshot_sources(self):
-        self.assertEqual(len(self.docs),30)
+        self.assertEqual(len(self.docs),102)
         for d in self.docs:
             self.assertTrue(d["checked"] and d["license"] and d["source_id"] and d["url"].startswith("https://"))
     def test_ambiguous_followup(self):
         self.assertIn("Какой",self.ask("Адрес Орсе и Лувра","Какие там события?")["reply"])
+    def test_european_guides(self):
+        guides={d["code"]:d for d in self.docs if d["kind"]=="guide"}
+        from europe import destinations
+        self.assertEqual(set(guides),{code for code,_ in destinations()})
+        for code,doc in guides.items():
+            with self.subTest(code=code):
+                reply=self.ask("Расскажи про "+doc["name"])
+                self.assertEqual(reply["hits"],[doc["id"]])
+                self.assertIn("oldid=",reply["sources"][0]["url"])
+        self.assertIn("Берлинская стена",self.ask("Что посмотреть в Берлине?")["reply"])
+        self.assertEqual(self.ask("Расскажи про Италию","Какая там кухня?")["hits"],[guides["IT"]["id"]])
+        self.assertFalse(self.ask("Какие выставки в Германии?")["sources"])
+
+    def test_guide_scope_and_landmarks(self):
+        self.assertFalse(self.ask("Расскажи про Швецию","Какие там события?")["hits"])
+        self.assertIn("Берлинская стена",self.ask("Маршрут по Берлину")["reply"])
+        self.assertIn("ru.wikipedia.org",self.ask("Что посмотреть в Вене?")["sources"][0]["url"])
+
+    def test_migrate_old_catalog(self):
+        import server
+        with TemporaryDirectory() as tmp, patch("server.DB",Path(tmp)/"existing.sqlite3"):
+            db=server.connect()
+            db.execute("DELETE FROM documents WHERE id LIKE 'G%'")
+            db.execute("INSERT INTO documents VALUES ('E999','{}')")
+            db.commit();db.close()
+            for _ in range(2):
+                db=server.connect()
+                self.assertEqual(db.execute("SELECT COUNT(*) FROM documents").fetchone()[0],103)
+                db.close()
+
     def test_city_switch(self):
         self.assertEqual(self.ask("Адрес Орсе","А какие события в Риме?")["sources"],[])
     def test_expired(self):
@@ -43,7 +73,7 @@ class SystemTests(unittest.TestCase):
         db.execute("CREATE TRIGGER interruption BEFORE INSERT ON documents WHEN NEW.id='D10' BEGIN SELECT RAISE(ABORT,'failure'); END")
         with self.assertRaises(sqlite3.IntegrityError):
             replace_catalog(db,self.docs)
-        self.assertEqual(db.execute("SELECT COUNT(*) FROM documents").fetchone()[0],30)
+        self.assertEqual(db.execute("SELECT COUNT(*) FROM documents").fetchone()[0],len(self.docs))
         db.close()
     def test_cache_follows_committed_edits(self):
         with TemporaryDirectory() as tmp, patch("server.DB",Path(tmp)/"catalog.sqlite3"):

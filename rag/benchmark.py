@@ -9,9 +9,16 @@ from server import HERE,snapshot,generate
 from search import Index
 
 BENCH = HERE.parent/"benchmark"
-def run(llm=False):
-    cases=json.loads((BENCH/"paris.json").read_text(encoding="utf-8"))
+def run(llm=False,course=False):
     documents=snapshot()
+    if course:
+        cases=json.loads((BENCH/"course.json").read_text(encoding="utf-8"))
+        ids={key for case in cases for key in case["relevant"]}
+        documents=[d for d in documents if d["id"] in ids]
+    else:
+        cases=[]
+        for name in ("paris.json","europe.json"):
+            cases.extend(json.loads((BENCH/name).read_text(encoding="utf-8")))
     index=Index(documents)
     digest=hashlib.sha256(json.dumps(documents,ensure_ascii=False,sort_keys=True,separators=(",",":")).encode()).hexdigest()
     report={"snapshot_sha256":digest,"k":5,"mode":os.environ["RAG_MODEL"] if llm else "extractive","runs":[]}
@@ -61,10 +68,11 @@ if __name__=="__main__":
     parser=argparse.ArgumentParser()
     parser.add_argument("--out",type=Path)
     parser.add_argument("--llm",action="store_true")
+    parser.add_argument("--course",action="store_true",help="Evaluate the 30-document European course subset")
     args=parser.parse_args()
     if args.llm and not os.getenv("RAG_MODEL"):
         parser.error("--llm requires RAG_MODEL")
-    report=run(args.llm)
+    report=run(args.llm,args.course)
     if args.out:
         args.out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print("Index only:",{k:v for k,v in report["index_only"].items() if k!="cases"})

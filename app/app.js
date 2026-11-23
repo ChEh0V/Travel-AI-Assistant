@@ -106,8 +106,13 @@ function messageElement(m){
   for(const source of (Array.isArray(m.sources)?m.sources:[])){
    if(!source || !/^https:\/\//i.test(source.url))continue;
    const link=document.createElement('a');link.href=source.url;link.target='_blank';link.rel='noopener noreferrer';
-   link.textContent='['+source.id+'] Источник · проверено '+String(source.checked).slice(0,10);
-   const row=document.createElement('p');row.append(link);content.append(row);
+   link.textContent='['+source.id+'] '+(source.credit || 'Источник')+' · проверено '+String(source.checked).slice(0,10);
+   const row=document.createElement('p');row.append(link);
+   if(source.license_url?.startsWith('https://creativecommons.org/')){
+    const license=document.createElement('a');license.href=source.license_url;license.textContent='CC BY-SA 4.0';
+    row.append(document.createTextNode(' · '),license);
+   }
+   content.append(row);
   }
   if(!m.content.includes('Готовлю ответ')){const actions=document.createElement('div');actions.className='reply-actions';const copy=document.createElement('button');copy.textContent='Копировать';copy.onclick=async()=>{try{await navigator.clipboard.writeText(m.content);toast('Ответ скопирован');}catch{toast('Выделите текст ответа, чтобы скопировать');}};actions.append(copy);if(/^День \d+$/m.test(m.content)){const route=document.createElement('a');route.href='#route';route.textContent='Текущий маршрут ↗';actions.append(route);}if(m.kind==='packing'){const packing=document.createElement('a');packing.href='#packing';packing.textContent='Открыть чек-лист ↗';actions.append(packing);}if(m.kind==='destinations'&&m.criteria)content.append(destinationCards(m.criteria));el.append(label,content,actions);return el;}
  }

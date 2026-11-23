@@ -11,11 +11,13 @@ def tokens(text):
     return re.findall(r"[^\W_]+", "".join(c for c in plain if not unicodedata.combining(c)))
 
 def facts(d):
+    if d["kind"]=="guide":
+        return d["sections"]
     if d["kind"]=="museum":
         return {"address":d["address"],"themes":d["themes"],"website":d["website"],"coordinates":d["coordinates"]}
     return {"event":(d.get("title_ru")+" / " if d.get("title_ru") else "")+d["name"],"price":d["price"],"period":d["start"][:10]+" — "+d["end"][:10]}
 
-LABEL = dict(address="Адрес", themes="Тематика", website="Сайт", coordinates="Координаты",
+LABEL = dict(overview="Путеводитель", places="Достопримечательности и города", food="Местная кухня", address="Адрес", themes="Тематика", website="Сайт", coordinates="Координаты",
              event="Событие", price="Категория стоимости",period="Период по афише")
 INTENTS = {
     "address":r"адрес|где наход|где располож|как найти",
@@ -31,6 +33,7 @@ class Index:
     def __init__(self, docs):
         self.docs = {d["id"]:d for d in docs}
         self.museums = {d["place"]:d for d in docs if d["kind"]=="museum"}
+        self.guides = {d["id"]:d for d in docs if d["kind"]=="guide"}
         self.postings = defaultdict(dict)
         self.lengths = {}
         self.aliases = {}
@@ -39,7 +42,8 @@ class Index:
             self.aliases[place] = [tokens(s) for s in forms if s]
         for d in docs:
             fields = facts(d)
-            words = tokens(" ".join([d["alias"], d["venue"], d["name"]]+
+            names = d["aliases"] if d["kind"]=="guide" else [d["alias"],d["venue"],d["name"]]
+            words = tokens(" ".join(names+
                 [LABEL[k]+" "+str(v) for k,v in fields.items() if v]))
             self.lengths[d["id"]] = len(words)
             for word,count in Counter(words).items():
@@ -66,12 +70,85 @@ class Index:
                     scores[key] += idf*tf*2.2/(tf+1.2*(.25+.75*self.lengths[key]/self.avg))
         return sorted(scores,key=lambda key:(-scores[key],key))[:k]
 
+    def guide_forms(self,d):
+        forms=list(d["aliases"])
+        name=d["name"]
+        if " " not in name and name.endswith("ия"):
+            forms.append(name[:-1]+"ю")
+        elif " " not in name and name.endswith("а"):
+            forms.append(name[:-1]+"у")
+        elif d["code"].islower() and len(forms)>1 and forms[1]==name+"е":
+            forms.append(name+"у")
+        return forms
+
+    def guide_ids(self,text):
+        phrase=" "+" ".join(tokens(text))+" "
+        return {key for key,d in self.guides.items() if any(
+            " "+" ".join(tokens(alias))+" " in phrase for alias in self.guide_forms(d))}
+
+    def guide_reply(self,q,messages,city,rewrite,expand,k):
+        ids=self.guide_ids(q)
+        topic=None
+        for field,pattern in (("food","кухн|что (?:там )?попробовать|местн.*ед"),("places","куда сходить|что посетить|что интересного|маршрут|что (?:там )?посмотреть|достопримечательност|какие города|куда съездить"),
+                              ("overview","(?:еду|хочу|поеду) в |поездка в |путеводител|расскажи|кратк.*обзор|чем (?:известн|интересн|знаменит)")):
+            if re.search(pattern,q):
+                topic=field
+                break
+        if not topic:
+            return None
+        if not ids and rewrite and re.search(r"там|в этой стране|^а |^что посмотреть[?]?$",q):
+            for previous in reversed(messages[:-1]):
+                if previous["role"]=="user":
+                    ids=self.guide_ids(previous["content"])
+                    if ids:
+                        break
+            if not ids:
+                ids={key for key,d in self.guides.items() if d["code"]==city}
+        if not ids:
+            return dict(reply="Уточните страну или город для путеводителя.",sources=[],hits=[],status="insufficient")
+        query=q
+        if rewrite:
+            query+=" "+" ".join(self.guides[key]["name"] for key in sorted(ids))
+        if expand:
+            query+=" "+LABEL[topic]
+        hits=self.rank(query,{key for key in ids if topic in self.guides[key]["sections"]},k)
+        lines=[]
+        sources=[]
+        required={}
+        for key in hits:
+            d=self.guides[key]
+            passage=d["sections"][topic]
+            lines.append(d["name"]+" — "+passage+" ["+key+"]")
+            url=d.get("places_url",d["url"]) if topic=="places" else d["url"]
+            sources.append(dict(id=key,url=url,checked=d["checked"],credit="Википедия" if url==d.get("places_url") else "Викигид",license_url=d["license_url"]))
+            required[key]=[passage.split(". ")[0][:90].strip(". ")]
+        for key in sorted(ids-set(hits)):
+            lines.append(self.guides[key]["name"]+" — по этой теме подтверждённого фрагмента в выдаче нет.")
+        return dict(reply="\n".join(lines),sources=sources,hits=hits,required=required,
+                    query=query,status="answered" if sources else "insufficient")
+
     def ask(self,messages,city="",rewrite=True,expand=True,k=5,now=None):
         q = messages[-1]["content"].casefold()
         def stop(message):
             return dict(reply=message,sources=[],hits=[],status="insufficient")
-        unknown = stop("В парижском корпусе нет подтверждённого ответа на этот вопрос.")
-        if re.search(UNSUPPORTED+"|"+OTHER_CITY,q):
+        unknown = stop("В корпусе нет подтверждённого ответа на этот вопрос.")
+        if re.search(UNSUPPORTED,q):
+            return unknown
+        guide=self.guide_reply(q,messages,city,rewrite,expand,k)
+        if guide is not None:
+            return guide
+        if not self.guide_ids(q) and not self.places(q) and re.search(r"там|туда|этой стране|этом городе",q):
+            for message in reversed(messages[:-1]):
+                if message["role"]!="user":
+                    continue
+                previous=self.guide_ids(message["content"])
+                if self.places(message["content"]):
+                    break
+                if previous:
+                    if any(self.guides[key]["code"] not in ("FR","paris") for key in previous):
+                        return unknown
+                    break
+        if re.search(OTHER_CITY,q) or any(self.guides[key]["code"] not in ("FR","paris") for key in self.guide_ids(q)):
             return unknown
         places = self.places(q)
         fields = [key for key,pattern in INTENTS.items() if re.search(pattern,q)]
@@ -135,6 +212,8 @@ class Index:
             quoted.append(topic.group(1).strip(" «»"))
         allowed = set()
         for key,d in self.docs.items():
+            if d["kind"]=="guide":
+                continue
             if places and d["place"] not in places or event != (d["kind"]=="event"):
                 continue
             if tags and not tags.issubset(d.get("tags",[])):

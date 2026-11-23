@@ -16,17 +16,20 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 
 from catalog import fetch_catalog
+from europe import fetch_guides, destinations
 from search import Index
 
 HERE = Path(__file__).resolve().parent
 DB = HERE/"local.sqlite3"
 
 def snapshot():
-    return sum((json.loads((HERE/name).read_text(encoding="utf-8")) for name in ("museums.json","events.json")),[])
+    return sum((json.loads((HERE/name).read_text(encoding="utf-8")) for name in ("museums.json","events.json","europe.json")),[])
 
 def replace_catalog(db,docs):
     if not docs or len({d["id"] for d in docs})!=len(docs) or sum(d["kind"]=="museum" for d in docs)!=15:
         raise ValueError("Incomplete or duplicated catalog")
+    if {d["code"] for d in docs if d["kind"]=="guide"} != {code for code,_ in destinations()}:
+        raise ValueError("Incomplete European guide coverage")
     Index(docs)
     with db:
         db.execute("DELETE FROM documents")
@@ -37,10 +40,14 @@ def connect():
     db.execute("CREATE TABLE IF NOT EXISTS documents(id TEXT PRIMARY KEY, body TEXT NOT NULL)")
     if not db.execute("SELECT 1 FROM documents LIMIT 1").fetchone():
         replace_catalog(db,snapshot())
+    if not db.execute("SELECT 1 FROM documents WHERE id LIKE 'G%' LIMIT 1").fetchone():
+        with db:
+            guides=json.loads((HERE/"europe.json").read_text(encoding="utf-8"))
+            db.executemany("INSERT OR IGNORE INTO documents VALUES (?,?)",[(d["id"],json.dumps(d,ensure_ascii=False)) for d in guides])
     return db
 
 def refresh():
-    docs = fetch_catalog()
+    docs = fetch_catalog()+fetch_guides()
     with closing(connect()) as db:
         replace_catalog(db,docs)
     print("Updated",len(docs),"documents",flush=True)
@@ -95,7 +102,7 @@ def generate(result,question):
             answer=json.load(response)["choices"][0]["message"]["content"]
         if not isinstance(answer,str) or not answer.strip():
             return dict(result,mode="extractive-fallback")
-        ids=set(re.findall(r"\[([DE]\d+)\]",answer))
+        ids=set(re.findall(r"\[([DEG]\d+)\]",answer))
         def normalized(text):
             return " ".join(text.casefold().split())
         complete=True

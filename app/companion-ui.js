@@ -79,7 +79,7 @@ async function handleWishlistPlan(text){
  try{
   state.plan=Companion.wishlistPlan(state.wishlist,state.city,state.days);
   state.day=0;
-  await verifyParisPlan();
+  await verifyDatedPlan();
   renderRoute();
   state.messages.push(tripPlanMessage('Маршрут из «Хочу сюда» · '+DESTINATIONS[state.city].name+'\n\n'+planText()));
  }catch(error){
@@ -148,7 +148,7 @@ function initCompanion(){
  $('packing-weather-refresh').onclick=()=>{if(!busy)loadForecast();};
  $('route-weather-refresh').onclick=()=>{if(!busy)(state.dates.start?loadForecast():openTripDates());};
  $('trip-start').onchange=()=>{const start=$('trip-start').value;$('trip-end').min=start||Companion.today();if(Companion.day(start))$('trip-end').max=new Date((Companion.day(start)+2)*86400000).toISOString().slice(0,10);};
- $('trip-dates-form').onsubmit=async e=>{e.preventDefault();if(busy)return;const start=$('trip-start').value,end=$('trip-end').value;const range=Companion.dateRange(start,end);if(!range.valid||range.days>3){$('trip-dates-error').textContent='Выберите период от 1 до 3 дней.';return;}applyTripDates(start,end);$('trip-dates-dialog').close();if(requiresVerifiedTickets(state)&&state.plan.length){setBusy(true);try{await verifyParisPlan();}finally{setBusy(false);save();}}if(state.plan.length&&Companion.forecastWindow(start,end)==='available')loadForecast();};
+ $('trip-dates-form').onsubmit=async e=>{e.preventDefault();if(busy)return;const start=$('trip-start').value,end=$('trip-end').value;const range=Companion.dateRange(start,end);if(!range.valid||range.days>3){$('trip-dates-error').textContent='Выберите период от 1 до 3 дней.';return;}applyTripDates(start,end);$('trip-dates-dialog').close();if(requiresVerifiedTickets(state)&&state.plan.length){setBusy(true);try{await verifyDatedPlan();}finally{setBusy(false);save();}}if(state.plan.length&&Companion.forecastWindow(start,end)==='available')loadForecast();};
  $('packing-add').onsubmit=e=>{e.preventDefault();const label=$('packing-item').value.trim();if(!label||busy)return;state.packing.custom.push({id:'custom-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,6),label});$('packing-item').value='';save();};
 }
 function openTripDates(){if(busy)return;$('trip-start').value=state.dates.start;$('trip-end').value=state.dates.end;$('trip-start').min=Companion.today();$('trip-end').min=state.dates.start||Companion.today();$('trip-dates-error').textContent='';$('trip-dates-dialog').showModal();}

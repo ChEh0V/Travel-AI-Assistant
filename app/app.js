@@ -67,13 +67,13 @@ function bookingPrice(booking){
 function ticketCheckKey(){
  return JSON.stringify([state.city,state.dates?.start,state.dates?.end,ticketParty(),state.startTimes??{}]);
 }
-async function verifyParisPlan(){
+async function verifyDatedPlan(){
  if(!requiresVerifiedTickets(state)||!state.plan.length)return;
- state.plan=datedParisBase(state);
+ state.plan=datedPlanBase(state);
  state.ticketCheck={key:ticketCheckKey(),at:Date.now()};
  const people=ticketParty();
  const interests=TravelTools.interests(state.preferences,state.interests);
- if(!people||interests.includes('free'))return;
+ if(state.city!=='paris'||!people||interests.includes('free'))return;
  const wishes=state.plan.map((day,index)=>{
   const date=routeDayKey(index);
   const stop=day.findLastIndex(place=>!place.pinned);
@@ -103,7 +103,7 @@ async function verifySavedPlan(){
  const checked=state.ticketCheck;
  if(checked?.key===ticketCheckKey()&&Date.now()-checked.at<60000)return;
  setBusy(true);
- try{await verifyParisPlan();}
+ try{await verifyDatedPlan();}
  finally{setBusy(false);save();}
 }
 const availabilityChecks=new Map();
@@ -309,7 +309,7 @@ function rebuild(previous=state.plan){
  state.ticketCheck=null;
  const interests=TravelTools.interests(state.preferences,state.interests);
  state.plan=createPlan(state.city,state.days,state.pace,interests,previous);
- if(requiresVerifiedTickets(state))state.plan=datedParisBase(state);
+ if(requiresVerifiedTickets(state))state.plan=datedPlanBase(state);
  else if(!interests.includes('free'))addTicketStops({walksOnly:state.avoidMuseums===true});
  state.day=Math.min(state.day,state.days-1);
  renderRoute();
@@ -362,7 +362,7 @@ if(!settings&&/^добавь (?:несколько )?мест[а]? с билет
  if(requiresVerifiedTickets(state)&&state.plan.length){
   state.preferences.activities='Микс';
   state.interests=state.interests.filter(interest=>interest!=='free');
-  await verifyParisPlan();
+  await verifyDatedPlan();
   state.messages.push(tripPlanMessage(planText()+'\n\n'+planTimingNote()));
   return;
  }
@@ -378,7 +378,7 @@ if(!settings&&/^добавь (?:несколько )?мест[а]? с билет
  return;
 }
 if(!settings&&state.plan.length&&/^(?:покажи|пришли|выведи)\s+(?:мне\s+)?(?:текущий\s+)?маршрут(?:\s+по\s+часам)?[.!?]?$/i.test(text)){
- await verifyParisPlan();
+ await verifyDatedPlan();
  state.messages.push(tripPlanMessage(planText()+'\n\n'+planTimingNote()));
  return;
 }
@@ -392,7 +392,7 @@ if(!settings)state.preferences=TravelTools.infer(text,state.preferences);const r
  else reply='В дне '+(day+1)+' заменил «'+old.name+'» на «'+state.plan[day][index].name+'».';
  state.messages.push({role:'assistant',content:reply,city:state.city});
  return;
-}if(response.reference){if(sharedDates)await verifyParisPlan();state.messages.push({role:'assistant',content:response.reply,sources:response.sources});return;}const previous=response.city&&response.city!==state.city?[]:state.plan;if(response.city&&response.city!==state.city){cancelForecast();state.packing.weather=null;state.city=response.city;}const days=text.match(/(?:на|за)\s*([1-3]|один|одну|два|двое|три)\s*(?:дн|ден|сут)/i);if(days)changeTripLength(({один:1,одну:1,два:2,двое:2,три:3}[days[1].toLowerCase()]||Number(days[1])));if(response.action==='free'&&!state.interests.includes('free'))state.interests.push('free');if(response.action==='slow')state.pace='slow';if(response.action==='walks'){state.interests=['walks','architecture'];state.avoidMuseums=true;}if(response.action==='instagram')response.reply=instagramReply(state.city);const routeAction=(response.action&&response.action!=='instagram')||days;if(routeAction){rebuild(previous);await verifyParisPlan();response.reply=DESTINATIONS[state.city].name+' · '+state.days+' дн.\n\n'+planText()+'\n\n'+planTimingNote()+'\n\nОстановки можно перетаскивать в маршруте. Если хотите заменить место, просто назовите его в чате.';}state.messages.push(routeAction?tripPlanMessage(response.reply):{role:'assistant',content:response.reply,city:state.city});}catch{state.messages.push({role:'assistant',content:'Не удалось получить ответ. Попробуйте ещё раз.'});}finally{setBusy(false);renderChat();save();if(!location.hash||location.hash==='#chat')$('input').focus();}}
+}if(response.reference){if(sharedDates)await verifyDatedPlan();state.messages.push({role:'assistant',content:response.reply,sources:response.sources});return;}const previous=response.city&&response.city!==state.city?[]:state.plan;if(response.city&&response.city!==state.city){cancelForecast();state.packing.weather=null;state.city=response.city;}const days=text.match(/(?:на|за)\s*([1-3]|один|одну|два|двое|три)\s*(?:дн|ден|сут)/i);if(days)changeTripLength(({один:1,одну:1,два:2,двое:2,три:3}[days[1].toLowerCase()]||Number(days[1])));if(response.action==='free'&&!state.interests.includes('free'))state.interests.push('free');if(response.action==='slow')state.pace='slow';if(response.action==='walks'){state.interests=['walks','architecture'];state.avoidMuseums=true;}if(response.action==='instagram')response.reply=instagramReply(state.city);const routeAction=(response.action&&response.action!=='instagram')||days;if(routeAction){rebuild(previous);await verifyDatedPlan();response.reply=DESTINATIONS[state.city].name+' · '+state.days+' дн.\n\n'+planText()+'\n\n'+planTimingNote()+'\n\nОстановки можно перетаскивать в маршруте. Если хотите заменить место, просто назовите его в чате.';}state.messages.push(routeAction?tripPlanMessage(response.reply):{role:'assistant',content:response.reply,city:state.city});}catch{state.messages.push({role:'assistant',content:'Не удалось получить ответ. Попробуйте ещё раз.'});}finally{setBusy(false);renderChat();save();if(!location.hash||location.hash==='#chat')$('input').focus();}}
 $('chat-form').onsubmit=e=>{e.preventDefault();ask($('input').value);};$('input').onkeydown=e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();ask($('input').value);}};
 document.querySelectorAll('[data-prompt]').forEach(b=>b.onclick=()=>ask(b.dataset.prompt));
 function openReplacement(day,index){
@@ -448,7 +448,7 @@ $('add-ticket-stops').onclick=()=>{
 };
 function renderPlan(){renderRouteWeather();
  const addTickets=$('add-ticket-stops');
- const canReplace=requiresVerifiedTickets(state)?!state.plan.flat().some(place=>place.booking):state.plan.some(day=>!day.some(place=>TravelTools.ticket(place))&&
+ const canReplace=requiresVerifiedTickets(state)?state.city==='paris'&&!state.plan.flat().some(place=>place.booking):state.plan.some(day=>!day.some(place=>TravelTools.ticket(place))&&
   day.some(place=>place.free&&!place.pinned&&!TravelTools.tour(place)));
  addTickets.hidden=!(canReplace&&(requiresVerifiedTickets(state)||replacementOptions(state).some(place=>TravelTools.ticket(place))));
  addTickets.disabled=busy;

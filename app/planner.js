@@ -19,7 +19,7 @@ function createPlan(city,days,pace,interests=[],previous=[]){
  });
 }
 function requiresVerifiedTickets(state){
- return state.city==='paris'&&!!state.dates?.start;
+ return ['paris','barcelona'].includes(state.city)&&!!state.dates?.start;
 }
 
 function replacementOptions(state){
@@ -30,9 +30,9 @@ function replacementOptions(state){
   !used.has(place.id)&&(!requiresVerifiedTickets(state)||place.free));
 }
 
-function datedParisBase(state){
+function datedPlanBase(state){
  const reserved=new Set(state.plan.flat().filter(place=>place.free).map(place=>place.id));
- const free=createPlan('paris',3,'active',[]).flat().filter(place=>place.free&&!reserved.has(place.id));
+ const free=createPlan(state.city,3,'active',[]).flat().filter(place=>place.free&&!reserved.has(place.id));
  return state.plan.map(day=>day.flatMap(place=>{
   const next=place.free?place:free.shift();
   return next?[next]:[];
@@ -162,4 +162,4 @@ async function getReply(messages,context){
  else return tripAdvice(messages,context);
  return new Promise(resolve=>setTimeout(()=>resolve(result),500));
 }
-if(typeof module!=='undefined')module.exports={DESTINATIONS,createPlan,replacementOptions,replacePlace,swapPlaces,getReply};
+if(typeof module!=='undefined')module.exports={DESTINATIONS,createPlan,replacementOptions,replacePlace,swapPlaces,getReply,requiresVerifiedTickets,datedPlanBase};

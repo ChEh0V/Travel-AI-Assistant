@@ -20,6 +20,10 @@ const Companion = (() => {
  }
  function today(){const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Moscow',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());return ['year','month','day'].map(k=>parts.find(p=>p.type===k).value).join('-');}
  function forecastWindow(start,end,now=today()){const range=dateRange(start,end);if(!range.valid)return 'invalid';if(day(start)<day(now))return 'past';if(day(end)>day(now)+15)return 'future';return 'available';}
+ function tripWeather(trip){
+  const weather=trip.packing?.weather;
+  return weather&&weather.city===trip.city&&weather.start===trip.dates?.start&&weather.end===trip.dates?.end?weather:null;
+ }
  function normalizePacking(value){const v=value&&typeof value==='object'?value:{};return {start:typeof v.start==='string'?v.start:'',end:typeof v.end==='string'?v.end:'',checked:v.checked&&typeof v.checked==='object'?v.checked:{},custom:Array.isArray(v.custom)?v.custom.filter(t=>t&&typeof t.id==='string'&&typeof t.label==='string').slice(0,100):[],weather:v.weather&&Array.isArray(v.weather.days)?v.weather:null};}
  function packingItems(packing,company){
   const result=[{id:'docs',label:'Документы и сохранённые бронирования',group:'Главное'},{id:'charger',label:'Телефон и зарядка',group:'Главное'},{id:'shoes',label:'Удобная обувь',group:'Вещи'},{id:'care',label:'Средства гигиены',group:'Вещи'},{id:'offline',label:'Скачать карты и адрес проживания',group:'Перед выездом'}];
@@ -63,6 +67,6 @@ const Companion = (() => {
   const matches=Object.entries(profiles).filter(([,p])=>!sea||p.tags.includes('sea')||p.tags.includes('coast')).map(([city,p])=>({city,reason:p.reason,score:(sea?(p.tags.includes('sea')?5:3):0)+(calm&&p.tags.includes('calm')?3:0)+(art&&p.tags.includes('art')?3:0)+(food&&p.tags.includes('food')?3:0)})).sort((a,b)=>b.score-a.score).slice(0,3);
   return {matches,days,requestedDays:parsedDays,budget:budget?Number(budget[1].replace(',','.')):null,calm};
  }
- return {coordinates,day,dateRange,extractDates,today,forecastWindow,normalizePacking,packingItems,clothing,wishlistPlan,readForecast,search};
+ return {coordinates,day,dateRange,extractDates,today,forecastWindow,tripWeather,normalizePacking,packingItems,clothing,wishlistPlan,readForecast,search};
 })();
 if(typeof module!=='undefined')module.exports=Companion;

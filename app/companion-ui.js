@@ -1,8 +1,8 @@
 let forecastController=null;
 let forecastStatus='';
-let wishSelection=null;
 function tripDateLabel(){return state.dates?.start&&state.dates?.end?state.dates.start.split('-').reverse().join('.')+' — '+state.dates.end.split('-').reverse().join('.'):'Даты пока не выбраны';}
-function routeDate(index){return state.dates?.start?new Intl.DateTimeFormat('ru-RU',{timeZone:'UTC',day:'numeric',month:'short'}).format(new Date((Companion.day(state.dates.start)+index)*86400000)):null;}
+function routeDayKey(index){return state.dates?.start?new Date((Companion.day(state.dates.start)+index)*86400000).toISOString().slice(0,10):null;}
+function routeDate(index){const date=routeDayKey(index);return date?new Intl.DateTimeFormat('ru-RU',{timeZone:'UTC',day:'numeric',month:'short'}).format(new Date(date)):null;}
 function ensureCompanionState(){
  state.packing=Companion.normalizePacking(state.packing);
  const previous=state.dates||{start:state.packing.start,end:state.packing.end};
@@ -10,7 +10,7 @@ function ensureCompanionState(){
  state.packing.start=state.dates.start;state.packing.end=state.dates.end;
  state.wishlist=Array.isArray(state.wishlist)?state.wishlist.filter(p=>p&&typeof p.id==='string'&&DESTINATIONS[p.city]&&typeof p.name==='string'):[];
 }
-function cancelForecast(){if(forecastController)forecastController.abort();forecastController=null;forecastStatus='';wishSelection=null;}
+function cancelForecast(){if(forecastController)forecastController.abort();forecastController=null;forecastStatus='';}
 function findChatPlace(name,preferredCity){
  const cities=[preferredCity,state.city,...Object.keys(DESTINATIONS)].filter((v,i,a)=>DESTINATIONS[v]&&a.indexOf(v)===i);
  for(const city of cities){const index=DESTINATIONS[city].places.findIndex(p=>p[0]===name);if(index>=0){const p=DESTINATIONS[city].places[index];return {id:city+'-'+index,city,name:p[0],description:p[1],type:p[2],free:p[3],duration:p[2]==='art'?'~ 2 часа':'~ 1 час',pinned:false};}}
@@ -39,22 +39,79 @@ function handleDestinationRequest(text){
  if(criteria.requestedDays>3)reply+='\n\nСейчас пример маршрута можно собрать на 1–3 дня.';
  state.messages.push({role:'assistant',content:reply,kind:'destinations',criteria});return true;
 }
-function updateWishSelection(){const count=state.wishlist.filter(p=>p.city===state.city&&wishSelection?.has(p.id)).length;$('wishlist-selection-count').textContent='Выбрано мест: '+count;$('wishlist-build').disabled=busy||!count;}
 function renderWishlist(){
- const current=state.wishlist.filter(p=>p.city===state.city);if(wishSelection===null)wishSelection=new Set(current.map(p=>p.id));
- if(!$('wishlist-dialog').open||state.dates.start)$('wishlist-route-days').value=state.days;$('wishlist-route-days').disabled=busy||Companion.dateRange(state.dates.start,state.dates.end).valid;
- $('wishlist-list').replaceChildren();
- if(!state.wishlist.length){const empty=document.createElement('p');empty.className='companion-empty';empty.textContent='Нажимайте «♡ Хочу сюда» в ответах, затем вернитесь и соберите маршрут.';$('wishlist-list').append(empty);}
- state.wishlist.forEach(place=>{
-  const row=document.createElement('article');row.className='wish-row';const label=document.createElement('label');label.className='wish-selection';const check=document.createElement('input');check.type='checkbox';check.checked=place.city===state.city&&wishSelection.has(place.id);check.disabled=busy||place.city!==state.city;check.onchange=()=>{if(check.checked)wishSelection.add(place.id);else wishSelection.delete(place.id);updateWishSelection();};const text=document.createElement('span');const city=document.createElement('small');city.textContent=DESTINATIONS[place.city].name+(place.city!==state.city?' · другой город':'');const name=document.createElement('strong');name.textContent=place.name;text.append(city,name);label.append(check,text);
-  const remove=document.createElement('button');remove.className='wish-remove';remove.textContent='Убрать';remove.disabled=busy;remove.onclick=()=>{state.wishlist=state.wishlist.filter(p=>p.id!==place.id);wishSelection.delete(place.id);save();};row.append(label,remove);$('wishlist-list').append(row);
- });updateWishSelection();
+ const list=$('wishlist-list');
+ list.replaceChildren();
+ if(!state.wishlist.length){
+  const empty=document.createElement('li');
+  empty.className='companion-empty';
+  empty.textContent='Пока нет сохранённых мест.';
+  list.append(empty);
+ }
+ for(const place of state.wishlist){
+  const row=document.createElement('li');
+  row.className='wish-row';
+  const name=document.createElement('strong');
+  name.textContent=place.name;
+  const city=document.createElement('small');
+  city.textContent=DESTINATIONS[place.city].name;
+  const text=document.createElement('div');
+  text.className='saved-place-name';
+  text.append(name,city);
+  const remove=document.createElement('button');
+  remove.type='button';
+  remove.className='wish-remove';
+  remove.setAttribute('aria-label','Убрать '+place.name);
+  remove.textContent='Убрать';
+  remove.disabled=busy;
+  remove.onclick=()=>{
+   state.wishlist=state.wishlist.filter(saved=>saved.id!==place.id);
+   save();
+  };
+  row.append(text,remove);
+  list.append(row);
+ }
 }
+
+function handleWishlistPlan(text){
+ if(!/(?:собери|составь)\s+(?:мне\s+)?маршрут\s+из\s+[«"']?(?:хочу сюда|избранного)/i.test(text))return false;
+ try{
+  state.plan=Companion.wishlistPlan(state.wishlist,state.city,state.days);
+  state.day=0;
+  renderRoute();
+  state.messages.push({role:'assistant',city:state.city,content:'Маршрут из «Хочу сюда» · '+DESTINATIONS[state.city].name+'\n\n'+planText()});
+ }catch(error){
+  state.messages.push({role:'assistant',content:error.message});
+ }
+ return true;
+}
+function renderRouteWeather(){
+ const date=routeDayKey(state.day);
+ const forecast=Companion.tripWeather(state);
+ const day=forecast?.days.find(item=>item.date===date);
+ const window=Companion.forecastWindow(state.dates.start,state.dates.end);
+ const button=$('route-weather-refresh');
+ button.hidden=!!date&&window!=='available';
+ button.disabled=busy||!!forecastController;
+ button.textContent=date?'Обновить прогноз':'Выбрать даты';
+ $('route-weather-source').hidden=!day;
+ const status=$('route-weather-status');
+ $('route-weather-title').textContent=date?'Погода · '+routeDate(state.day):'Погода на день';
+ status.classList.toggle('has-forecast',!!day&&!forecastController&&window==='available');
+ if(!date)status.textContent='Выберите даты, чтобы увидеть прогноз.';
+ else if(forecastController)status.textContent='Загружаем прогноз…';
+ else if(window==='future')status.textContent='Прогноз появится ближе к поездке.';
+ else if(window==='past')status.textContent='Дата уже прошла.';
+ else if(day)status.textContent=Math.round(day.min)+'…'+Math.round(day.max)+' °C · вероятность осадков '+Math.round(day.rain)+'%';
+ else if(forecastStatus)status.textContent='Не удалось загрузить прогноз. Попробуйте ещё раз.';
+ else status.textContent='Прогноз пока не загружен.';
+}
+
 function renderPacking(){
  const p=state.packing;$('packing-city').textContent=state.plan.length?DESTINATIONS[state.city].name:'Выберите город в чате';
  $('packing-date-summary').textContent=tripDateLabel();
  $('packing-weather-refresh').disabled=busy||!!forecastController||!state.plan.length||!state.dates.start;
- const weather=p.weather;const correct=weather&&weather.city===state.city&&weather.start===p.start&&weather.end===p.end;
+ const weather=Companion.tripWeather(state);const correct=!!weather;
  const window=Companion.forecastWindow(p.start,p.end);
  $('weather-status').textContent=forecastStatus||(correct?'Прогноз на даты поездки. Рекомендации добавлены в чек-лист. Обновлён '+new Intl.DateTimeFormat('ru-RU',{timeZone:'Europe/Moscow',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}).format(new Date(weather.updated))+'.':!p.start?'Задайте даты один раз в настройках поездки — они появятся здесь автоматически.':window==='future'?'До поездки ещё далеко: прогноз доступен только на ближайшие 16 дней. Базовый чек-лист уже готов.':window==='past'?'Для прошедших дат прогноз не запрашивается.':window==='invalid'?'Проверьте даты: от 1 до 30 дней.':'Нажмите «Обновить погоду», чтобы дополнить рекомендации на даты поездки.');
  $('weather-days').replaceChildren();
@@ -65,13 +122,13 @@ function renderPacking(){
  $('packing-add').querySelectorAll('input,button').forEach(el=>el.disabled=busy);
 }
 function renderCompanion(){
- ensureCompanionState();$('trip-date-button').textContent=state.dates.start?tripDateLabel():'Даты поездки';$('wishlist-count').textContent=state.wishlist.length;renderWishlist();renderPacking();
+ ensureCompanionState();$('trip-date-button').textContent=state.dates.start?tripDateLabel():'Даты поездки';$('wishlist-count').textContent=state.wishlist.length;renderWishlist();renderPacking();renderRouteWeather();
  document.querySelectorAll('.want-button').forEach(b=>{const exists=state.wishlist.some(p=>p.id===b.dataset.placeId);b.textContent=exists?'♥ В «Хочу сюда»':'♡ Хочу сюда';b.setAttribute('aria-pressed',exists);b.disabled=busy;});
 }
 async function loadForecast(){
  cancelForecast();const p=state.packing;const range=Companion.dateRange(p.start,p.end);if(!range.valid){forecastStatus='Укажите корректный период от 1 до 30 дней.';renderPacking();return;}
  const window=Companion.forecastWindow(p.start,p.end);if(window!=='available'){renderPacking();return;}
- const tripId=state.id,city=state.city,start=p.start,end=p.end;const coords=Companion.coordinates[city];const controller=new AbortController();forecastController=controller;forecastStatus='Получаем прогноз на ваши даты…';renderPacking();const timeout=setTimeout(()=>controller.abort(),12000);
+ const tripId=state.id,city=state.city,start=p.start,end=p.end;const coords=Companion.coordinates[city];const controller=new AbortController();forecastController=controller;forecastStatus='Получаем прогноз на ваши даты…';renderPacking();renderRouteWeather();const timeout=setTimeout(()=>controller.abort(),12000);
  try{
   const params=new URLSearchParams({latitude:coords[0],longitude:coords[1],daily:'temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max,uv_index_max',timezone:'auto',start_date:start,end_date:end});
   const response=await fetch('https://api.open-meteo.com/v1/forecast?'+params,{signal:controller.signal});if(!response.ok)throw new Error('Forecast HTTP '+response.status);const data=await response.json();const days=Companion.readForecast(data,start,end);
@@ -83,13 +140,13 @@ async function loadForecast(){
 function initCompanion(){
  $('city-finder').onclick=()=>{if(!busy){$('finder-dialog').showModal();$('finder-input').focus();}};
  $('finder-form').onsubmit=e=>{e.preventDefault();const text=$('finder-input').value.trim();if(!text||busy)return;$('finder-dialog').close();location.hash='chat';ask('Подбери город: '+text);};
- $('open-wishlist').onclick=()=>{wishSelection=null;renderWishlist();$('wishlist-dialog').showModal();};
+ $('open-wishlist').onclick=()=>{renderWishlist();$('wishlist-dialog').showModal();};
  document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>$(b.dataset.close).close());
  $('trip-date-button').onclick=openTripDates;$('packing-edit-dates').onclick=openTripDates;
  $('packing-weather-refresh').onclick=()=>{if(!busy)loadForecast();};
+ $('route-weather-refresh').onclick=()=>{if(!busy)(state.dates.start?loadForecast():openTripDates());};
  $('trip-start').onchange=()=>{const start=$('trip-start').value;$('trip-end').min=start||Companion.today();if(Companion.day(start))$('trip-end').max=new Date((Companion.day(start)+2)*86400000).toISOString().slice(0,10);};
  $('trip-dates-form').onsubmit=e=>{e.preventDefault();if(busy)return;const start=$('trip-start').value,end=$('trip-end').value;const range=Companion.dateRange(start,end);if(!range.valid||range.days>3){$('trip-dates-error').textContent='Выберите период от 1 до 3 дней.';return;}applyTripDates(start,end);$('trip-dates-dialog').close();if(state.plan.length&&Companion.forecastWindow(start,end)==='available')loadForecast();};
- $('wishlist-build').onclick=()=>{if(busy)return;const selected=state.wishlist.filter(p=>wishSelection?.has(p.id)&&p.city===state.city);const days=Number($('wishlist-route-days').value);try{state.plan=Companion.wishlistPlan(selected,state.city,days);state.days=days;state.day=0;state.messages.push({role:'assistant',city:state.city,content:'Маршрут из «Хочу сюда» · '+DESTINATIONS[state.city].name+'\n\n'+planText()+'\n\nВыбранные места закреплены. План доступен в вашей поездке.'});$('wishlist-dialog').close();renderRoute();renderChat();save();location.hash='route';navigate();}catch(error){toast(error.message);}};
  $('packing-add').onsubmit=e=>{e.preventDefault();const label=$('packing-item').value.trim();if(!label||busy)return;state.packing.custom.push({id:'custom-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,6),label});$('packing-item').value='';save();};
 }
 function openTripDates(){if(busy)return;$('trip-start').value=state.dates.start;$('trip-end').value=state.dates.end;$('trip-start').min=Companion.today();$('trip-end').min=state.dates.start||Companion.today();$('trip-dates-error').textContent='';$('trip-dates-dialog').showModal();}

@@ -147,6 +147,28 @@ textarea::placeholder { color: #757281; }
 .day-intro { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
 .day-intro h2 { font: 25px Georgia, serif; }
 .day-intro > span { font-size: 12px; color: #757281; }
+.route-weather { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; padding:18px 20px; margin:0 0 16px; background:#D4EDF5; border:1px solid #79A4B7; border-radius:15px; color:var(--ink); }
+.route-weather-lead { display:flex; align-items:center; gap:14px; }
+.route-weather-icon { width:30px; height:30px; flex:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+.route-weather p { margin:4px 0 0; font-size:14px; color:var(--ink); }
+.route-weather p.has-forecast { font-size:19px; font-weight:700; }
+.route-weather-actions { display:flex; align-items:center; gap:12px; flex-wrap:wrap; font-size:13px; }
+.route-hours { display:flex; align-items:center; flex-wrap:wrap; gap:10px 16px; margin:0 0 13px; color:var(--ink); }
+.route-hours label { display:flex; align-items:center; gap:8px; font-weight:650; }
+.route-hours input { border:1px solid var(--line); border-radius:8px; padding:5px 8px; background:var(--paper); color:var(--ink); font:inherit; }
+.route-hours p { margin:0; font-size:13px; color:var(--muted); }
+.place-time { display:inline-block; margin:0 0 9px; padding:4px 9px; border-radius:7px; background:#DCEFF5; color:#16374F; font-size:14px; font-weight:750; }
+.place-links a.ticket-link, .reply-place .ticket-link { display:inline-flex; align-items:center; width:fit-content; border:1px solid #719BAC; border-radius:8px; padding:5px 9px; color:#123E58; background:#DCEFF5; font-size:13px; text-decoration:none; }
+.reply-place .ticket-link { margin:7px 0 0 8px; }
+.ticket-link:hover { text-decoration:underline; }
+.chat-route-shortcut { display:inline-flex; align-items:center; gap:6px; padding:7px 10px; border:1px solid #709AAC; border-radius:8px; color:#16374F; background:#DCEFF5; text-decoration:none; font-size:13px; font-weight:700; }
+.chat-route-shortcut[hidden] { display:none; }
+.chat-route-shortcut .icon { width:17px; height:17px; }
+.chat-route-shortcut:hover { border-color:#1C4D78; }
+.availability-status { display:inline-block; align-self:center; margin:4px 4px; color:var(--muted); font-size:13px; }
+.availability-status.availability-found { color:#075E54; font-weight:700; }
+.reply-actions a.reply-route-link { background:#1C4D78; color:#fff; border-color:#1C4D78; font-weight:700; padding:9px 13px; }
+.reply-actions a.reply-route-link:hover { background:#163C5D; color:#fff; }
 .place { display: grid; grid-template-columns: 30px 1fr; gap: 14px; margin-bottom: 16px; }
 .place-number { font-size: 12px; color: #757281; padding-top: 16px; }
 .place-body { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 19px; }
@@ -158,6 +180,20 @@ textarea::placeholder { color: #757281; }
 .place-actions { display: flex; justify-content: space-between; border-top: 1px solid #e1e2e9; margin-top: 15px; padding-top: 11px; }
 .place-actions button { color: #757281; font-size: 12px; min-height: 30px; border: 0; background: none; padding: 0; }
 .place-actions button.pinned, .place-actions button:hover { color: var(--blue); }
+.place[draggable="true"] { cursor: grab; user-select: none; }
+.place[draggable="true"]:active { cursor: grabbing; }
+.place.dragging { opacity: .55; }
+.place.drop-target { outline: 2px solid var(--blue); outline-offset: -2px; }
+.place-order { display: flex; gap: 8px; }
+.place-actions .place-order button { min-width: 36px; min-height: 36px; font-size: 18px; }
+.place-order button:disabled { opacity: .35; }
+.route-order-hint { font-size: 14px; }
+.replacement-search { display: grid; gap: 8px; }
+.replacement-search input { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; color: var(--ink); font: inherit; }
+.replacement-favorites { display: flex; gap: 8px; align-items: center; margin: 14px 0; }
+#replacement-options { display: grid; gap: 8px; max-height: 38vh; overflow: auto; }
+.replacement-option { text-align: left; background: var(--soft); color: var(--ink); border: 1px solid var(--line); border-radius: 10px; padding: 11px 13px; font: inherit; }
+.replacement-option:hover, .replacement-option:focus-visible { border-color: var(--atlantic-accent); }
 .route-note { font-size: 12px; line-height: 1.8; color: #757281; }
 
 .source-symbol { width: 35px; height: 35px; color: #757281; }

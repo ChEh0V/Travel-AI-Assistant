@@ -10,28 +10,130 @@ const DESTINATIONS = {
 const TYPE_LABELS={architecture:'Архитектура',art:'Искусство',walks:'Прогулка',food:'Местная кухня'};
 function createPlan(city,days,pace,interests=[],previous=[]){
  const pool=DESTINATIONS[city].places.map((p,i)=>({id:city+'-'+i,name:p[0],description:p[1],type:p[2],free:p[3],duration:p[2]==='art'?'~ 2 часа':'~ 1 час',pinned:false}));
- const ranked=pool.slice().sort((a,b)=>Number(interests.includes(b.type)||interests.includes('free')&&b.free)-Number(interests.includes(a.type)||interests.includes('free')&&a.free));
+ const score=place=>Number(interests.includes(place.type))+2*Number(interests.includes('free')&&place.free);
+ const ranked=pool.slice().sort((a,b)=>score(b)-score(a));
  const used=new Set(previous.slice(0,days).flatMap(day=>day.filter(p=>p.pinned).map(p=>p.id)));const count=pace==='slow'?2:3;
  return Array.from({length:days},(_,day)=>{
   const pinned=(previous[day]||[]).filter(p=>p.pinned);pinned.forEach(p=>used.add(p.id));
   const picks=ranked.filter(p=>!used.has(p.id)).slice(0,Math.max(0,count-pinned.length));picks.forEach(p=>used.add(p.id));return [...pinned,...picks];
  });
 }
-function replacePlace(state,day,index){const old=state.plan[day][index];if(old.pinned)return false;const used=new Set(state.plan.flat().map(p=>p.id));const alternatives=createPlan(state.city,3,'active',[]).flat();const next=alternatives.find(p=>!used.has(p.id));if(!next)return false;state.plan[day][index]=next;return true;}
+function replacementOptions(state){
+ const used=new Set(state.plan.flat().map(place=>place.id));
+ const favorites=(state.wishlist??[]).filter(place=>place.city===state.city);
+ const places=[...createPlan(state.city,3,'active',[]).flat(),...favorites];
+ return [...new Map(places.map(place=>[place.id,place])).values()].filter(place=>!used.has(place.id));
+}
+
+function replacePlace(state,day,index,replacementId){
+ const old=state.plan[day]?.[index];
+ if(!old||old.pinned)return false;
+ const next=replacementOptions(state).find(place=>!replacementId||place.id===replacementId);
+ if(!next)return false;
+ state.plan[day][index]={...next,pinned:false};
+ return true;
+}
+
+function swapPlaces(places, first, second){
+ if(first===second || !places[first] || !places[second])return false;
+ [places[first],places[second]]=[places[second],places[first]];
+ return true;
+}
+
+function placeWords(text){
+ return text.toLowerCase().replace(/ё/g,'е').match(/[\p{L}\p{N}]+/gu)??[];
+}
+
+function mentionedPlaces(places,text){
+ const words=placeWords(text);
+ const exact=places.filter(place=>{
+  const name=placeWords(place.name).join(' ');
+  return (' '+words.join(' ')+' ').includes(' '+name+' ');
+ });
+ if(exact.length)return exact;
+ return places.filter(place=>placeWords(place.name).some(name=>{
+  if(name.length<4||['музей','площадь','улица','город'].includes(name))return false;
+  return words.some(word=>word===name || (word.length>=4&&Math.abs(word.length-name.length)<=2&&
+    (word.startsWith(name.slice(0,-1))||name.startsWith(word.slice(0,-1)))));
+ }));
+}
+
+function replacementRequest(question,context){
+ const numbered=question.match(/^\s*замени\s+место\s*(?:№\s*)?(\d+)(?:\s+(?:в\s+дне|на\s+день|день)\s*(\d+))?\s*[.!?]?\s*$/i);
+ if(numbered)return {day:numbered[2]?Number(numbered[2])-1:(context.day??0),index:Number(numbered[1])-1};
+ const plan=context.plan??[];
+ if(/замени\s+музеи|без музеев/.test(question))return null;
+ const insteadFirst=question.match(/^(?:давай\s+)?вместо\s+(.+?)\s+(?:давай|лучше|хочу)\s+(.+)/i);
+ const instead=question.match(/^(?:давай\s+)?(?:лучше\s+)?(.+?)\s+вместо\s+(.+)/i);
+ const replace=question.match(/(?:заменить|заменишь|заменим|замени|поменять|поменяй|поменяем)\s+(.+)/i);
+ if(!insteadFirst&&!instead&&!replace)return null;
+ if(!plan.length)return {reply:'Сначала соберите маршрут, чтобы в нём можно было заменить остановку.'};
+ const [oldText,newText]=insteadFirst?insteadFirst.slice(1):instead?[instead[2],instead[1]]:replace[1].split(/\s+на\s+/,2);
+ const stops=plan.flatMap((places,day)=>places.map((place,index)=>({name:place.name,day,index})));
+ const matches=mentionedPlaces(stops,oldText);
+ if(matches.length!==1)return {reply:'Какую остановку заменить? Назовите место из маршрута.'};
+ if(!newText)return matches[0];
+ const options=replacementOptions(context);
+ const replacements=mentionedPlaces(options,newText);
+ if(replacements.length!==1)return {reply:'Не нашёл однозначной замены среди свободных мест этого города. Выберите вариант в маршруте через поиск или «Хочу сюда».'};
+ return {...matches[0],replacementId:replacements[0].id};
+}
+
+async function requestChat(messages,context,advice){
+ const history=messages.slice(-8).map(m=>({role:m.role,content:m.content.slice(0,3000)}));
+ const response=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},
+   body:JSON.stringify({messages:history,city:context.city,advice}),signal:AbortSignal.timeout(105000)});
+ if(!response.ok)throw new Error('Ассистент недоступен');
+ return response.json();
+}
+
+async function tripAdvice(messages,context){
+ const destination=DESTINATIONS[context.city];
+ const plan=(context.plan??[]).map((day,index)=>{
+   const schedule=TravelTools.daySchedule(day,context.startTimes?.[index]);
+   return 'День '+(index+1)+': '+schedule.map(({place,start})=>start+' '+place.name).join(', ');
+ }).join('\n');
+ const preferences=Object.values(context.preferences??{}).join(', ');
+ const dates=context.dates?.start?'Даты поездки: '+context.dates.start+' — '+context.dates.end:'';
+ const weather=Companion.tripWeather(context);
+ const forecast=weather?.days.map(day=>day.date+': '+day.min+'…'+day.max+' °C, вероятность осадков '+day.rain+'%').join('; ');
+ const advice=['Город: '+(destination?.name??'не выбран'),plan,
+   dates,forecast?'Прогноз Open-Meteo: '+forecast:'',
+   preferences?'Предпочтения поездки: '+preferences:'',
+   'Места из каталога: '+(destination?.places.map(p=>p[0]).join(', ')??'')].filter(Boolean).join('\n');
+ const data=await requestChat(messages,context,advice);
+ return {reply:data.reply,reference:true,city:null,action:null};
+}
+
 async function getReply(messages,context){
  const q=messages[messages.length-1].content.toLowerCase();
+ const replacement=replacementRequest(q,context);
+ if(replacement?.reply)return {reference:true,reply:replacement.reply};
+ if(replacement)return {action:'replace',replacement};
+ if(/^\s*замени\s+место[.!?\s]*$/.test(q)){
+   return {reference:true,reply:'Какое место заменить? Назовите его, и я подберу другое.'};
+ }
+ if(context.plan?.length&&/погод[ауые]|вероятность осадков|температура/.test(q)){
+   const start=context.dates?.start;
+   const end=context.dates?.end;
+   const period=Companion.forecastWindow(start,end);
+   const weather=Companion.tripWeather(context);
+   const reply=!start?'Укажите даты поездки, чтобы получить прогноз.':
+     period==='past'?'Эти даты уже прошли. Для них прогноз не запрашивается.':
+     period==='future'?'Для этих дат прогноз пока недоступен. Open-Meteo показывает до 16 дней вперёд.':
+     weather?'Прогноз для '+DESTINATIONS[context.city].name+' по Open-Meteo:\n'+weather.days.map(
+       day=>day.date+': '+Math.round(day.min)+'…'+Math.round(day.max)+' °C · вероятность осадков '+Math.round(day.rain)+'%'
+     ).join('\n'):'Откройте маршрут и нажмите «Обновить прогноз», чтобы загрузить погоду на даты поездки.';
+   return {reference:true,reply};
+ }
  const city=Object.keys(DESTINATIONS).find(k=>DESTINATIONS[k].keys.some(key=>q.includes(key)));
  const outsideRoute=!city && /маршрут.*(?: по | в )/i.test(q);
  const routeCommand=/маршрут|составь план|почему.*план|инстаграм|instagram|больше бесплатного|сделай спокойнее|замени музеи|замен.*на прогул|без музеев/.test(q);
  const newDestination=!city && /(?:еду|хочу|поеду) в |поездка в /.test(q);
- const factual=/куда сходить|что посетить|что интересного|расскажи|путеводител|кухн|что попробовать|что посмотреть|достопримечательност|куда съездить|адрес|наход|как найти|координат|тематик|располож|сайт|музе|орсе|лувр|событи|афиш|выставк|мастер.класс|концерт|мероприяти|коллекци|источник|откуда|билет|скидк|там|\?/.test(q);
+ const factual=/куда сходить|что посетить|что интересного|расскажи|путеводител|кухн|что попробовать|что посмотреть|достопримечательност|куда съездить|адрес|наход|как найти|координат|тематик|располож|сайт|музе|орсе|лувр|событи|афиш|выставк|мастер.класс|концерт|мероприяти|коллекци|источник|откуда|билет|скидк|цен[ауые]|расписан|открыт|там/.test(q);
  const clarifying=/^(Уточните название|Какой из упомянутых)/.test(messages.at(-2)?.content || "");
  if(outsideRoute || newDestination || (!routeCommand && (factual || clarifying))){
-   const history=messages.slice(-8).map(m=>({role:m.role,content:m.content.slice(0,3000)}));
-   const response=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},
-     body:JSON.stringify({messages:history,city:context.city}),signal:AbortSignal.timeout(105000)});
-   if(!response.ok)throw new Error('Справочник недоступен');
-   const data=await response.json();
+   const data=await requestChat(messages,context);
    const reply=outsideRoute && data.status==="answered" ? "По путеводителю для этого направления можно рассмотреть следующие места.\n"+data.reply : data.reply;
    return {reply,sources:data.sources,reference:true,city:null,action:null};
  }
@@ -40,11 +142,10 @@ async function getReply(messages,context){
  else if(city&&city!==context.city){result.city=city;result.action='city';result.reply='Переключаю поездку: '+DESTINATIONS[city].name+'. Подготовил маршрут с вашими пожеланиями.';}
  else if(/бесплат|эконом/.test(q)){result.action='free';result.reply='Добавил предпочтение бесплатных прогулок. Доступные места поставил в начало плана; закреплённые сохранил. ';}
  else if(/спокой|меньше ход|без спеш|поспокой/.test(q)){result.action='slow';result.reply='Сделал программу спокойнее: до двух мест в день. Закреплённые места остаются. ';}
- else if(/замен|без музе|вместо музе|на прогул/.test(q)){result.action='walks';result.reply='Сместил акцент на прогулки и архитектуру. Закреплённые места оставил. Отдельную карточку можно заменить кнопкой под ней.';}
+ else if(/без музе|вместо музе|замени музеи|замен.*на прогул/.test(q)){result.action='walks';result.reply='Сместил акцент на прогулки и архитектуру. Закреплённые места оставил.';}
  else if(/почему/.test(q)){result.reply='План использует выбранный город, число дней, темп и интересы. Сначала идут места, подходящие вашим предпочтениям. ';}
- else if(/источник|откуда/.test(q)){result.reply='Сейчас ответы и карточки подготовлены заранее. Поиск по документам и цитирование пока не подключены.';}
- else if(/маршрут|план|собер|посмотр/.test(q)){result.action='rebuild';result.reply='Подготовил маршрут. Можно обсудить изменения здесь.';}
- else{result.reply='Назовите европейское направление и что вам интересно. Например: «Что посмотреть в Германии?» или «Какая кухня в Грузии?». Маршруты на 1–3 дня можно собрать для Рима, Парижа, Барселоны, Праги, Вены и Лиссабона.';}
+ else if(/маршрут|составь план|собер/.test(q)||/(?:на|за)\s*(?:[1-3]|один|одну|два|двое|три)\s*(?:дн|ден|сут)/.test(q)){result.action='rebuild';result.reply='Подготовил маршрут. Можно обсудить изменения здесь.';}
+ else return tripAdvice(messages,context);
  return new Promise(resolve=>setTimeout(()=>resolve(result),500));
 }
-if(typeof module!=='undefined')module.exports={DESTINATIONS,createPlan,replacePlace,getReply};
+if(typeof module!=='undefined')module.exports={DESTINATIONS,createPlan,replacementOptions,replacePlace,swapPlaces,getReply};

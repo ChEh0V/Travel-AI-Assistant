@@ -9,9 +9,8 @@ html:root {
 }
 html:root .sidebar { background:var(--sidebar); border-color:var(--line); }
 html:root :is(.logo,.logo small,.logo-icon,.nav-caption,nav a,.region,.welcome-kicker,.welcome h1 em,.welcome>p,.ticket-top,.suggestions small,.ticket-stub,.thread strong,.thread .trip-detail,.trip-preview,.trip-arrow,.history-empty,.sidebar-note,.local-label,.active-trip,.composer-bottom .icon,.user .message-label,.followups button,.followups span,.place-tag,.trip-card-top,.trip-card-meta,.trip-card-preview,.trip-card-actions button,.trip-search input,#trips-total,.trips-empty p,.instagram-prompt,.instagram-prompt>span,.delete-link,.delete-trip-button) { color:var(--ink); }
-html:root :is(.new-chat,.primary-action,#send,nav a.active,.thread.active) { background:var(--atlantic-accent); color:var(--ink); border-color:transparent; box-shadow:none; }
+html:root :is(.new-chat,.primary-action,#send,nav a.active) { background:var(--atlantic-accent); color:var(--ink); border-color:transparent; box-shadow:none; }
 html:root :is(.new-chat:hover,.primary-action:hover,#send:hover,nav a.active:hover) { background:color-mix(in srgb,var(--atlantic-accent) 85%,white); color:var(--ink); }
-html:root :is(.thread.active strong,.thread.active .trip-detail,.thread.active .trip-preview,.thread.active .trip-arrow) { color:var(--ink); }
 html:root :is(.thread,nav a:hover,.active-trip,.followups button,.place-tag,.place-tag.free,.message.user) { background:var(--soft); border-color:var(--line); }
 html:root .thread:hover { background:var(--atlantic-neutral); border-color:var(--line); }
 html:root :is(.suggestions button,.trip-card) { background:var(--atlantic-base); border-color:var(--line); }
@@ -39,11 +38,25 @@ html:root {
   --soft:color-mix(in srgb,var(--atlantic-base) 40%,white);
   --line:color-mix(in srgb,var(--atlantic-base) 75%,var(--atlantic-ink));
 }
-html:root :is(.new-chat,.primary-action,#send,nav a.active,.thread.active,.day-tab.active) { background:var(--atlantic-accent); color:var(--atlantic-button-text); border-color:var(--atlantic-accent); }
+html:root :is(.new-chat,.primary-action,#send,nav a.active,.day-tab.active) { background:var(--atlantic-accent); color:var(--atlantic-button-text); border-color:var(--atlantic-accent); }
 html:root :is(.new-chat:hover,.primary-action:hover,#send:hover,nav a.active:hover) { background:var(--atlantic-accent); color:var(--atlantic-button-text); box-shadow:0 0 0 3px color-mix(in srgb,var(--atlantic-accent) 20%,transparent); }
-html:root :is(.thread.active strong,.thread.active .trip-detail,.thread.active .trip-preview,.thread.active .trip-arrow) { color:var(--atlantic-button-text); }
 html:root :is(.suggestions button:nth-child(2),.trip-card.tone-1) { background:color-mix(in srgb,var(--atlantic-secondary) 55%,white); }
 html:root :is(.suggestions button:nth-child(3),.trip-card.tone-2) { background:color-mix(in srgb,var(--atlantic-base) 35%,white); }
 html:root :is(.logo,.welcome h1 em,.title-dot,.ticket-top) { color:var(--atlantic-ink); }
 html:root #chat-form:focus-within { border-color:var(--atlantic-accent); box-shadow:0 0 0 3px color-mix(in srgb,var(--atlantic-accent) 15%,transparent); }
 html:root .trip-card.current::before { background:var(--atlantic-accent); }
+
+html:root #thread-list .thread.active { background:#D6EBF3; border-color:#477B97; }
+html:root #thread-list .thread.active :is(strong,.trip-detail,.trip-preview,.trip-arrow) { color:#102F47; }
+html:root .message-label.assistant-name { color:#00646A; font-weight:750; }
+html:root .logo > .brand-name {
+  color:var(--atlantic-ink); font-family:"Segoe UI",system-ui,sans-serif;
+  font-size:25px; font-weight:650; letter-spacing:-.25px;
+  margin-inline-start:3px;
+}
+.finder-pin {
+  width:19px; height:19px; flex:none; stroke:currentColor;
+  stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round;
+}
+.saved-places { list-style:none; margin:14px 0 0; padding:0; }
+.saved-place-name { display:grid; gap:4px; }

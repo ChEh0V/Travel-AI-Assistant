@@ -26,7 +26,7 @@ try{const saved=JSON.parse(localStorage.getItem(STORAGE));if(saved&&DESTINATIONS
 function toast(text){$('toast').textContent=text;$('toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('visible'),2500);}
 function archiveCurrent(){ensureCompanionState();if(!state.messages.length&&!state.budget?.items?.length&&!state.budget?.limit&&!state.wishlist.length&&!state.packing.custom.length&&!state.packing.start)return;state.updated=Date.now();threads=TravelTools.upsertThreads(threads,state);}
 const euro=cents=>new Intl.NumberFormat('ru-RU',{style:'currency',currency:'EUR',maximumFractionDigits:2}).format(cents/100);
-function ticketLink(place,date,time){
+function ticketLink(place,date,time,confirmed=false){
  const url=TravelTools.ticket(place);
  if(!url)return null;
  const link=document.createElement('a');
@@ -35,9 +35,15 @@ function ticketLink(place,date,time){
  link.rel='noopener noreferrer';
  link.className='ticket-link';
  const planned=[date,time].filter(Boolean).join(', ');
- link.textContent=planned?'Проверить билет · '+planned+' ↗':'Официальные билеты ↗';
- link.title='Выберите дату и проверьте свободное время на официальном сайте';
+ link.textContent=confirmed&&planned?'Билет на рейс · '+planned+' ↗':'Официальная касса ↗';
+ link.title=confirmed?'Проверьте остаток мест перед покупкой':'Откройте официальный календарь для проверки наличия';
  return link;
+}
+function uncheckedTicketStatus(){
+ const status=document.createElement('span');
+ status.className='availability-status';
+ status.textContent='Наличие билетов неизвестно';
+ return status;
 }
 function tourLink(place){
  const tour=TravelTools.tour(place);
@@ -142,7 +148,8 @@ function showCruiseAvailability(link,place,date,plannedTime,people){
 function placeLinks(place,visitDate,visitTime,isoDate){
  const el=document.createElement('div');el.className='place-links';
  const map=document.createElement('a');map.href=TravelTools.maps(place,state.city);map.target='_blank';map.rel='noopener noreferrer';map.textContent='На карте и отзывы ↗';el.append(map);
- const ticket=ticketLink(place,visitDate,visitTime);if(ticket)el.append(ticket);
+ const ticket=ticketLink(place,visitDate,visitTime,!!place.booking);
+ if(ticket){el.append(ticket);if(!place.booking)el.append(uncheckedTicketStatus());}
  const cruiseIncluded=place.id==='paris-2'&&state.plan.flat().some(stop=>stop.id===parisCruise.id);
  const tour=cruiseIncluded?null:tourLink(place);if(tour){
   el.append(tour);
@@ -251,8 +258,9 @@ function messageElement(m){
     const place=findChatPlace(timed?.[2]??heading,m.city);
     if(place){
      p.append(wantButton(place));
-     const ticket=ticketLink(place,visitDate,timed?.[1]);
-     if(ticket)p.append(ticket);
+     const confirmed=m.confirmedCruise&&place.id===parisCruise.id;
+     const ticket=ticketLink(place,visitDate,timed?.[1],confirmed);
+     if(ticket){p.append(ticket);if(!confirmed)p.append(uncheckedTicketStatus());}
      const tour=m.confirmedCruise&&place.id==='paris-2'?null:tourLink(place);
      if(tour){
       p.append(tour);
@@ -357,7 +365,7 @@ $('route-start').onchange=event=>{
  save();
 };
 function setBusy(value){busy=value;$('send').disabled=value;$('new-trip').disabled=value;$('trips-new').disabled=value;document.querySelectorAll('[data-prompt]').forEach(b=>b.disabled=value);renderRoute();renderHistory();renderTrips();renderBudget();renderCompanion();}
-async function ask(text,{settings=false}={}){text=text.trim();if(!text||busy)return;state.messages.push({role:'user',content:text});if(!settings)$('input').value='';renderChat();setBusy(true);const typing=messageElement({role:'assistant',content:'Готовлю ответ…'});typing.classList.add('typing');$('chat').append(typing);$('chat').scrollTop=$('chat').scrollHeight;try{const sharedDates=Companion.extractDates(text,state.days);if(sharedDates)applyTripDates(sharedDates.start,sharedDates.end);if(!settings&&((await handleWishlistPlan(text))||handleDestinationRequest(text)))return;
+async function ask(text,{settings=false}={}){text=text.trim();if(!text||busy)return;state.messages.push({role:'user',content:text});if(!settings)$('input').value='';renderChat();setBusy(true);const typing=messageElement({role:'assistant',content:'Готовлю ответ…'});typing.classList.add('typing');$('chat').append(typing);$('chat').scrollTop=$('chat').scrollHeight;try{const sharedDates=barcelonaTicketQuestion(text).length?null:Companion.extractDates(text,state.days);if(sharedDates)applyTripDates(sharedDates.start,sharedDates.end);if(!settings&&((await handleWishlistPlan(text))||handleDestinationRequest(text)))return;
 if(!settings&&/^добавь (?:несколько )?мест[а]? с билетами[.!?]?$/i.test(text)){
  if(requiresVerifiedTickets(state)&&state.plan.length){
   state.preferences.activities='Микс';
@@ -392,7 +400,7 @@ if(!settings)state.preferences=TravelTools.infer(text,state.preferences);const r
  else reply='В дне '+(day+1)+' заменил «'+old.name+'» на «'+state.plan[day][index].name+'».';
  state.messages.push({role:'assistant',content:reply,city:state.city});
  return;
-}if(response.reference){if(sharedDates)await verifyDatedPlan();state.messages.push({role:'assistant',content:response.reply,sources:response.sources});return;}const previous=response.city&&response.city!==state.city?[]:state.plan;if(response.city&&response.city!==state.city){cancelForecast();state.packing.weather=null;state.city=response.city;}const days=text.match(/(?:на|за)\s*([1-3]|один|одну|два|двое|три)\s*(?:дн|ден|сут)/i);if(days)changeTripLength(({один:1,одну:1,два:2,двое:2,три:3}[days[1].toLowerCase()]||Number(days[1])));if(response.action==='free'&&!state.interests.includes('free'))state.interests.push('free');if(response.action==='slow')state.pace='slow';if(response.action==='walks'){state.interests=['walks','architecture'];state.avoidMuseums=true;}if(response.action==='instagram')response.reply=instagramReply(state.city);const routeAction=(response.action&&response.action!=='instagram')||days;if(routeAction){rebuild(previous);await verifyDatedPlan();response.reply=DESTINATIONS[state.city].name+' · '+state.days+' дн.\n\n'+planText()+'\n\n'+planTimingNote()+'\n\nОстановки можно перетаскивать в маршруте. Если хотите заменить место, просто назовите его в чате.';}state.messages.push(routeAction?tripPlanMessage(response.reply):{role:'assistant',content:response.reply,city:state.city});}catch{state.messages.push({role:'assistant',content:'Не удалось получить ответ. Попробуйте ещё раз.'});}finally{setBusy(false);renderChat();save();if(!location.hash||location.hash==='#chat')$('input').focus();}}
+}if(response.reference){if(sharedDates)await verifyDatedPlan();state.messages.push({role:'assistant',content:response.reply,sources:response.sources,city:response.city??state.city});return;}const previous=response.city&&response.city!==state.city?[]:state.plan;if(response.city&&response.city!==state.city){cancelForecast();state.packing.weather=null;state.city=response.city;}const days=text.match(/(?:на|за)\s*([1-3]|один|одну|два|двое|три)\s*(?:дн|ден|сут)/i);if(days)changeTripLength(({один:1,одну:1,два:2,двое:2,три:3}[days[1].toLowerCase()]||Number(days[1])));if(response.action==='free'&&!state.interests.includes('free'))state.interests.push('free');if(response.action==='slow')state.pace='slow';if(response.action==='walks'){state.interests=['walks','architecture'];state.avoidMuseums=true;}if(response.action==='instagram')response.reply=instagramReply(state.city);const routeAction=(response.action&&response.action!=='instagram')||days;if(routeAction){rebuild(previous);await verifyDatedPlan();response.reply=DESTINATIONS[state.city].name+' · '+state.days+' дн.\n\n'+planText()+'\n\n'+planTimingNote()+'\n\nОстановки можно перетаскивать в маршруте. Если хотите заменить место, просто назовите его в чате.';}state.messages.push(routeAction?tripPlanMessage(response.reply):{role:'assistant',content:response.reply,city:state.city});}catch{state.messages.push({role:'assistant',content:'Не удалось получить ответ. Попробуйте ещё раз.'});}finally{setBusy(false);renderChat();save();if(!location.hash||location.hash==='#chat')$('input').focus();}}
 $('chat-form').onsubmit=e=>{e.preventDefault();ask($('input').value);};$('input').onkeydown=e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();ask($('input').value);}};
 document.querySelectorAll('[data-prompt]').forEach(b=>b.onclick=()=>ask(b.dataset.prompt));
 function openReplacement(day,index){

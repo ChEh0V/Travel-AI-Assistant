@@ -119,8 +119,21 @@ async function tripAdvice(messages,context){
  return {reply:data.reply,reference:true,city:null,action:null};
 }
 
+function barcelonaTicketQuestion(text){
+ const query=text.toLowerCase().trim();
+ if(!/билет|сеанс|слот/.test(query)||!/^(билет|сеанс|слот)|есть ли|есть билет|наличие|доступн|сколько|цен[ауеы]|купить|проверь|проверить|расписание|во сколько/.test(query))return [];
+ const options=createPlan('barcelona',3,'active',[]).flat().filter(place=>!place.free);
+ return mentionedPlaces(options,text);
+}
+
 async function getReply(messages,context){
  const q=messages[messages.length-1].content.toLowerCase();
+ const ticketPlaces=barcelonaTicketQuestion(q);
+ if(ticketPlaces.length){
+  return {reference:true,city:'barcelona',reply:
+   'Наличие билетов неизвестно. Официальная касса не отдаёт приложению свободные сеансы и цену. Проверьте нужную дату по ссылке.\n\n'+
+   ticketPlaces.map(place=>'• '+place.name+' — Выберите дату и время в официальной кассе.').join('\n')};
+ }
  const replacement=replacementRequest(q,context);
  if(replacement?.reply)return {reference:true,reply:replacement.reply};
  if(replacement)return {action:'replace',replacement};

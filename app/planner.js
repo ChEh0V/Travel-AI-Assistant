@@ -19,7 +19,7 @@ function createPlan(city,days,pace,interests=[],previous=[]){
  });
 }
 function requiresVerifiedTickets(state){
- return state.city==='barcelona'||(['paris','prague'].includes(state.city)&&!!state.dates?.start);
+ return state.city==='barcelona'||(['paris','prague','lisbon'].includes(state.city)&&!!state.dates?.start);
 }
 
 function replacementOptions(state){

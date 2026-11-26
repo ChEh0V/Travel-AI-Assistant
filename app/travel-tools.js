@@ -17,7 +17,8 @@ const TravelTools = (() => {
   'vienna-1':'https://shop.khm.at/en/tickets/kunsthistorisches-museum-200000000001005-T001-02',
   'vienna-3':'https://www.belvedere.at/en/visit',
   'vienna-7':'https://www.mqw.at/en/visit/opening-hours/',
-  'lisbon-7':'https://gulbenkian.pt/en/useful-information/tickets/'
+  'lisbon-7':'https://gulbenkian.pt/en/useful-information/tickets/',
+  'lisbon-9':'https://www.hippotrip.com/en/tickets/'
  };
  const knownPrices={
   'rome-0':{currency:'EUR',adult:16,label:'от 16 €'},

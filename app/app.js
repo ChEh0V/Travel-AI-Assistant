@@ -59,7 +59,11 @@ const pragueCruise={
  id:'prague-9',city:'prague',name:'Круиз по Влтаве',description:'Обзорная прогулка на теплоходе по Влтаве.',
  type:'walks',free:false,duration:'~ 1 час',pinned:false
 };
-const verifiedStops={paris:parisCruise,prague:pragueCruise};
+const lisbonHippotrip={
+ id:'lisbon-9',city:'lisbon',name:'Тур на амфибии HIPPOtrip',description:'Обзорный тур по Лиссабону по суше и реке Тежу.',
+ type:'walks',free:false,duration:'~ 1,5 часа',pinned:false
+};
+const verifiedStops={paris:parisCruise,prague:pragueCruise,lisbon:lisbonHippotrip};
 function ticketParty(){
  const company=state.preferences?.company;
  if(company==='С друзьями'||company==='С семьёй')return null;
@@ -114,7 +118,7 @@ async function verifySavedPlan(){
 }
 const availabilityChecks=new Map();
 function showCruiseAvailability(link,place,date,plannedTime,people){
- if(!['paris-2','paris-9','prague-9'].includes(place.id)||!date||date<Companion.today())return;
+ if(!['paris-2','paris-9','prague-9','lisbon-9'].includes(place.id)||!date||date<Companion.today())return;
  const status=document.createElement('span');
  status.className='availability-status';
  status.textContent='Проверяем рейсы…';

@@ -96,4 +96,59 @@ def prague_cruise_slots(visit_date, people):
     return sorted(times), price
 
 
-PROVIDERS = {"paris-2": cruise_slots, "paris-9": cruise_slots, "prague-9": prague_cruise_slots}
+def hippotrip_slots(visit_date, people):
+    day = date.fromisoformat(visit_date)
+    if day.isoformat() != visit_date or not 1 <= people <= 20:
+        raise ValueError("Invalid date or number of guests")
+    headers = {
+        "Authorization": "Bearer 198518e3-581b-4995-a4b5-fbb37840322a",
+        "Octo-Capabilities": "octo/pricing",
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "Origin": "https://www.hippotrip.com",
+        "User-Agent": "Mozilla/5.0",
+    }
+    payload = json.dumps({
+        "productId": "404f599f-6869-4a9f-b921-c60839fd70c9",
+        "optionId": "3096d03e-5780-4cf2-b9f7-5aebe1f00f12",
+        "localDateStart": visit_date,
+        "localDateEnd": visit_date,
+        "units": [{"id": "unit_aa50c8f0-18d7-43bf-bfbe-2bff4075a25e", "quantity": people}],
+    }).encode()
+    request = Request("https://checkout-api.ventrata.com/octo/availability", data=payload, headers=headers)
+    with urlopen(request, timeout=8) as response:
+        slots = json.loads(response.read(300_000))
+    if not isinstance(slots, list):
+        raise ValueError("Invalid Hippotrip response")
+    times = set()
+    adult = None
+    for slot in slots:
+        if not isinstance(slot, dict) or not slot.get("available"):
+            continue
+        vacancies = slot.get("vacancies")
+        if isinstance(vacancies, int) and vacancies < people:
+            continue
+        stamp = slot.get("localDateTimeStart", "")
+        if not isinstance(stamp, str) or stamp[:10] != visit_date:
+            continue
+        hhmm = stamp[11:16]
+        if re.fullmatch(r"(?:[01]\d|2[0-3]):[0-5]\d", hhmm):
+            times.add(hhmm)
+            if adult is None:
+                for unit in slot.get("unitPricing", []):
+                    if unit.get("unitType") == "ADULT" and isinstance(unit.get("retail"), (int, float)):
+                        precision = unit.get("currencyPrecision", 2)
+                        adult = round(unit["retail"] / (10 ** precision), 2)
+                        break
+    if not times:
+        return [], None
+    price = {"currency": "EUR", "adult": adult, "total": round(adult * people, 2), "people": people} if adult else None
+    return sorted(times), price
+
+
+PROVIDERS = {
+    "paris-2": cruise_slots,
+    "paris-9": cruise_slots,
+    "prague-9": prague_cruise_slots,
+    "lisbon-9": hippotrip_slots,
+}

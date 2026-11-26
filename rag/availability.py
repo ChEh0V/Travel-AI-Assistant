@@ -54,4 +54,46 @@ def cruise_slots(visit_date, people):
     return sorted(parser.times), price
 
 
-PROVIDERS = {"paris-2": cruise_slots, "paris-9": cruise_slots}
+def prague_cruise_slots(visit_date, people):
+    day = date.fromisoformat(visit_date)
+    if day.isoformat() != visit_date or not 1 <= people <= 20:
+        raise ValueError("Invalid date or number of guests")
+    request = Request("https://www.prague-boats.cz/api/cruises-list",
+                      headers={"Accept": "application/json", "User-Agent": "Mozilla/5.0"})
+    with urlopen(request, timeout=8) as response:
+        data = json.loads(response.read(500_000))
+    if not isinstance(data, list):
+        raise ValueError("Invalid cruises response")
+    cruise = next((item for item in data if item.get("id") == 17 or item.get("slug") == "/one-hour-river-cruise"), None)
+    if cruise is None or not isinstance(cruise.get("availability"), list):
+        raise ValueError("Missing Prague cruise timetable")
+    times = set()
+    adult = None
+    for entry in cruise["availability"]:
+        dep = entry.get("departure") if isinstance(entry, dict) else None
+        if not isinstance(dep, dict):
+            continue
+        if dep.get("forSale") is not True or dep.get("availability") != "available":
+            continue
+        vacancies = dep.get("vacancies")
+        if not isinstance(vacancies, int) or vacancies < people:
+            continue
+        stamp = dep.get("time", "")
+        if not isinstance(stamp, str) or stamp[:10] != visit_date:
+            continue
+        hhmm = stamp[11:16]
+        if re.fullmatch(r"(?:[01]\d|2[0-3]):[0-5]\d", hhmm):
+            times.add(hhmm)
+            if adult is None and isinstance(dep.get("adultPriceEur"), (int, float)) and 0 < dep["adultPriceEur"] < 10000:
+                adult = dep["adultPriceEur"]
+    if not times:
+        return [], None
+    if adult is None:
+        fallback = (cruise.get("nereast") or {}).get("adultPriceEur")
+        if isinstance(fallback, (int, float)) and 0 < fallback < 10000:
+            adult = fallback
+    price = {"currency": "EUR", "adult": adult, "total": round(adult * people, 2), "people": people} if adult else None
+    return sorted(times), price
+
+
+PROVIDERS = {"paris-2": cruise_slots, "paris-9": cruise_slots, "prague-9": prague_cruise_slots}

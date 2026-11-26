@@ -19,7 +19,7 @@ function createPlan(city,days,pace,interests=[],previous=[]){
  });
 }
 function requiresVerifiedTickets(state){
- return ['paris','barcelona'].includes(state.city)&&!!state.dates?.start;
+ return state.city==='barcelona'||(['paris','prague'].includes(state.city)&&!!state.dates?.start);
 }
 
 function replacementOptions(state){
@@ -130,9 +130,8 @@ async function getReply(messages,context){
  const q=messages[messages.length-1].content.toLowerCase();
  const ticketPlaces=barcelonaTicketQuestion(q);
  if(ticketPlaces.length){
-  return {reference:true,city:'barcelona',reply:
-   'Наличие билетов неизвестно. Официальная касса не отдаёт приложению свободные сеансы и цену. Проверьте нужную дату по ссылке.\n\n'+
-   ticketPlaces.map(place=>'• '+place.name+' — Выберите дату и время в официальной кассе.').join('\n')};
+  return {reference:true,city:'barcelona',ticketLookup:true,reply:
+   ticketPlaces.map(place=>'• '+place.name+' — Свободные часы на нужную дату можно посмотреть в кассе.').join('\n')};
  }
  const replacement=replacementRequest(q,context);
  if(replacement?.reply)return {reference:true,reply:replacement.reply};

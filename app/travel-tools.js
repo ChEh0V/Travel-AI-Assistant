@@ -13,14 +13,33 @@ const TravelTools = (() => {
   'barcelona-7':'https://parkguell.barcelona/en/buy-tickets',
   'prague-3':'https://www.hrad.cz/en/prague-castle-for-visitors/tickets',
   'prague-4':'https://www.ngprague.cz/en/about/admission/',
+  'prague-9':'https://www.prague-boats.cz/one-hour-river-cruise',
   'vienna-1':'https://shop.khm.at/en/tickets/kunsthistorisches-museum-200000000001005-T001-02',
   'vienna-3':'https://www.belvedere.at/en/visit',
   'vienna-7':'https://www.mqw.at/en/visit/opening-hours/',
   'lisbon-7':'https://gulbenkian.pt/en/useful-information/tickets/'
  };
+ const knownPrices={
+  'rome-0':{currency:'EUR',adult:16,label:'от 16 €'},
+  'rome-1':{currency:'EUR',adult:16,label:'от 16 € (комбо с Колизеем)'},
+  'rome-3':{currency:'EUR',adult:17,label:'от 17 €'},
+  'rome-7':{currency:'EUR',adult:13,label:'от 13 €'},
+  'paris-0':{currency:'EUR',adult:22,label:'от 22 €'},
+  'paris-4':{currency:'EUR',adult:16,label:'от 16 €'},
+  'barcelona-0':{currency:'EUR',adult:26,label:'от 26 €'},
+  'barcelona-3':{currency:'EUR',adult:14,label:'от 14 €'},
+  'barcelona-7':{currency:'EUR',adult:10,label:'от 10 €'},
+  'prague-3':{currency:'CZK',adult:250,label:'от 250 CZK'},
+  'prague-4':{currency:'CZK',adult:300,label:'от 300 CZK'},
+  'vienna-1':{currency:'EUR',adult:21,label:'от 21 €'},
+  'vienna-3':{currency:'EUR',adult:5,label:'от 5 €'},
+  'vienna-7':{currency:'EUR',adult:0,label:'территория бесплатно'},
+  'lisbon-7':{currency:'EUR',adult:12,label:'от 12 €'}
+ };
  const tours={
   'paris-2':{label:'Круиз по Сене',url:'https://vedettesdupontneuf.com/cruises/'},
-  'prague-1':{label:'Экскурсия по Старому городу',url:'https://prague.eu/en/produkt/old-town-jewish-quarter-5/'}
+  'prague-1':{label:'Экскурсия по Старому городу',url:'https://prague.eu/en/produkt/old-town-jewish-quarter-5/'},
+  'prague-2':{label:'Круиз по Влтаве',url:'https://www.prague-boats.cz/one-hour-river-cruise'}
  };
  const cities={rome:'Rome Italy',paris:'Paris France',barcelona:'Barcelona Spain',prague:'Prague Czechia',vienna:'Vienna Austria',lisbon:'Lisbon Portugal'};
  function interests(preferences={},base=[]) {
@@ -77,6 +96,7 @@ const TravelTools = (() => {
  function withoutRoute(trip){return {...JSON.parse(JSON.stringify(trip)),plan:[],day:0};}
  return {companies,interests,infer,maps,dayMap,daySchedule,upsertThreads,removeTrip,withoutRoute,
   ticket:place=>Object.hasOwn(tickets,place.id)?tickets[place.id]:null,
-  tour:place=>Object.hasOwn(tours,place.id)?tours[place.id]:null};
+  tour:place=>Object.hasOwn(tours,place.id)?tours[place.id]:null,
+  price:place=>Object.hasOwn(knownPrices,place.id)?knownPrices[place.id]:null};
 })();
 if(typeof module!=='undefined')module.exports=TravelTools;

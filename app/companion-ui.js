@@ -13,6 +13,7 @@ function ensureCompanionState(){
 function cancelForecast(){if(forecastController)forecastController.abort();forecastController=null;forecastStatus='';}
 function findChatPlace(name,preferredCity){
  if(name===parisCruise.name)return parisCruise;
+ if(name===pragueCruise.name)return pragueCruise;
  const cities=[preferredCity,state.city,...Object.keys(DESTINATIONS)].filter((v,i,a)=>DESTINATIONS[v]&&a.indexOf(v)===i);
  for(const city of cities){const index=DESTINATIONS[city].places.findIndex(p=>p[0]===name);if(index>=0){const p=DESTINATIONS[city].places[index];return {id:city+'-'+index,city,name:p[0],description:p[1],type:p[2],free:p[3],duration:p[2]==='art'?'~ 2 часа':'~ 1 час',pinned:false};}}
  return null;

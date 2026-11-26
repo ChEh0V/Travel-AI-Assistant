@@ -18,11 +18,25 @@ function createPlan(city,days,pace,interests=[],previous=[]){
   const picks=ranked.filter(p=>!used.has(p.id)).slice(0,Math.max(0,count-pinned.length));picks.forEach(p=>used.add(p.id));return [...pinned,...picks];
  });
 }
+function requiresVerifiedTickets(state){
+ return state.city==='paris'&&!!state.dates?.start;
+}
+
 function replacementOptions(state){
  const used=new Set(state.plan.flat().map(place=>place.id));
  const favorites=(state.wishlist??[]).filter(place=>place.city===state.city);
  const places=[...createPlan(state.city,3,'active',[]).flat(),...favorites];
- return [...new Map(places.map(place=>[place.id,place])).values()].filter(place=>!used.has(place.id));
+ return [...new Map(places.map(place=>[place.id,place])).values()].filter(place=>
+  !used.has(place.id)&&(!requiresVerifiedTickets(state)||place.free));
+}
+
+function datedParisBase(state){
+ const reserved=new Set(state.plan.flat().filter(place=>place.free).map(place=>place.id));
+ const free=createPlan('paris',3,'active',[]).flat().filter(place=>place.free&&!reserved.has(place.id));
+ return state.plan.map(day=>day.flatMap(place=>{
+  const next=place.free?place:free.shift();
+  return next?[next]:[];
+ }));
 }
 
 function replacePlace(state,day,index,replacementId){

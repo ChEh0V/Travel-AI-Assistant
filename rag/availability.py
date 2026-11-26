@@ -36,10 +36,22 @@ def cruise_slots(visit_date, people):
     if not isinstance(data, dict) or data.get("erreur") or data.get("date") != visit_date:
         raise ValueError("Invalid calendar response")
     if data.get("aucun_depart") is True:
-        return []
+        return [], None
     offer = next((offer for offer in data["offres"] if offer.get("id") == 56), None)
     if offer is None or not isinstance(offer.get("html_horaires"), str):
         raise ValueError("Missing cruise timetable")
     parser = SlotOptions(people)
     parser.feed(offer["html_horaires"])
-    return sorted(parser.times)
+    rates = [
+        rate for rate in offer.get("grille", [])
+        if isinstance(rate.get("pax_min"), int) and rate["pax_min"] <= people
+        and isinstance(rate.get("adulte"), (int, float)) and 0 < rate["adulte"] < 10000
+    ]
+    price = None
+    if rates:
+        adult = max(rates, key=lambda rate: rate["pax_min"])["adulte"]
+        price = {"currency": "EUR", "adult": adult, "total": round(adult * people, 2), "people": people}
+    return sorted(parser.times), price
+
+
+PROVIDERS = {"paris-2": cruise_slots, "paris-9": cruise_slots}

@@ -7,6 +7,7 @@ const TravelTools = (() => {
   'rome-7':'https://www.museicapitolini.org/it/infopage/biglietti',
   'paris-0':'https://www.louvre.fr/en/visit/tickets-and-prices',
   'paris-4':'https://billetterie.musee-orsay.fr/',
+  'paris-9':'https://www.vedettesdupontneuf.com/cruises/',
   'barcelona-0':'https://sagradafamilia.org/en/tickets',
   'barcelona-3':'https://museupicassobcn.cat/en/plan-your-visit/buy-tickets-and-opening-hours',
   'barcelona-7':'https://parkguell.barcelona/en/buy-tickets',
@@ -48,10 +49,14 @@ const TravelTools = (() => {
     gap+=45;
     lunch=true;
    }
-   const from=cursor+gap;
+   const ready=cursor+gap;
+   const slot=place.booking?.time?.split(':').map(Number);
+   const booked=slot?slot[0]*60+slot[1]:null;
+   const missedBooking=booked!==null&&booked<ready;
+   const from=booked!==null&&!missedBooking?booked:ready;
    const to=from+duration;
    cursor=to;
-   return {place,start:clockLabel(from),end:clockLabel(to),gap,endsNextDay:to>=24*60};
+   return {place,start:clockLabel(from),end:clockLabel(to),gap,missedBooking,endsNextDay:to>=24*60};
   });
  }
  function infer(text,previous={}){

@@ -16,7 +16,7 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 from urllib.parse import parse_qs, urlsplit
 
-from availability import cruise_slots
+from availability import PROVIDERS
 from catalog import fetch_catalog
 from europe import fetch_guides, destinations
 from search import Index
@@ -158,15 +158,16 @@ class Handler(SimpleHTTPRequestHandler):
         if url.path != "/api/ticket-availability":
             return super().do_GET()
         query = parse_qs(url.query)
-        if query.get("place") != ["paris-2"]:
+        provider = PROVIDERS.get(query.get("place", [""])[0])
+        if provider is None:
             return self.send_json(200, {"status":"unsupported"})
         try:
             visit_date = query["date"][0]
             people = int(query.get("people", ["1"])[0])
-            slots = cruise_slots(visit_date, people)
+            slots, price = provider(visit_date, people)
         except (OSError, ValueError, KeyError, TypeError, AttributeError):
             return self.send_json(200, {"status":"unavailable"})
-        return self.send_json(200, {"status":"available" if slots else "no_slots", "times":slots})
+        return self.send_json(200, {"status":"available" if slots else "no_slots", "times":slots, "price":price})
 
     def send_json(self,status,data):
         body=json.dumps(data,ensure_ascii=False).encode()

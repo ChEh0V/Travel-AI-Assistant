@@ -12,6 +12,7 @@ function ensureCompanionState(){
 }
 function cancelForecast(){if(forecastController)forecastController.abort();forecastController=null;forecastStatus='';}
 function findChatPlace(name,preferredCity){
+ if(name===parisCruise.name)return parisCruise;
  const cities=[preferredCity,state.city,...Object.keys(DESTINATIONS)].filter((v,i,a)=>DESTINATIONS[v]&&a.indexOf(v)===i);
  for(const city of cities){const index=DESTINATIONS[city].places.findIndex(p=>p[0]===name);if(index>=0){const p=DESTINATIONS[city].places[index];return {id:city+'-'+index,city,name:p[0],description:p[1],type:p[2],free:p[3],duration:p[2]==='art'?'~ 2 часа':'~ 1 час',pinned:false};}}
  return null;
@@ -73,13 +74,14 @@ function renderWishlist(){
  }
 }
 
-function handleWishlistPlan(text){
+async function handleWishlistPlan(text){
  if(!/(?:собери|составь)\s+(?:мне\s+)?маршрут\s+из\s+[«"']?(?:хочу сюда|избранного)/i.test(text))return false;
  try{
   state.plan=Companion.wishlistPlan(state.wishlist,state.city,state.days);
   state.day=0;
+  await verifyParisPlan();
   renderRoute();
-  state.messages.push({role:'assistant',city:state.city,content:'Маршрут из «Хочу сюда» · '+DESTINATIONS[state.city].name+'\n\n'+planText()});
+  state.messages.push(tripPlanMessage('Маршрут из «Хочу сюда» · '+DESTINATIONS[state.city].name+'\n\n'+planText()));
  }catch(error){
   state.messages.push({role:'assistant',content:error.message});
  }
@@ -146,7 +148,7 @@ function initCompanion(){
  $('packing-weather-refresh').onclick=()=>{if(!busy)loadForecast();};
  $('route-weather-refresh').onclick=()=>{if(!busy)(state.dates.start?loadForecast():openTripDates());};
  $('trip-start').onchange=()=>{const start=$('trip-start').value;$('trip-end').min=start||Companion.today();if(Companion.day(start))$('trip-end').max=new Date((Companion.day(start)+2)*86400000).toISOString().slice(0,10);};
- $('trip-dates-form').onsubmit=e=>{e.preventDefault();if(busy)return;const start=$('trip-start').value,end=$('trip-end').value;const range=Companion.dateRange(start,end);if(!range.valid||range.days>3){$('trip-dates-error').textContent='Выберите период от 1 до 3 дней.';return;}applyTripDates(start,end);$('trip-dates-dialog').close();if(state.plan.length&&Companion.forecastWindow(start,end)==='available')loadForecast();};
+ $('trip-dates-form').onsubmit=async e=>{e.preventDefault();if(busy)return;const start=$('trip-start').value,end=$('trip-end').value;const range=Companion.dateRange(start,end);if(!range.valid||range.days>3){$('trip-dates-error').textContent='Выберите период от 1 до 3 дней.';return;}applyTripDates(start,end);$('trip-dates-dialog').close();if(requiresVerifiedTickets(state)&&state.plan.length){setBusy(true);try{await verifyParisPlan();}finally{setBusy(false);save();}}if(state.plan.length&&Companion.forecastWindow(start,end)==='available')loadForecast();};
  $('packing-add').onsubmit=e=>{e.preventDefault();const label=$('packing-item').value.trim();if(!label||busy)return;state.packing.custom.push({id:'custom-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,6),label});$('packing-item').value='';save();};
 }
 function openTripDates(){if(busy)return;$('trip-start').value=state.dates.start;$('trip-end').value=state.dates.end;$('trip-start').min=Companion.today();$('trip-end').min=state.dates.start||Companion.today();$('trip-dates-error').textContent='';$('trip-dates-dialog').showModal();}

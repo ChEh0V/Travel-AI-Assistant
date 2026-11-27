@@ -97,6 +97,7 @@ nav a.active:hover { background: #ddd9f4; }
 #chat-form:focus-within { border-color: #757281; box-shadow: 0 0 0 3px #5850c807; }
 textarea { width: 100%; min-height: 62px; max-height: 150px; resize: none; background: none; border: 0; outline: none; font-size: 17px; line-height: 1.7; }
 textarea::placeholder { color: #757281; }
+#input:focus-visible { outline: none; }
 .composer-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 9px; }
 .composer-bottom > span { display: flex; align-items: center; gap: 7px; font-size: 10px; color: #757281; }
 .composer-bottom .icon { color: #777384; width: 16px; height: 16px; }
@@ -126,6 +127,9 @@ textarea::placeholder { color: #757281; }
 .reply-actions { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px; }
 .reply-actions a, .reply-actions button { border: 0; background: none; padding: 0; text-decoration: none; color: #757281; font-size: 11px; cursor: pointer; }
 .reply-actions a:hover, .reply-actions button:hover { color: var(--blue); }
+.reply-actions .copy-reply { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 6px; }
+.copy-reply svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linejoin: round; }
+.copy-reply:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 .typing { color: #757281; }
 .typing .message-content { font-size: 14px; }
 

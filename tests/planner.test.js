@@ -1,4 +1,19 @@
 const test=require('node:test');const assert=require('node:assert/strict');const {DESTINATIONS,createPlan,replacePlace,getReply}=require('../app/planner.js');
+test('запросы о матче и театре идут в справку и не перестраивают маршрут',async(t)=>{
+ const simulatedFetch=t.mock.method(globalThis,'fetch',async(url,options)=>{
+  assert.equal(url,'/api/chat');
+  assert.equal(JSON.parse(options.body).advice,undefined);
+  return {ok:true,json:async()=>({status:'answered',reply:'Афиша',sources:[]})};
+ });
+ const context={city:'vienna',plan:createPlan('vienna',2,'balanced',[])};
+ for(const content of ['хочу посмотреть матч барсы','хочу посмотреть матч барселоны','театр']){
+  const result=await getReply([{role:'user',content}],context);
+  assert.equal(result.reference,true);
+  assert.equal(result.action,null);
+  assert.equal(result.city,null);
+ }
+ assert.equal(simulatedFetch.mock.callCount(),3);
+});
 test('каждый европейский город даёт уникальные места на 1–3 дня',()=>{for(const city of Object.keys(DESTINATIONS))for(const days of [1,2,3]){const plan=createPlan(city,days,'balanced',['architecture']);assert.equal(plan.length,days);assert.equal(new Set(plan.flat().map(p=>p.id)).size,plan.flat().length);assert.ok(plan.flat().every(p=>p.id.startsWith(city+'-')));}});
 test('закреплённые места сохраняются при изменении интересов',()=>{const plan=createPlan('paris',2,'balanced',[]);plan[1][0].pinned=true;const next=createPlan('paris',2,'slow',['walks'],plan);assert.ok(next[1].some(p=>p.id===plan[1][0].id));assert.equal(new Set(next.flat().map(p=>p.id)).size,next.flat().length);});
 test('замена не меняет закреплённое место и не создаёт дубликаты',()=>{const state={city:'rome',plan:createPlan('rome',2,'balanced',[])};state.plan[0][0].pinned=true;assert.equal(replacePlace(state,0,0),false);const old=state.plan[0][1].id;assert.equal(replacePlace(state,0,1),true);assert.notEqual(state.plan[0][1].id,old);assert.equal(new Set(state.plan.flat().map(p=>p.id)).size,6);});

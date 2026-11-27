@@ -59,14 +59,46 @@ const Companion = (() => {
   if(days.length!==dateRange(start,end).days||days[0]?.date!==start||days.at(-1)?.date!==end||days.some((x,i)=>day(x.date)!==day(start)+i||!['min','max','rain','wind','uv'].every(k=>Number.isFinite(x[k]))))throw new Error('Неполный прогноз');
   return days;
  }
- function search(text){
+ function climatePreference(text){
+  const q=text.toLowerCase().replaceAll('ё','е');
+  if(/прохлад|похолод|холодн|нежарк|без жары|не жарко/.test(q))return 'cool';
+  if(/жар[акуы]|пожарче|зной/.test(q))return 'hot';
+  if(/тепл|потеплее/.test(q))return 'warm';
+  return null;
+ }
+ function travelMonth(text){
+  const match=text.toLowerCase().match(/январ|феврал|март|апрел|ма[йяе]|июн|июл|август|сентябр|октябр|ноябр|декабр/u);
+  return match?['январ','феврал','март','апрел','май','июн','июл','август','сентябр','октябр','ноябр','декабр'].indexOf(match[0].replace(/^ма[яе]$/,'май'))+1:0;
+ }
+ async function climateMatches(matches,month,preference,fetchData=fetch){
+  const year=new Date().getUTCFullYear()-1;
+  const mm=String(month).padStart(2,'0');
+  const count=new Date(Date.UTC(year,month,0)).getUTCDate();
+  const points=matches.map(m=>coordinates[m.city]);
+  const params=new URLSearchParams({latitude:points.map(p=>p[0]).join(','),longitude:points.map(p=>p[1]).join(','),
+   start_date:year+'-'+mm+'-01',end_date:year+'-'+mm+'-'+count,daily:'temperature_2m_max',timezone:'auto'});
+  const response=await fetchData('https://archive-api.open-meteo.com/v1/archive?'+params,{signal:AbortSignal.timeout(12000)});
+  if(!response.ok)throw Error('archive');
+  const payload=await response.json();
+  const rows=Array.isArray(payload)?payload:[payload];
+  const ranked=matches.flatMap((match,i)=>{
+   const values=rows[i]?.daily?.temperature_2m_max;
+   if(values?.length!==count||!values.every(Number.isFinite))return [];
+   const mean=values.reduce((a,b)=>a+b,0)/count;
+   const distance=preference==='hot'?-mean:preference==='cool'?mean:Math.abs(mean-23);
+   return [{...match,distance,reason:'Средний дневной максимум за '+mm+'.'+year+' по архиву Open-Meteo: '+mean.toFixed(1)+' °C. '+match.reason}];
+  });
+  if(!ranked.length)throw Error('archive');
+  return ranked.sort((a,b)=>a.distance-b.distance||b.score-a.score).slice(0,3);
+ }
+ function search(text,origin=null,limit=3){
   const q=text.toLowerCase();const sea=/мор[еяю]|пляж|побереж/.test(q),calm=/спокой|неспеш|без спеш|тихо/.test(q),art=/музе|искусств/.test(q),food=/еда|кухн|гастро/.test(q);
   const budget=q.match(/(?:до|бюджет\s*)\s*(\d+(?:[.,]\d+)?)\s*(?:евро|€|eur)/i);const duration=q.match(/(?:за|на)\s*(\d+|два|три|один)\s*(?:дн|ден)/);
   const parsedDays=duration?({два:2,три:3,один:1}[duration[1]]||Number(duration[1])):2;
   const days=Math.max(1,Math.min(3,parsedDays));
-  const matches=Object.entries(profiles).filter(([,p])=>!sea||p.tags.includes('sea')||p.tags.includes('coast')).map(([city,p])=>({city,reason:p.reason,score:(sea?(p.tags.includes('sea')?5:3):0)+(calm&&p.tags.includes('calm')?3:0)+(art&&p.tags.includes('art')?3:0)+(food&&p.tags.includes('food')?3:0)})).sort((a,b)=>b.score-a.score).slice(0,3);
+  const matches=Object.entries(profiles).filter(([city])=>city!==origin).filter(([,p])=>!sea||p.tags.includes('sea')||p.tags.includes('coast')).map(([city,p])=>({city,reason:p.reason,score:(sea?(p.tags.includes('sea')?5:3):0)+(calm&&p.tags.includes('calm')?3:0)+(art&&p.tags.includes('art')?3:0)+(food&&p.tags.includes('food')?3:0)})).sort((a,b)=>b.score-a.score).slice(0,limit);
   return {matches,days,requestedDays:parsedDays,budget:budget?Number(budget[1].replace(',','.')):null,calm};
  }
- return {coordinates,day,dateRange,extractDates,today,forecastWindow,tripWeather,normalizePacking,packingItems,clothing,wishlistPlan,readForecast,search};
+ return {climatePreference,travelMonth,climateMatches,coordinates,day,dateRange,extractDates,today,forecastWindow,tripWeather,normalizePacking,packingItems,clothing,wishlistPlan,readForecast,search};
 })();
 if(typeof module!=='undefined')module.exports=Companion;

@@ -279,15 +279,19 @@ function messageElement(m){
   for(const source of (Array.isArray(m.sources)?m.sources:[])){
    if(!source || !/^https:\/\//i.test(source.url))continue;
    const link=document.createElement('a');link.href=source.url;link.target='_blank';link.rel='noopener noreferrer';
-   link.textContent='['+source.id+'] '+(source.credit || 'Источник')+' · проверено '+String(source.checked).slice(0,10);
+   link.textContent='['+source.id+'] '+(source.credit || 'Источник')+(source.checked?' · проверено '+String(source.checked).slice(0,10):'');
    const row=document.createElement('p');row.append(link);
+   if(source.attribution_url==='https://www.openstreetmap.org/copyright'){
+    const attribution=document.createElement('a');attribution.href=source.attribution_url;attribution.textContent='ODbL';
+    row.append(document.createTextNode(' · '),attribution);
+   }
    if(source.license_url?.startsWith('https://creativecommons.org/')){
     const license=document.createElement('a');license.href=source.license_url;license.textContent='CC BY-SA 4.0';
     row.append(document.createTextNode(' · '),license);
    }
    content.append(row);
   }
-  if(!m.content.includes('Готовлю ответ')){const actions=document.createElement('div');actions.className='reply-actions';const copy=document.createElement('button');copy.textContent='Копировать';copy.onclick=async()=>{try{await navigator.clipboard.writeText(m.content);toast('Ответ скопирован');}catch{toast('Выделите текст ответа, чтобы скопировать');}};actions.append(copy);if(/^День \d+(?: · .+)?$/m.test(m.content)){const route=document.createElement('a');route.href='#route';route.className='reply-route-link';route.textContent='Текущий маршрут ↗';actions.append(route);}if(m.kind==='packing'){const packing=document.createElement('a');packing.href='#packing';packing.textContent='Открыть чек-лист ↗';actions.append(packing);}if(m.kind==='destinations'&&m.criteria)content.append(destinationCards(m.criteria));el.append(label,content,actions);return el;}
+  if(!m.content.includes('Готовлю ответ')){const actions=document.createElement('div');actions.className='reply-actions';const copy=document.createElement('button');copy.type='button';copy.className='copy-reply';copy.title='Копировать ответ';copy.setAttribute('aria-label',copy.title);copy.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-copy"></use></svg>';copy.onclick=async()=>{try{await navigator.clipboard.writeText(m.content);toast('Ответ скопирован');}catch{toast('Выделите текст ответа, чтобы скопировать');}};actions.append(copy);if(/^День \d+(?: · .+)?$/m.test(m.content)){const route=document.createElement('a');route.href='#route';route.className='reply-route-link';route.textContent='Текущий маршрут ↗';actions.append(route);}if(m.kind==='packing'){const packing=document.createElement('a');packing.href='#packing';packing.textContent='Открыть чек-лист ↗';actions.append(packing);}if(m.kind==='destinations'&&m.criteria)content.append(destinationCards(m.criteria));el.append(label,content,actions);return el;}
  }
  el.append(label,content);return el;
 }
@@ -371,7 +375,34 @@ $('route-start').onchange=event=>{
  save();
 };
 function setBusy(value){busy=value;$('send').disabled=value;$('new-trip').disabled=value;$('trips-new').disabled=value;document.querySelectorAll('[data-prompt]').forEach(b=>b.disabled=value);renderRoute();renderHistory();renderTrips();renderBudget();renderCompanion();}
-async function ask(text,{settings=false}={}){text=text.trim();if(!text||busy)return;state.messages.push({role:'user',content:text});if(!settings)$('input').value='';renderChat();setBusy(true);const typing=messageElement({role:'assistant',content:'Готовлю ответ…'});typing.classList.add('typing');$('chat').append(typing);$('chat').scrollTop=$('chat').scrollHeight;try{const sharedDates=barcelonaTicketQuestion(text).length?null:Companion.extractDates(text,state.days);if(sharedDates)applyTripDates(sharedDates.start,sharedDates.end);if(!settings&&((await handleWishlistPlan(text))||handleDestinationRequest(text)))return;
+async function ask(text,{settings=false,command=false}={}){text=text.trim();if(!text||busy)return;state.messages.push({role:'user',content:text});if(!settings)$('input').value='';renderChat();setBusy(true);const typing=messageElement({role:'assistant',content:'Готовлю ответ…'});typing.classList.add('typing');$('chat').append(typing);$('chat').scrollTop=$('chat').scrollHeight;try{
+ if(!settings&&!command){
+  const context={...state,city:state.plan.length?state.city:''};
+  const turn=await requestChat(state.messages,context,undefined,'/api/intent');
+  if(turn.intent==='transport'){
+   const answer=await requestChat([{role:'user',content:turn.query}],context,undefined,'/api/chat','transport');
+   state.messages.push({role:'assistant',content:answer.reply,sources:answer.sources});
+   return;
+  }
+  const pending=state.messages.at(-2)?.climateRequest;
+  const preference=Companion.climatePreference(text)||Companion.climatePreference(turn.query);
+  const selecting=turn.intent==='destinations'||/(?:хочу|куда|подбери|ищу|поехать|лететь)/i.test(text)&&preference;
+  const continuing=pending&&Companion.travelMonth(text)&&text.trim().split(/\s+/).length<=4;
+  if(selecting||continuing){
+   const query=continuing?pending.query+' '+text:text+' '+turn.query;
+   if(await handleDestinationRequest(query,'destinations',continuing?pending.origin:turn.city,preference||(continuing?pending.preference:null)))return;
+  }
+  if(turn.intent==='packing'&&await handleDestinationRequest(text,'packing',turn.city))return;
+  if(turn.intent!=='plan'){
+   const standalone=[...state.messages.slice(0,-1),{role:'user',content:turn.query}];
+   const answer=turn.intent==='weather'||barcelonaTicketQuestion(turn.query).length
+    ?await getReply(standalone,context)
+    :await requestChat(standalone,context);
+   state.messages.push({role:'assistant',content:answer.reply,sources:answer.sources,ticketLookup:answer.ticketLookup,city:answer.city||state.city});
+   return;
+  }
+ }
+ const sharedDates=(isEventRequest(state.messages)||barcelonaTicketQuestion(text).length)?null:Companion.extractDates(text,state.days);if(sharedDates)applyTripDates(sharedDates.start,sharedDates.end);if(!settings&&(await handleWishlistPlan(text)))return;
 if(!settings&&/^добавь (?:несколько )?мест[а]? с билетами[.!?]?$/i.test(text)){
  if(requiresVerifiedTickets(state)&&state.plan.length){
   state.preferences.activities='Микс';
@@ -408,7 +439,7 @@ if(!settings)state.preferences=TravelTools.infer(text,state.preferences);const r
  return;
 }if(response.reference){if(sharedDates)await verifyDatedPlan();state.messages.push({role:'assistant',content:response.reply,sources:response.sources,city:response.city??state.city,ticketLookup:response.ticketLookup});return;}const previous=response.city&&response.city!==state.city?[]:state.plan;if(response.city&&response.city!==state.city){cancelForecast();state.packing.weather=null;state.city=response.city;}const days=text.match(/(?:на|за)\s*([1-3]|один|одну|два|двое|три)\s*(?:дн|ден|сут)/i);if(days)changeTripLength(({один:1,одну:1,два:2,двое:2,три:3}[days[1].toLowerCase()]||Number(days[1])));if(response.action==='free'&&!state.interests.includes('free'))state.interests.push('free');if(response.action==='slow')state.pace='slow';if(response.action==='walks'){state.interests=['walks','architecture'];state.avoidMuseums=true;}if(response.action==='instagram')response.reply=instagramReply(state.city);const routeAction=(response.action&&response.action!=='instagram')||days;if(routeAction){rebuild(previous);await verifyDatedPlan();response.reply=DESTINATIONS[state.city].name+' · '+state.days+' дн.\n\n'+planText()+'\n\n'+planTimingNote()+'\n\nОстановки можно перетаскивать в маршруте. Если хотите заменить место, просто назовите его в чате.';}state.messages.push(routeAction?tripPlanMessage(response.reply):{role:'assistant',content:response.reply,city:state.city});}catch{state.messages.push({role:'assistant',content:'Не удалось получить ответ. Попробуйте ещё раз.'});}finally{setBusy(false);renderChat();save();if(!location.hash||location.hash==='#chat')$('input').focus();}}
 $('chat-form').onsubmit=e=>{e.preventDefault();ask($('input').value);};$('input').onkeydown=e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();ask($('input').value);}};
-document.querySelectorAll('[data-prompt]').forEach(b=>b.onclick=()=>ask(b.dataset.prompt));
+document.querySelectorAll('[data-prompt]').forEach(b=>b.onclick=()=>ask(b.dataset.prompt,{command:true}));
 function openReplacement(day,index){
  const original=state.plan[day]?.[index];
  if(busy||!original||original.pinned)return;
@@ -458,7 +489,7 @@ window.addEventListener('hashchange',navigate);
 $('add-ticket-stops').onclick=()=>{
  location.hash='chat';
  navigate();
- ask('Добавь места с билетами');
+ ask('Добавь места с билетами',{command:true});
 };
 function renderPlan(){renderRouteWeather();
  const addTickets=$('add-ticket-stops');

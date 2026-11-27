@@ -1,0 +1,5788 @@
+[
+  {
+    "id": "V111635851963",
+    "kind": "venue",
+    "code": "rome",
+    "category": "cafe",
+    "name": "Bubble Tea",
+    "address": "",
+    "coordinates": [
+      41.8982412,
+      12.4763924
+    ],
+    "source_id": "node/11635851963",
+    "url": "https://www.openstreetmap.org/node/11635851963",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V16124042638",
+    "kind": "venue",
+    "code": "rome",
+    "category": "cafe",
+    "name": "Tazza dOro",
+    "address": "Via degli Orfani 84",
+    "coordinates": [
+      41.8993943,
+      12.4773797
+    ],
+    "source_id": "node/6124042638",
+    "url": "https://www.openstreetmap.org/node/6124042638",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11668469052",
+    "kind": "venue",
+    "code": "rome",
+    "category": "cafe",
+    "name": "Camilloni a Sant'Eustachio",
+    "address": "Piazza di Sant'Eustachio 54",
+    "coordinates": [
+      41.8982958,
+      12.4757668
+    ],
+    "source_id": "node/1668469052",
+    "url": "https://www.openstreetmap.org/node/1668469052",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V15355096921",
+    "kind": "venue",
+    "code": "rome",
+    "category": "cafe",
+    "name": "Tempio Bar",
+    "address": "Piazza della Rotonda 16",
+    "coordinates": [
+      41.8996008,
+      12.476799
+    ],
+    "source_id": "node/5355096921",
+    "url": "https://www.openstreetmap.org/node/5355096921",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V113727949301",
+    "kind": "venue",
+    "code": "rome",
+    "category": "cafe",
+    "name": "Da Vittorio Café Roma",
+    "address": "Piazza della Minerva 69",
+    "coordinates": [
+      41.8976729,
+      12.4774241
+    ],
+    "source_id": "node/13727949301",
+    "url": "https://www.openstreetmap.org/node/13727949301",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V110875926276",
+    "kind": "venue",
+    "code": "rome",
+    "category": "cafe",
+    "name": "Napoletano's",
+    "address": "",
+    "coordinates": [
+      41.8995972,
+      12.4766973
+    ],
+    "source_id": "node/10875926276",
+    "url": "https://www.openstreetmap.org/node/10875926276",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V114031985706",
+    "kind": "venue",
+    "code": "rome",
+    "category": "restaurant",
+    "name": "Appetito",
+    "address": "",
+    "coordinates": [
+      41.8988302,
+      12.4773173
+    ],
+    "source_id": "node/14031985706",
+    "url": "https://www.openstreetmap.org/node/14031985706",
+    "checked": "2026-11-26",
+    "cuisine": "pizza"
+  },
+  {
+    "id": "V113570424601",
+    "kind": "venue",
+    "code": "rome",
+    "category": "restaurant",
+    "name": "Come 'na Vorta Pasta e Vino - Palombella",
+    "address": "",
+    "coordinates": [
+      41.8982636,
+      12.476348
+    ],
+    "source_id": "node/13570424601",
+    "url": "https://www.openstreetmap.org/node/13570424601",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V16056793785",
+    "kind": "venue",
+    "code": "rome",
+    "category": "restaurant",
+    "name": "T-Burger station & Bar",
+    "address": "Via della Palombella 34",
+    "coordinates": [
+      41.8982634,
+      12.4763113
+    ],
+    "source_id": "node/6056793785",
+    "url": "https://www.openstreetmap.org/node/6056793785",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14294932354",
+    "kind": "venue",
+    "code": "rome",
+    "category": "restaurant",
+    "name": "Miscellanea",
+    "address": "Via della Palombella 34",
+    "coordinates": [
+      41.8982577,
+      12.4762516
+    ],
+    "source_id": "node/4294932354",
+    "url": "https://www.openstreetmap.org/node/4294932354",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14196496989",
+    "kind": "venue",
+    "code": "rome",
+    "category": "restaurant",
+    "name": "Ristorante La Sagrestia",
+    "address": "Via del Seminario 89",
+    "coordinates": [
+      41.8989897,
+      12.4775061
+    ],
+    "source_id": "node/4196496989",
+    "url": "https://www.openstreetmap.org/node/4196496989",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V17757282085",
+    "kind": "venue",
+    "code": "rome",
+    "category": "restaurant",
+    "name": "Taverna del Seminario",
+    "address": "Via del Seminario 105",
+    "coordinates": [
+      41.899036,
+      12.4774563
+    ],
+    "source_id": "node/7757282085",
+    "url": "https://www.openstreetmap.org/node/7757282085",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V12322290519",
+    "kind": "venue",
+    "code": "rome",
+    "category": "hotel",
+    "name": "Best Suites Pantheon",
+    "address": "Piazza della Rotonda 70",
+    "coordinates": [
+      41.8990963,
+      12.4772863
+    ],
+    "source_id": "node/2322290519",
+    "url": "https://www.openstreetmap.org/node/2322290519",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11980723003",
+    "kind": "venue",
+    "code": "rome",
+    "category": "guest_house",
+    "name": "Relais Maddalena",
+    "address": "",
+    "coordinates": [
+      41.9000778,
+      12.4763753
+    ],
+    "source_id": "node/1980723003",
+    "url": "https://www.openstreetmap.org/node/1980723003",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14689290445",
+    "kind": "venue",
+    "code": "rome",
+    "category": "apartment",
+    "name": "Rome is Home",
+    "address": "Via dei Chiavari",
+    "coordinates": [
+      41.8950801,
+      12.4743052
+    ],
+    "source_id": "node/4689290445",
+    "url": "https://www.openstreetmap.org/node/4689290445",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V2204141712",
+    "kind": "venue",
+    "code": "rome",
+    "category": "hostel",
+    "name": "Casa San Giuseppe",
+    "address": "Vicolo Moroni 22",
+    "coordinates": [
+      41.8922958,
+      12.4688235
+    ],
+    "source_id": "way/204141712",
+    "url": "https://www.openstreetmap.org/way/204141712",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13056184800",
+    "kind": "venue",
+    "code": "rome",
+    "category": "hotel",
+    "name": "Albergo del Senato",
+    "address": "Piazza della Rotonda 73",
+    "coordinates": [
+      41.8991572,
+      12.4772782
+    ],
+    "source_id": "node/3056184800",
+    "url": "https://www.openstreetmap.org/node/3056184800",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11920404978",
+    "kind": "venue",
+    "code": "rome",
+    "category": "hotel",
+    "name": "Hotel Abruzzi Rome",
+    "address": "Piazza della Rotonda 69",
+    "coordinates": [
+      41.8993673,
+      12.4771074
+    ],
+    "source_id": "node/1920404978",
+    "url": "https://www.openstreetmap.org/node/1920404978",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V18932455801",
+    "kind": "venue",
+    "code": "paris",
+    "category": "cafe",
+    "name": "Marlette",
+    "address": "",
+    "coordinates": [
+      48.8574019,
+      2.3526636
+    ],
+    "source_id": "node/8932455801",
+    "url": "https://www.openstreetmap.org/node/8932455801",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V111781433970",
+    "kind": "venue",
+    "code": "paris",
+    "category": "cafe",
+    "name": "Starbucks",
+    "address": "Rue du Renard 4",
+    "coordinates": [
+      48.8578501,
+      2.3518366
+    ],
+    "source_id": "node/11781433970",
+    "url": "https://www.openstreetmap.org/node/11781433970",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V1702306852",
+    "kind": "venue",
+    "code": "paris",
+    "category": "cafe",
+    "name": "Le Relais de l'Hôtel de Ville",
+    "address": "Rue de Rivoli 50",
+    "coordinates": [
+      48.8570216,
+      2.3541492
+    ],
+    "source_id": "node/702306852",
+    "url": "https://www.openstreetmap.org/node/702306852",
+    "checked": "2026-11-26",
+    "cuisine": "french;local"
+  },
+  {
+    "id": "V1599513406",
+    "kind": "venue",
+    "code": "paris",
+    "category": "cafe",
+    "name": "Le Carrefour",
+    "address": "",
+    "coordinates": [
+      48.8575154,
+      2.3544599
+    ],
+    "source_id": "node/599513406",
+    "url": "https://www.openstreetmap.org/node/599513406",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V12211556498",
+    "kind": "venue",
+    "code": "paris",
+    "category": "cafe",
+    "name": "Les Deux Théâtres",
+    "address": "",
+    "coordinates": [
+      48.8573922,
+      2.349554
+    ],
+    "source_id": "node/2211556498",
+    "url": "https://www.openstreetmap.org/node/2211556498",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13980384402",
+    "kind": "venue",
+    "code": "paris",
+    "category": "cafe",
+    "name": "Caly",
+    "address": "",
+    "coordinates": [
+      48.8567626,
+      2.3551515
+    ],
+    "source_id": "node/3980384402",
+    "url": "https://www.openstreetmap.org/node/3980384402",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1697183314",
+    "kind": "venue",
+    "code": "paris",
+    "category": "restaurant",
+    "name": "Bistrot Marguerite",
+    "address": "",
+    "coordinates": [
+      48.8562818,
+      2.350543
+    ],
+    "source_id": "node/697183314",
+    "url": "https://www.openstreetmap.org/node/697183314",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V112844783512",
+    "kind": "venue",
+    "code": "paris",
+    "category": "restaurant",
+    "name": "Terraza mikuna",
+    "address": "",
+    "coordinates": [
+      48.8572276,
+      2.3538349
+    ],
+    "source_id": "node/12844783512",
+    "url": "https://www.openstreetmap.org/node/12844783512",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V12927812417",
+    "kind": "venue",
+    "code": "paris",
+    "category": "restaurant",
+    "name": "Troquet du Temple",
+    "address": "Rue du Temple 9",
+    "coordinates": [
+      48.8579191,
+      2.352822
+    ],
+    "source_id": "node/2927812417",
+    "url": "https://www.openstreetmap.org/node/2927812417",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V110099270359",
+    "kind": "venue",
+    "code": "paris",
+    "category": "restaurant",
+    "name": "Pastasuta",
+    "address": "Rue de la Coutellerie 2",
+    "coordinates": [
+      48.8574938,
+      2.3505431
+    ],
+    "source_id": "node/10099270359",
+    "url": "https://www.openstreetmap.org/node/10099270359",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V12981481780",
+    "kind": "venue",
+    "code": "paris",
+    "category": "restaurant",
+    "name": "La Goulette",
+    "address": "",
+    "coordinates": [
+      48.8579651,
+      2.3528021
+    ],
+    "source_id": "node/2981481780",
+    "url": "https://www.openstreetmap.org/node/2981481780",
+    "checked": "2026-11-26",
+    "cuisine": "mediterranean"
+  },
+  {
+    "id": "V15196643322",
+    "kind": "venue",
+    "code": "paris",
+    "category": "restaurant",
+    "name": "Le Coupe Gorge",
+    "address": "",
+    "coordinates": [
+      48.8574811,
+      2.3504511
+    ],
+    "source_id": "node/5196643322",
+    "url": "https://www.openstreetmap.org/node/5196643322",
+    "checked": "2026-11-26",
+    "cuisine": "french"
+  },
+  {
+    "id": "V255760877",
+    "kind": "venue",
+    "code": "paris",
+    "category": "hotel",
+    "name": "duO",
+    "address": "Rue du Temple 11",
+    "coordinates": [
+      48.8581162,
+      2.3529048
+    ],
+    "source_id": "way/55760877",
+    "url": "https://www.openstreetmap.org/way/55760877",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V255545735",
+    "kind": "venue",
+    "code": "paris",
+    "category": "hostel",
+    "name": "Auberge Maubuisson",
+    "address": "Rue des Barres 12",
+    "coordinates": [
+      48.8553104,
+      2.3553806
+    ],
+    "source_id": "way/55545735",
+    "url": "https://www.openstreetmap.org/way/55545735",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V17245550464",
+    "kind": "venue",
+    "code": "paris",
+    "category": "apartment",
+    "name": "Yuna",
+    "address": "Rue des Halles 4",
+    "coordinates": [
+      48.8592404,
+      2.3473714
+    ],
+    "source_id": "node/7245550464",
+    "url": "https://www.openstreetmap.org/node/7245550464",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11684514555",
+    "kind": "venue",
+    "code": "paris",
+    "category": "guest_house",
+    "name": "Short Stay Apartment Pompidou",
+    "address": "",
+    "coordinates": [
+      48.8624653,
+      2.3525528
+    ],
+    "source_id": "node/1684514555",
+    "url": "https://www.openstreetmap.org/node/1684514555",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V21388323196",
+    "kind": "venue",
+    "code": "paris",
+    "category": "hotel",
+    "name": "Le Grand Mazarin",
+    "address": "",
+    "coordinates": [
+      48.8573108,
+      2.3543971
+    ],
+    "source_id": "way/1388323196",
+    "url": "https://www.openstreetmap.org/way/1388323196",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V110212698996",
+    "kind": "venue",
+    "code": "paris",
+    "category": "hotel",
+    "name": "Rivoli",
+    "address": "",
+    "coordinates": [
+      48.8567593,
+      2.3551903
+    ],
+    "source_id": "node/10212698996",
+    "url": "https://www.openstreetmap.org/node/10212698996",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V16646409085",
+    "kind": "venue",
+    "code": "barcelona",
+    "category": "cafe",
+    "name": "Planelles Donat",
+    "address": "Carrer de Cucurulla 9",
+    "coordinates": [
+      41.3843839,
+      2.1740634
+    ],
+    "source_id": "node/6646409085",
+    "url": "https://www.openstreetmap.org/node/6646409085",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V112625944208",
+    "kind": "venue",
+    "code": "barcelona",
+    "category": "cafe",
+    "name": "Marie Blachère",
+    "address": "Carrer de la Canuda 21",
+    "coordinates": [
+      41.3847422,
+      2.1720265
+    ],
+    "source_id": "node/12625944208",
+    "url": "https://www.openstreetmap.org/node/12625944208",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V112229799901",
+    "kind": "venue",
+    "code": "barcelona",
+    "category": "cafe",
+    "name": "Corgi café",
+    "address": "",
+    "coordinates": [
+      41.3841903,
+      2.1725264
+    ],
+    "source_id": "node/12229799901",
+    "url": "https://www.openstreetmap.org/node/12229799901",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V113673058989",
+    "kind": "venue",
+    "code": "barcelona",
+    "category": "cafe",
+    "name": "El Mos",
+    "address": "Carrer Comtal 12",
+    "coordinates": [
+      41.3863545,
+      2.1729624
+    ],
+    "source_id": "node/13673058989",
+    "url": "https://www.openstreetmap.org/node/13673058989",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V12610015274",
+    "kind": "venue",
+    "code": "barcelona",
+    "category": "cafe",
+    "name": "Chocolate Box",
+    "address": "Carrer dels Capellans",
+    "coordinates": [
+      41.384715,
+      2.17514
+    ],
+    "source_id": "node/2610015274",
+    "url": "https://www.openstreetmap.org/node/2610015274",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V111687613888",
+    "kind": "venue",
+    "code": "barcelona",
+    "category": "cafe",
+    "name": "365",
+    "address": "",
+    "coordinates": [
+      41.3864878,
+      2.1733578
+    ],
+    "source_id": "node/11687613888",
+    "url": "https://www.openstreetmap.org/node/11687613888",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V12888634319",
+    "kind": "venue",
+    "code": "barcelona",
+    "category": "restaurant",
+    "name": "Betawi",
+    "address": "Carrer de Montsió 6",
+    "coordinates": [
+      41.3857076,
+      2.1738162
+    ],
+    "source_id": "node/2888634319",
+    "url": "https://www.openstreetmap.org/node/2888634319",
+    "checked": "2026-11-26",
+    "cuisine": "indonesian"
+  },
+  {
+    "id": "V16467059385",
+    "kind": "venue",
+    "code": "barcelona",
+    "category": "restaurant",
+    "name": "Set de Gòtic",
+    "address": "Carrer de Montsió 5",
+    "coordinates": [
+      41.3857903,
+      2.1738261
+    ],
+    "source_id": "node/6467059385",
+    "url": "https://www.openstreetmap.org/node/6467059385",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V19494853722",
+    "kind": "venue",
+    "code": "barcelona",
+    "category": "restaurant",
+    "name": "Restaurant La Taverneta Barcelona",
+    "address": "Carrer de Francesc Pujols 3",
+    "coordinates": [
+      41.3843695,
+      2.1729219
+    ],
+    "source_id": "node/9494853722",
+    "url": "https://www.openstreetmap.org/node/9494853722",
+    "checked": "2026-11-26",
+    "cuisine": "french"
+  },
+  {
+    "id": "V11816141992",
+    "kind": "venue",
+    "code": "barcelona",
+    "category": "restaurant",
+    "name": "Bosco",
+    "address": "Carrer dels Capellans 9",
+    "coordinates": [
+      41.3852432,
+      2.174473
+    ],
+    "source_id": "node/1816141992",
+    "url": "https://www.openstreetmap.org/node/1816141992",
+    "checked": "2026-11-26",
+    "cuisine": "tapas"
+  },
+  {
+    "id": "V14442168389",
+    "kind": "venue",
+    "code": "barcelona",
+    "category": "restaurant",
+    "name": "El Clercle",
+    "address": "",
+    "coordinates": [
+      41.3845837,
+      2.174319
+    ],
+    "source_id": "node/4442168389",
+    "url": "https://www.openstreetmap.org/node/4442168389",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V17084711166",
+    "kind": "venue",
+    "code": "barcelona",
+    "category": "restaurant",
+    "name": "Ascent",
+    "address": "",
+    "coordinates": [
+      41.3847,
+      2.17466
+    ],
+    "source_id": "node/7084711166",
+    "url": "https://www.openstreetmap.org/node/7084711166",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V2671820137",
+    "kind": "venue",
+    "code": "barcelona",
+    "category": "hotel",
+    "name": "Catalonia Portal de l'Àngel",
+    "address": "",
+    "coordinates": [
+      41.3854227,
+      2.1728315
+    ],
+    "source_id": "way/671820137",
+    "url": "https://www.openstreetmap.org/way/671820137",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13229875884",
+    "kind": "venue",
+    "code": "barcelona",
+    "category": "hostel",
+    "name": "Hostal Lausanne",
+    "address": "Avinguda del Portal de l'Àngel 24",
+    "coordinates": [
+      41.3859352,
+      2.1729133
+    ],
+    "source_id": "node/3229875884",
+    "url": "https://www.openstreetmap.org/node/3229875884",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V16546984292",
+    "kind": "venue",
+    "code": "barcelona",
+    "category": "apartment",
+    "name": "Apartments Sant Jordi Fontanella",
+    "address": "Carrer de Fontanella 15",
+    "coordinates": [
+      41.3880972,
+      2.1722519
+    ],
+    "source_id": "node/6546984292",
+    "url": "https://www.openstreetmap.org/node/6546984292",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V16052988402",
+    "kind": "venue",
+    "code": "barcelona",
+    "category": "guest_house",
+    "name": "Дом в Барсе",
+    "address": "",
+    "coordinates": [
+      41.3832456,
+      2.1774079
+    ],
+    "source_id": "node/6052988402",
+    "url": "https://www.openstreetmap.org/node/6052988402",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V19202552770",
+    "kind": "venue",
+    "code": "barcelona",
+    "category": "hotel",
+    "name": "Kimpton Vividora Barcelona",
+    "address": "Carrer del Duc 15",
+    "coordinates": [
+      41.3852978,
+      2.1722188
+    ],
+    "source_id": "node/9202552770",
+    "url": "https://www.openstreetmap.org/node/9202552770",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V311226976",
+    "kind": "venue",
+    "code": "barcelona",
+    "category": "hotel",
+    "name": "Hotel Catalonia Catedral",
+    "address": "",
+    "coordinates": [
+      41.3848559,
+      2.1746132
+    ],
+    "source_id": "relation/11226976",
+    "url": "https://www.openstreetmap.org/relation/11226976",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V12407308936",
+    "kind": "venue",
+    "code": "prague",
+    "category": "cafe",
+    "name": "Starbucks",
+    "address": "",
+    "coordinates": [
+      50.0869306,
+      14.421279
+    ],
+    "source_id": "node/2407308936",
+    "url": "https://www.openstreetmap.org/node/2407308936",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V11948155689",
+    "kind": "venue",
+    "code": "prague",
+    "category": "cafe",
+    "name": "Café Mozart",
+    "address": "Staroměstské náměstí 22",
+    "coordinates": [
+      50.08679,
+      14.4209933
+    ],
+    "source_id": "node/1948155689",
+    "url": "https://www.openstreetmap.org/node/1948155689",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13475173933",
+    "kind": "venue",
+    "code": "prague",
+    "category": "cafe",
+    "name": "Bubblify",
+    "address": "Železná 1",
+    "coordinates": [
+      50.0866555,
+      14.4219331
+    ],
+    "source_id": "node/3475173933",
+    "url": "https://www.openstreetmap.org/node/3475173933",
+    "checked": "2026-11-26",
+    "cuisine": "bubble_tea"
+  },
+  {
+    "id": "V112798080074",
+    "kind": "venue",
+    "code": "prague",
+    "category": "cafe",
+    "name": "Trdlokafe",
+    "address": "",
+    "coordinates": [
+      50.0866323,
+      14.4219771
+    ],
+    "source_id": "node/12798080074",
+    "url": "https://www.openstreetmap.org/node/12798080074",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V14771268089",
+    "kind": "venue",
+    "code": "prague",
+    "category": "cafe",
+    "name": "The Miners",
+    "address": "",
+    "coordinates": [
+      50.0865017,
+      14.4218739
+    ],
+    "source_id": "node/4771268089",
+    "url": "https://www.openstreetmap.org/node/4771268089",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11977821253",
+    "kind": "venue",
+    "code": "prague",
+    "category": "cafe",
+    "name": "At the Bell",
+    "address": "Staroměstské náměstí 13",
+    "coordinates": [
+      50.0877379,
+      14.4219067
+    ],
+    "source_id": "node/1977821253",
+    "url": "https://www.openstreetmap.org/node/1977821253",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13620482769",
+    "kind": "venue",
+    "code": "prague",
+    "category": "restaurant",
+    "name": "Bílý koníček",
+    "address": "Staroměstské náměstí 20",
+    "coordinates": [
+      50.08698,
+      14.4214958
+    ],
+    "source_id": "node/3620482769",
+    "url": "https://www.openstreetmap.org/node/3620482769",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11977821255",
+    "kind": "venue",
+    "code": "prague",
+    "category": "restaurant",
+    "name": "El Toro Negro",
+    "address": "Staroměstské náměstí 22",
+    "coordinates": [
+      50.086861,
+      14.4211045
+    ],
+    "source_id": "node/1977821255",
+    "url": "https://www.openstreetmap.org/node/1977821255",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11258869789",
+    "kind": "venue",
+    "code": "prague",
+    "category": "restaurant",
+    "name": "Staroměstská restaurace",
+    "address": "Staroměstské náměstí 19",
+    "coordinates": [
+      50.0870294,
+      14.4216285
+    ],
+    "source_id": "node/1258869789",
+    "url": "https://www.openstreetmap.org/node/1258869789",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V110730236809",
+    "kind": "venue",
+    "code": "prague",
+    "category": "restaurant",
+    "name": "Einstein Bistrot",
+    "address": "Staroměstské náměstí 551/17",
+    "coordinates": [
+      50.0871461,
+      14.4218628
+    ],
+    "source_id": "node/10730236809",
+    "url": "https://www.openstreetmap.org/node/10730236809",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V19721287982",
+    "kind": "venue",
+    "code": "prague",
+    "category": "restaurant",
+    "name": "Wine & Food",
+    "address": "",
+    "coordinates": [
+      50.0866687,
+      14.4216859
+    ],
+    "source_id": "node/9721287982",
+    "url": "https://www.openstreetmap.org/node/9721287982",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V16919368186",
+    "kind": "venue",
+    "code": "prague",
+    "category": "restaurant",
+    "name": "420",
+    "address": "",
+    "coordinates": [
+      50.0866959,
+      14.4208627
+    ],
+    "source_id": "node/6919368186",
+    "url": "https://www.openstreetmap.org/node/6919368186",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13620539874",
+    "kind": "venue",
+    "code": "prague",
+    "category": "hotel",
+    "name": "Old Town Square Hotel",
+    "address": "Staroměstské náměstí 20",
+    "coordinates": [
+      50.086959,
+      14.4215518
+    ],
+    "source_id": "node/3620539874",
+    "url": "https://www.openstreetmap.org/node/3620539874",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V12598483241",
+    "kind": "venue",
+    "code": "prague",
+    "category": "guest_house",
+    "name": "Arcadia Residence",
+    "address": "",
+    "coordinates": [
+      50.0859698,
+      14.4213557
+    ],
+    "source_id": "node/2598483241",
+    "url": "https://www.openstreetmap.org/node/2598483241",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13620445231",
+    "kind": "venue",
+    "code": "prague",
+    "category": "hostel",
+    "name": "Prague Square Hostel",
+    "address": "Melantrichova 10",
+    "coordinates": [
+      50.085657,
+      14.4209891
+    ],
+    "source_id": "node/3620445231",
+    "url": "https://www.openstreetmap.org/node/3620445231",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V19909520121",
+    "kind": "venue",
+    "code": "prague",
+    "category": "apartment",
+    "name": "Týn Yard Residence",
+    "address": "Týn 637/7",
+    "coordinates": [
+      50.0882684,
+      14.424055
+    ],
+    "source_id": "node/9909520121",
+    "url": "https://www.openstreetmap.org/node/9909520121",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13620539873",
+    "kind": "venue",
+    "code": "prague",
+    "category": "hotel",
+    "name": "Grand hotel Praha",
+    "address": "Staroměstské náměstí 22",
+    "coordinates": [
+      50.0867672,
+      14.4212133
+    ],
+    "source_id": "node/3620539873",
+    "url": "https://www.openstreetmap.org/node/3620539873",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13620482768",
+    "kind": "venue",
+    "code": "prague",
+    "category": "hotel",
+    "name": "Hotel Dar",
+    "address": "Kožná 12",
+    "coordinates": [
+      50.0862339,
+      14.4214911
+    ],
+    "source_id": "node/3620482768",
+    "url": "https://www.openstreetmap.org/node/3620482768",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V16167346532",
+    "kind": "venue",
+    "code": "vienna",
+    "category": "cafe",
+    "name": "Haas & Haas",
+    "address": "Stephansplatz 4",
+    "coordinates": [
+      48.2080012,
+      16.3740142
+    ],
+    "source_id": "node/6167346532",
+    "url": "https://www.openstreetmap.org/node/6167346532",
+    "checked": "2026-11-26",
+    "cuisine": "teahouse"
+  },
+  {
+    "id": "V113790059581",
+    "kind": "venue",
+    "code": "vienna",
+    "category": "cafe",
+    "name": "Mamas Café",
+    "address": "",
+    "coordinates": [
+      48.2088993,
+      16.3742162
+    ],
+    "source_id": "node/13790059581",
+    "url": "https://www.openstreetmap.org/node/13790059581",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1957695900",
+    "kind": "venue",
+    "code": "vienna",
+    "category": "cafe",
+    "name": "Cafe Porta",
+    "address": "Schulerstraße 6",
+    "coordinates": [
+      48.2083193,
+      16.3749277
+    ],
+    "source_id": "node/957695900",
+    "url": "https://www.openstreetmap.org/node/957695900",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13482195406",
+    "kind": "venue",
+    "code": "vienna",
+    "category": "cafe",
+    "name": "XCelsior Caffè-Bar",
+    "address": "Stephansplatz 7",
+    "coordinates": [
+      48.2090335,
+      16.3732591
+    ],
+    "source_id": "node/3482195406",
+    "url": "https://www.openstreetmap.org/node/3482195406",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop;italian"
+  },
+  {
+    "id": "V1839473189",
+    "kind": "venue",
+    "code": "vienna",
+    "category": "cafe",
+    "name": "Cafe Diglas Wollzeile",
+    "address": "Wollzeile 10",
+    "coordinates": [
+      48.2086459,
+      16.3752673
+    ],
+    "source_id": "node/839473189",
+    "url": "https://www.openstreetmap.org/node/839473189",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1956430055",
+    "kind": "venue",
+    "code": "vienna",
+    "category": "cafe",
+    "name": "L. Heiner Hofzuckerbäcker",
+    "address": "Wollzeile 9",
+    "coordinates": [
+      48.2089745,
+      16.3750576
+    ],
+    "source_id": "node/956430055",
+    "url": "https://www.openstreetmap.org/node/956430055",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14958728806",
+    "kind": "venue",
+    "code": "vienna",
+    "category": "restaurant",
+    "name": "Haas & Haas",
+    "address": "",
+    "coordinates": [
+      48.207946,
+      16.3739521
+    ],
+    "source_id": "node/4958728806",
+    "url": "https://www.openstreetmap.org/node/4958728806",
+    "checked": "2026-11-26",
+    "cuisine": "international"
+  },
+  {
+    "id": "V1567104171",
+    "kind": "venue",
+    "code": "vienna",
+    "category": "restaurant",
+    "name": "Chamäleon",
+    "address": "Blutgasse 3",
+    "coordinates": [
+      48.2077601,
+      16.3743609
+    ],
+    "source_id": "node/567104171",
+    "url": "https://www.openstreetmap.org/node/567104171",
+    "checked": "2026-11-26",
+    "cuisine": "swiss"
+  },
+  {
+    "id": "V1478928080",
+    "kind": "venue",
+    "code": "vienna",
+    "category": "restaurant",
+    "name": "Schnitzel One - Domgasse",
+    "address": "Schulerstraße 4",
+    "coordinates": [
+      48.2083537,
+      16.3747538
+    ],
+    "source_id": "node/478928080",
+    "url": "https://www.openstreetmap.org/node/478928080",
+    "checked": "2026-11-26",
+    "cuisine": "austrian"
+  },
+  {
+    "id": "V1929100304",
+    "kind": "venue",
+    "code": "vienna",
+    "category": "restaurant",
+    "name": "Mae Aurel",
+    "address": "",
+    "coordinates": [
+      48.2085197,
+      16.3747893
+    ],
+    "source_id": "node/929100304",
+    "url": "https://www.openstreetmap.org/node/929100304",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1956430162",
+    "kind": "venue",
+    "code": "vienna",
+    "category": "restaurant",
+    "name": "Ristorante Firenze Enoteca",
+    "address": "Singerstraße 3",
+    "coordinates": [
+      48.2078671,
+      16.3723947
+    ],
+    "source_id": "node/956430162",
+    "url": "https://www.openstreetmap.org/node/956430162",
+    "checked": "2026-11-26",
+    "cuisine": "italian"
+  },
+  {
+    "id": "V1269208764",
+    "kind": "venue",
+    "code": "vienna",
+    "category": "restaurant",
+    "name": "Cheng Chinese Cuisine",
+    "address": "Singerstraße 11a",
+    "coordinates": [
+      48.2071903,
+      16.3741585
+    ],
+    "source_id": "node/269208764",
+    "url": "https://www.openstreetmap.org/node/269208764",
+    "checked": "2026-11-26",
+    "cuisine": "chinese"
+  },
+  {
+    "id": "V14755207423",
+    "kind": "venue",
+    "code": "vienna",
+    "category": "hotel",
+    "name": "De france",
+    "address": "",
+    "coordinates": [
+      48.2075892,
+      16.373655
+    ],
+    "source_id": "node/4755207423",
+    "url": "https://www.openstreetmap.org/node/4755207423",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14101228995",
+    "kind": "venue",
+    "code": "vienna",
+    "category": "guest_house",
+    "name": "Pension Neuer Markt",
+    "address": "Seilergasse 9",
+    "coordinates": [
+      48.2070611,
+      16.370839
+    ],
+    "source_id": "node/4101228995",
+    "url": "https://www.openstreetmap.org/node/4101228995",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V12943685182",
+    "kind": "venue",
+    "code": "vienna",
+    "category": "apartment",
+    "name": "Vienna Apartment Stubenbastei",
+    "address": "Stubenbastei 10",
+    "coordinates": [
+      48.2074385,
+      16.3786677
+    ],
+    "source_id": "node/2943685182",
+    "url": "https://www.openstreetmap.org/node/2943685182",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V112441664411",
+    "kind": "venue",
+    "code": "vienna",
+    "category": "hostel",
+    "name": "Lion's rooms n apartments",
+    "address": "",
+    "coordinates": [
+      48.2127284,
+      16.3884835
+    ],
+    "source_id": "node/12441664411",
+    "url": "https://www.openstreetmap.org/node/12441664411",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V2169186442",
+    "kind": "venue",
+    "code": "vienna",
+    "category": "hotel",
+    "name": "Zum König von Ungarn",
+    "address": "Schulerstraße 10",
+    "coordinates": [
+      48.2081347,
+      16.3752009
+    ],
+    "source_id": "way/169186442",
+    "url": "https://www.openstreetmap.org/way/169186442",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1956430138",
+    "kind": "venue",
+    "code": "vienna",
+    "category": "hotel",
+    "name": "Hotel Royal",
+    "address": "Singerstraße 3",
+    "coordinates": [
+      48.2078844,
+      16.3723234
+    ],
+    "source_id": "node/956430138",
+    "url": "https://www.openstreetmap.org/node/956430138",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V12620372118",
+    "kind": "venue",
+    "code": "lisbon",
+    "category": "cafe",
+    "name": "Café Gelo",
+    "address": "Praça Dom Pedro IV 64",
+    "coordinates": [
+      38.7143297,
+      -9.1401791
+    ],
+    "source_id": "node/2620372118",
+    "url": "https://www.openstreetmap.org/node/2620372118",
+    "checked": "2026-11-26",
+    "cuisine": "breakfast;donut;tea;cake;coffee_shop;chicken;fish"
+  },
+  {
+    "id": "V14475929290",
+    "kind": "venue",
+    "code": "lisbon",
+    "category": "cafe",
+    "name": "Café Nicola",
+    "address": "Rua 1° de Dezembro 10",
+    "coordinates": [
+      38.7131676,
+      -9.1398061
+    ],
+    "source_id": "node/4475929290",
+    "url": "https://www.openstreetmap.org/node/4475929290",
+    "checked": "2026-11-26",
+    "cuisine": "portuguese"
+  },
+  {
+    "id": "V14624423531",
+    "kind": "venue",
+    "code": "lisbon",
+    "category": "cafe",
+    "name": "Café Garrett",
+    "address": "Praça Dom João da Câmara",
+    "coordinates": [
+      38.7146287,
+      -9.1401069
+    ],
+    "source_id": "node/4624423531",
+    "url": "https://www.openstreetmap.org/node/4624423531",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14803931021",
+    "kind": "venue",
+    "code": "lisbon",
+    "category": "cafe",
+    "name": "Ginginha do Carmo",
+    "address": "Calçada do Carmo 37",
+    "coordinates": [
+      38.7133972,
+      -9.1406623
+    ],
+    "source_id": "node/4803931021",
+    "url": "https://www.openstreetmap.org/node/4803931021",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14813698527",
+    "kind": "venue",
+    "code": "lisbon",
+    "category": "cafe",
+    "name": "Cozinha d`Avó Celeste",
+    "address": "Rua Augusta 282",
+    "coordinates": [
+      38.7127808,
+      -9.1386033
+    ],
+    "source_id": "node/4813698527",
+    "url": "https://www.openstreetmap.org/node/4813698527",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14433136691",
+    "kind": "venue",
+    "code": "lisbon",
+    "category": "cafe",
+    "name": "Confeitaria Nacional",
+    "address": "Praça da Figueira 18B",
+    "coordinates": [
+      38.7131355,
+      -9.1380797
+    ],
+    "source_id": "node/4433136691",
+    "url": "https://www.openstreetmap.org/node/4433136691",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V15185699924",
+    "kind": "venue",
+    "code": "lisbon",
+    "category": "restaurant",
+    "name": "Peixaria do Rossio",
+    "address": "",
+    "coordinates": [
+      38.713588,
+      -9.1400012
+    ],
+    "source_id": "node/5185699924",
+    "url": "https://www.openstreetmap.org/node/5185699924",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V113953447074",
+    "kind": "venue",
+    "code": "lisbon",
+    "category": "restaurant",
+    "name": "Painel da Baixa",
+    "address": "",
+    "coordinates": [
+      38.7136791,
+      -9.1400768
+    ],
+    "source_id": "node/13953447074",
+    "url": "https://www.openstreetmap.org/node/13953447074",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V15016929026",
+    "kind": "venue",
+    "code": "lisbon",
+    "category": "restaurant",
+    "name": "Fiorella",
+    "address": "Praça Dom Pedro IV 27",
+    "coordinates": [
+      38.7132588,
+      -9.1397497
+    ],
+    "source_id": "node/5016929026",
+    "url": "https://www.openstreetmap.org/node/5016929026",
+    "checked": "2026-11-26",
+    "cuisine": "italian;italian_pizza;portuguese"
+  },
+  {
+    "id": "V15018721322",
+    "kind": "venue",
+    "code": "lisbon",
+    "category": "restaurant",
+    "name": "Buffet Leão",
+    "address": "",
+    "coordinates": [
+      38.7139219,
+      -9.1404288
+    ],
+    "source_id": "node/5018721322",
+    "url": "https://www.openstreetmap.org/node/5018721322",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V113021802058",
+    "kind": "venue",
+    "code": "lisbon",
+    "category": "restaurant",
+    "name": "Capítulo Restaurant & Bar",
+    "address": "",
+    "coordinates": [
+      38.7144344,
+      -9.1385757
+    ],
+    "source_id": "node/13021802058",
+    "url": "https://www.openstreetmap.org/node/13021802058",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V112978848292",
+    "kind": "venue",
+    "code": "lisbon",
+    "category": "restaurant",
+    "name": "Los Chanetes",
+    "address": "",
+    "coordinates": [
+      38.713036,
+      -9.1396636
+    ],
+    "source_id": "node/12978848292",
+    "url": "https://www.openstreetmap.org/node/12978848292",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V16770253201",
+    "kind": "venue",
+    "code": "lisbon",
+    "category": "hostel",
+    "name": "Rossio Hostel",
+    "address": "Calçada do Carmo 6",
+    "coordinates": [
+      38.7136807,
+      -9.1401147
+    ],
+    "source_id": "node/6770253201",
+    "url": "https://www.openstreetmap.org/node/6770253201",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V15095561602",
+    "kind": "venue",
+    "code": "lisbon",
+    "category": "hotel",
+    "name": "Metrópole",
+    "address": "Praça Dom Pedro IV 30",
+    "coordinates": [
+      38.7132844,
+      -9.1398469
+    ],
+    "source_id": "node/5095561602",
+    "url": "https://www.openstreetmap.org/node/5095561602",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V296306205",
+    "kind": "venue",
+    "code": "lisbon",
+    "category": "guest_house",
+    "name": "Visionaire Apartments",
+    "address": "",
+    "coordinates": [
+      38.7141622,
+      -9.1382975
+    ],
+    "source_id": "way/96306205",
+    "url": "https://www.openstreetmap.org/way/96306205",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V296297502",
+    "kind": "venue",
+    "code": "lisbon",
+    "category": "apartment",
+    "name": "Residentas Arco do Bandeira",
+    "address": "Rua dos Sapateiros 218-232",
+    "coordinates": [
+      38.7128076,
+      -9.1388768
+    ],
+    "source_id": "way/96297502",
+    "url": "https://www.openstreetmap.org/way/96297502",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V15096400090",
+    "kind": "venue",
+    "code": "lisbon",
+    "category": "hotel",
+    "name": "Hotel Inn Rossio",
+    "address": "Rua 1º de Dezembro 73",
+    "coordinates": [
+      38.7137126,
+      -9.1403467
+    ],
+    "source_id": "node/5096400090",
+    "url": "https://www.openstreetmap.org/node/5096400090",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14277479999",
+    "kind": "venue",
+    "code": "lisbon",
+    "category": "guest_house",
+    "name": "DownTown",
+    "address": "Rua 1º de Dezembro 33",
+    "coordinates": [
+      38.7131273,
+      -9.1400227
+    ],
+    "source_id": "node/4277479999",
+    "url": "https://www.openstreetmap.org/node/4277479999",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1975136815",
+    "kind": "venue",
+    "code": "berlin",
+    "category": "cafe",
+    "name": "LePopulaire",
+    "address": "Unter den Linden 5",
+    "coordinates": [
+      52.5169402,
+      13.3962176
+    ],
+    "source_id": "node/975136815",
+    "url": "https://www.openstreetmap.org/node/975136815",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V16721933782",
+    "kind": "venue",
+    "code": "berlin",
+    "category": "cafe",
+    "name": "The blnd",
+    "address": "",
+    "coordinates": [
+      52.5153721,
+      13.396898
+    ],
+    "source_id": "node/6721933782",
+    "url": "https://www.openstreetmap.org/node/6721933782",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1305259644",
+    "kind": "venue",
+    "code": "berlin",
+    "category": "cafe",
+    "name": "The Coffee Shop",
+    "address": "Werderscher Markt 1",
+    "coordinates": [
+      52.5152592,
+      13.3983179
+    ],
+    "source_id": "node/305259644",
+    "url": "https://www.openstreetmap.org/node/305259644",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V19656079781",
+    "kind": "venue",
+    "code": "berlin",
+    "category": "cafe",
+    "name": "Forum Café",
+    "address": "Schloßplatz 1",
+    "coordinates": [
+      52.5172015,
+      13.4011771
+    ],
+    "source_id": "node/9656079781",
+    "url": "https://www.openstreetmap.org/node/9656079781",
+    "checked": "2026-11-26",
+    "cuisine": "cake;salad;soup"
+  },
+  {
+    "id": "V1876181984",
+    "kind": "venue",
+    "code": "berlin",
+    "category": "cafe",
+    "name": "Lorch & Söhne Kommode",
+    "address": "Bebelplatz 1",
+    "coordinates": [
+      52.5163595,
+      13.3929727
+    ],
+    "source_id": "node/876181984",
+    "url": "https://www.openstreetmap.org/node/876181984",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V2494975292",
+    "kind": "venue",
+    "code": "berlin",
+    "category": "cafe",
+    "name": "Kiosk Flussbad Garten",
+    "address": "",
+    "coordinates": [
+      52.5145436,
+      13.4011097
+    ],
+    "source_id": "way/494975292",
+    "url": "https://www.openstreetmap.org/way/494975292",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13716997384",
+    "kind": "venue",
+    "code": "berlin",
+    "category": "restaurant",
+    "name": "Foreign Affairs",
+    "address": "Werderscher Markt 11",
+    "coordinates": [
+      52.5148567,
+      13.3980296
+    ],
+    "source_id": "node/3716997384",
+    "url": "https://www.openstreetmap.org/node/3716997384",
+    "checked": "2026-11-26",
+    "cuisine": "international"
+  },
+  {
+    "id": "V11602537128",
+    "kind": "venue",
+    "code": "berlin",
+    "category": "restaurant",
+    "name": "Noumi",
+    "address": "Jägerstraße 35",
+    "coordinates": [
+      52.5143727,
+      13.3976164
+    ],
+    "source_id": "node/1602537128",
+    "url": "https://www.openstreetmap.org/node/1602537128",
+    "checked": "2026-11-26",
+    "cuisine": "vietnamese"
+  },
+  {
+    "id": "V15196452422",
+    "kind": "venue",
+    "code": "berlin",
+    "category": "restaurant",
+    "name": "Lunchtime",
+    "address": "Jägerstraße 34",
+    "coordinates": [
+      52.5142513,
+      13.3971703
+    ],
+    "source_id": "node/5196452422",
+    "url": "https://www.openstreetmap.org/node/5196452422",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V19381487072",
+    "kind": "venue",
+    "code": "berlin",
+    "category": "restaurant",
+    "name": "CHIARO",
+    "address": "Behrenstraße 37",
+    "coordinates": [
+      52.5158147,
+      13.3939157
+    ],
+    "source_id": "node/9381487072",
+    "url": "https://www.openstreetmap.org/node/9381487072",
+    "checked": "2026-11-26",
+    "cuisine": "italian"
+  },
+  {
+    "id": "V111435888769",
+    "kind": "venue",
+    "code": "berlin",
+    "category": "restaurant",
+    "name": "Beef Grill Club",
+    "address": "Französische Straße",
+    "coordinates": [
+      52.5149034,
+      13.3944371
+    ],
+    "source_id": "node/11435888769",
+    "url": "https://www.openstreetmap.org/node/11435888769",
+    "checked": "2026-11-26",
+    "cuisine": "steak_house"
+  },
+  {
+    "id": "V19681836928",
+    "kind": "venue",
+    "code": "berlin",
+    "category": "restaurant",
+    "name": "Baret",
+    "address": "Schloßplatz",
+    "coordinates": [
+      52.5174248,
+      13.4008935
+    ],
+    "source_id": "node/9681836928",
+    "url": "https://www.openstreetmap.org/node/9681836928",
+    "checked": "2026-11-26",
+    "cuisine": "regional"
+  },
+  {
+    "id": "V1695646332",
+    "kind": "venue",
+    "code": "berlin",
+    "category": "hotel",
+    "name": "Arcotel John F Berlin",
+    "address": "Werderscher Markt 11",
+    "coordinates": [
+      52.515182,
+      13.3977084
+    ],
+    "source_id": "node/695646332",
+    "url": "https://www.openstreetmap.org/node/695646332",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V111652990583",
+    "kind": "venue",
+    "code": "berlin",
+    "category": "hostel",
+    "name": "Space Night",
+    "address": "Leipziger Straße 45",
+    "coordinates": [
+      52.510439,
+      13.396858
+    ],
+    "source_id": "node/11652990583",
+    "url": "https://www.openstreetmap.org/node/11652990583",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1863727000",
+    "kind": "venue",
+    "code": "berlin",
+    "category": "guest_house",
+    "name": "Panorama Apartment Berlin City Centre",
+    "address": "",
+    "coordinates": [
+      52.5222761,
+      13.4050159
+    ],
+    "source_id": "node/863727000",
+    "url": "https://www.openstreetmap.org/node/863727000",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14166069492",
+    "kind": "venue",
+    "code": "berlin",
+    "category": "apartment",
+    "name": "Sixties Apartments I",
+    "address": "Oranienburger Straße 11",
+    "coordinates": [
+      52.5237989,
+      13.3993758
+    ],
+    "source_id": "node/4166069492",
+    "url": "https://www.openstreetmap.org/node/4166069492",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11598987141",
+    "kind": "venue",
+    "code": "berlin",
+    "category": "hotel",
+    "name": "Hotel de Rome",
+    "address": "Behrenstraße 37",
+    "coordinates": [
+      52.5157914,
+      13.3940671
+    ],
+    "source_id": "node/1598987141",
+    "url": "https://www.openstreetmap.org/node/1598987141",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V2414161389",
+    "kind": "venue",
+    "code": "berlin",
+    "category": "hotel",
+    "name": "Titanic Gendarmenmarkt Berlin",
+    "address": "Französische Straße 30",
+    "coordinates": [
+      52.5149041,
+      13.3946751
+    ],
+    "source_id": "way/414161389",
+    "url": "https://www.openstreetmap.org/way/414161389",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1559520875",
+    "kind": "venue",
+    "code": "london",
+    "category": "cafe",
+    "name": "Caffè Nero",
+    "address": "Trafalgar Square 60-61",
+    "coordinates": [
+      51.5072772,
+      -0.1283651
+    ],
+    "source_id": "node/559520875",
+    "url": "https://www.openstreetmap.org/node/559520875",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V1588034827",
+    "kind": "venue",
+    "code": "london",
+    "category": "cafe",
+    "name": "Costa",
+    "address": "",
+    "coordinates": [
+      51.5075005,
+      -0.1267675
+    ],
+    "source_id": "node/588034827",
+    "url": "https://www.openstreetmap.org/node/588034827",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V13609864448",
+    "kind": "venue",
+    "code": "london",
+    "category": "cafe",
+    "name": "Muriel's Kitchen",
+    "address": "",
+    "coordinates": [
+      51.5089202,
+      -0.1274819
+    ],
+    "source_id": "node/3609864448",
+    "url": "https://www.openstreetmap.org/node/3609864448",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13098608835",
+    "kind": "venue",
+    "code": "london",
+    "category": "cafe",
+    "name": "The Grand Caffè",
+    "address": "Strand 1",
+    "coordinates": [
+      51.5078159,
+      -0.1265174
+    ],
+    "source_id": "node/3098608835",
+    "url": "https://www.openstreetmap.org/node/3098608835",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V110699089655",
+    "kind": "venue",
+    "code": "london",
+    "category": "cafe",
+    "name": "Espresso Bar",
+    "address": "",
+    "coordinates": [
+      51.5089976,
+      -0.128771
+    ],
+    "source_id": "node/10699089655",
+    "url": "https://www.openstreetmap.org/node/10699089655",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V13609864449",
+    "kind": "venue",
+    "code": "london",
+    "category": "cafe",
+    "name": "National Portrait Gallery Cafe",
+    "address": "",
+    "coordinates": [
+      51.5091122,
+      -0.127509
+    ],
+    "source_id": "node/3609864449",
+    "url": "https://www.openstreetmap.org/node/3609864449",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13925439675",
+    "kind": "venue",
+    "code": "london",
+    "category": "restaurant",
+    "name": "Gouqi",
+    "address": "Cockspur Street 25",
+    "coordinates": [
+      51.5074066,
+      -0.1295611
+    ],
+    "source_id": "node/3925439675",
+    "url": "https://www.openstreetmap.org/node/3925439675",
+    "checked": "2026-11-26",
+    "cuisine": "chinese"
+  },
+  {
+    "id": "V1559522541",
+    "kind": "venue",
+    "code": "london",
+    "category": "restaurant",
+    "name": "Prezzo",
+    "address": "Northumberland Avenue 31-32",
+    "coordinates": [
+      51.507428,
+      -0.1265922
+    ],
+    "source_id": "node/559522541",
+    "url": "https://www.openstreetmap.org/node/559522541",
+    "checked": "2026-11-26",
+    "cuisine": "italian"
+  },
+  {
+    "id": "V2550944274",
+    "kind": "venue",
+    "code": "london",
+    "category": "restaurant",
+    "name": "Garfunkel's",
+    "address": "Northumberland Avenue 3",
+    "coordinates": [
+      51.5071056,
+      -0.1268092
+    ],
+    "source_id": "way/550944274",
+    "url": "https://www.openstreetmap.org/way/550944274",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V112840823791",
+    "kind": "venue",
+    "code": "london",
+    "category": "restaurant",
+    "name": "Locatelli's",
+    "address": "",
+    "coordinates": [
+      51.5085652,
+      -0.1298451
+    ],
+    "source_id": "node/12840823791",
+    "url": "https://www.openstreetmap.org/node/12840823791",
+    "checked": "2026-11-26",
+    "cuisine": "italian"
+  },
+  {
+    "id": "V112087774907",
+    "kind": "venue",
+    "code": "london",
+    "category": "restaurant",
+    "name": "The Portrait Restaurant",
+    "address": "St. Martin's Place 2",
+    "coordinates": [
+      51.5092413,
+      -0.1279969
+    ],
+    "source_id": "node/12087774907",
+    "url": "https://www.openstreetmap.org/node/12087774907",
+    "checked": "2026-11-26",
+    "cuisine": "british;irish"
+  },
+  {
+    "id": "V1348018690",
+    "kind": "venue",
+    "code": "london",
+    "category": "restaurant",
+    "name": "PizzaExpress",
+    "address": "The Strand 450",
+    "coordinates": [
+      51.508406,
+      -0.126123
+    ],
+    "source_id": "node/348018690",
+    "url": "https://www.openstreetmap.org/node/348018690",
+    "checked": "2026-11-26",
+    "cuisine": "pizza"
+  },
+  {
+    "id": "V2183993059",
+    "kind": "venue",
+    "code": "london",
+    "category": "hotel",
+    "name": "The Trafalgar St. James London, Curio Collection by Hilton",
+    "address": "Spring Gardens 2",
+    "coordinates": [
+      51.5073375,
+      -0.1295145
+    ],
+    "source_id": "way/183993059",
+    "url": "https://www.openstreetmap.org/way/183993059",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1452514416",
+    "kind": "venue",
+    "code": "london",
+    "category": "guest_house",
+    "name": "LSE Northumberland House",
+    "address": "Northumberland Avenue 8A",
+    "coordinates": [
+      51.5068495,
+      -0.1255019
+    ],
+    "source_id": "node/452514416",
+    "url": "https://www.openstreetmap.org/node/452514416",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14976422877",
+    "kind": "venue",
+    "code": "london",
+    "category": "apartment",
+    "name": "Arlington House Apartments",
+    "address": "",
+    "coordinates": [
+      51.5065312,
+      -0.1408655
+    ],
+    "source_id": "node/4976422877",
+    "url": "https://www.openstreetmap.org/node/4976422877",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V2476776062",
+    "kind": "venue",
+    "code": "london",
+    "category": "hostel",
+    "name": "Astor Oxford Street",
+    "address": "Noel Street 14",
+    "coordinates": [
+      51.5147576,
+      -0.1366223
+    ],
+    "source_id": "way/476776062",
+    "url": "https://www.openstreetmap.org/way/476776062",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V15031714610",
+    "kind": "venue",
+    "code": "london",
+    "category": "hotel",
+    "name": "Hotel The Grand at Trafalgar Square",
+    "address": "",
+    "coordinates": [
+      51.5069341,
+      -0.1259733
+    ],
+    "source_id": "node/5031714610",
+    "url": "https://www.openstreetmap.org/node/5031714610",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V232919259",
+    "kind": "venue",
+    "code": "london",
+    "category": "hotel",
+    "name": "Royal Trafalgar Hotel",
+    "address": "",
+    "coordinates": [
+      51.5091436,
+      -0.1301772
+    ],
+    "source_id": "way/32919259",
+    "url": "https://www.openstreetmap.org/way/32919259",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V12721722530",
+    "kind": "venue",
+    "code": "amsterdam",
+    "category": "cafe",
+    "name": "Dam Good Coffee",
+    "address": "Dam 10",
+    "coordinates": [
+      52.3736013,
+      4.8923043
+    ],
+    "source_id": "node/2721722530",
+    "url": "https://www.openstreetmap.org/node/2721722530",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11908174088",
+    "kind": "venue",
+    "code": "amsterdam",
+    "category": "cafe",
+    "name": "'t Nieuwe Kafé",
+    "address": "Eggertstraat 8",
+    "coordinates": [
+      52.3737404,
+      4.8921362
+    ],
+    "source_id": "node/1908174088",
+    "url": "https://www.openstreetmap.org/node/1908174088",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1251528265",
+    "kind": "venue",
+    "code": "amsterdam",
+    "category": "cafe",
+    "name": "Lucy's",
+    "address": "Rokin 8-H",
+    "coordinates": [
+      52.3723189,
+      4.8926728
+    ],
+    "source_id": "node/251528265",
+    "url": "https://www.openstreetmap.org/node/251528265",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V12724250366",
+    "kind": "venue",
+    "code": "amsterdam",
+    "category": "cafe",
+    "name": "30ML",
+    "address": "Rokin 9",
+    "coordinates": [
+      52.3722219,
+      4.8934504
+    ],
+    "source_id": "node/2724250366",
+    "url": "https://www.openstreetmap.org/node/2724250366",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14500739323",
+    "kind": "venue",
+    "code": "amsterdam",
+    "category": "cafe",
+    "name": "Vascobelo V-bar",
+    "address": "Rokin 9-1",
+    "coordinates": [
+      52.3722132,
+      4.8935212
+    ],
+    "source_id": "node/4500739323",
+    "url": "https://www.openstreetmap.org/node/4500739323",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V12619774486",
+    "kind": "venue",
+    "code": "amsterdam",
+    "category": "cafe",
+    "name": "De Drie Graefjes",
+    "address": "Eggertstraat 1",
+    "coordinates": [
+      52.374201,
+      4.89248
+    ],
+    "source_id": "node/2619774486",
+    "url": "https://www.openstreetmap.org/node/2619774486",
+    "checked": "2026-11-26",
+    "cuisine": "american"
+  },
+  {
+    "id": "V14679941397",
+    "kind": "venue",
+    "code": "amsterdam",
+    "category": "restaurant",
+    "name": "Royal98",
+    "address": "Damrak 98",
+    "coordinates": [
+      52.3735434,
+      4.8932024
+    ],
+    "source_id": "node/4679941397",
+    "url": "https://www.openstreetmap.org/node/4679941397",
+    "checked": "2026-11-26",
+    "cuisine": "italian"
+  },
+  {
+    "id": "V16192682978",
+    "kind": "venue",
+    "code": "amsterdam",
+    "category": "restaurant",
+    "name": "Bougainville",
+    "address": "Dam 27",
+    "coordinates": [
+      52.3725106,
+      4.8932522
+    ],
+    "source_id": "node/6192682978",
+    "url": "https://www.openstreetmap.org/node/6192682978",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V12385772432",
+    "kind": "venue",
+    "code": "amsterdam",
+    "category": "restaurant",
+    "name": "La Piazza",
+    "address": "Paleisstraat 3",
+    "coordinates": [
+      52.3725959,
+      4.8915763
+    ],
+    "source_id": "node/2385772432",
+    "url": "https://www.openstreetmap.org/node/2385772432",
+    "checked": "2026-11-26",
+    "cuisine": "pizza"
+  },
+  {
+    "id": "V134044093",
+    "kind": "venue",
+    "code": "amsterdam",
+    "category": "restaurant",
+    "name": "De Roode Leeuw",
+    "address": "Damrak 93",
+    "coordinates": [
+      52.3737595,
+      4.8936095
+    ],
+    "source_id": "node/34044093",
+    "url": "https://www.openstreetmap.org/node/34044093",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V12385772430",
+    "kind": "venue",
+    "code": "amsterdam",
+    "category": "restaurant",
+    "name": "La Boca",
+    "address": "Paleisstraat 15",
+    "coordinates": [
+      52.3725793,
+      4.8912975
+    ],
+    "source_id": "node/2385772430",
+    "url": "https://www.openstreetmap.org/node/2385772430",
+    "checked": "2026-11-26",
+    "cuisine": "argentinian"
+  },
+  {
+    "id": "V12385772431",
+    "kind": "venue",
+    "code": "amsterdam",
+    "category": "restaurant",
+    "name": "Burger Bistro",
+    "address": "Paleisstraat 21",
+    "coordinates": [
+      52.3725149,
+      4.8910962
+    ],
+    "source_id": "node/2385772431",
+    "url": "https://www.openstreetmap.org/node/2385772431",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1251149366",
+    "kind": "venue",
+    "code": "amsterdam",
+    "category": "hotel",
+    "name": "Swissôtel",
+    "address": "Damrak 96",
+    "coordinates": [
+      52.3735795,
+      4.8933229
+    ],
+    "source_id": "node/251149366",
+    "url": "https://www.openstreetmap.org/node/251149366",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11907019944",
+    "kind": "venue",
+    "code": "amsterdam",
+    "category": "hostel",
+    "name": "Hotel Mevlana",
+    "address": "Nieuwezijds Voorburgwal 160",
+    "coordinates": [
+      52.374495,
+      4.8911049
+    ],
+    "source_id": "node/1907019944",
+    "url": "https://www.openstreetmap.org/node/1907019944",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V15752358425",
+    "kind": "venue",
+    "code": "amsterdam",
+    "category": "apartment",
+    "name": "Highland House",
+    "address": "",
+    "coordinates": [
+      52.3752787,
+      4.8934781
+    ],
+    "source_id": "node/5752358425",
+    "url": "https://www.openstreetmap.org/node/5752358425",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V15002723025",
+    "kind": "venue",
+    "code": "amsterdam",
+    "category": "guest_house",
+    "name": "Home - Mansard",
+    "address": "",
+    "coordinates": [
+      52.3717476,
+      4.8887935
+    ],
+    "source_id": "node/5002723025",
+    "url": "https://www.openstreetmap.org/node/5002723025",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V110983185489",
+    "kind": "venue",
+    "code": "amsterdam",
+    "category": "hotel",
+    "name": "Hotel Twenty Seven",
+    "address": "Dam 27",
+    "coordinates": [
+      52.372498,
+      4.8932903
+    ],
+    "source_id": "node/10983185489",
+    "url": "https://www.openstreetmap.org/node/10983185489",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1251149361",
+    "kind": "venue",
+    "code": "amsterdam",
+    "category": "hotel",
+    "name": "De Roode Leeuw",
+    "address": "Damrak 93-94",
+    "coordinates": [
+      52.3737184,
+      4.8935428
+    ],
+    "source_id": "node/251149361",
+    "url": "https://www.openstreetmap.org/node/251149361",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14440441859",
+    "kind": "venue",
+    "code": "brussels",
+    "category": "cafe",
+    "name": "Waffelin",
+    "address": "",
+    "coordinates": [
+      50.8471934,
+      4.35238
+    ],
+    "source_id": "node/4440441859",
+    "url": "https://www.openstreetmap.org/node/4440441859",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V13574500900",
+    "kind": "venue",
+    "code": "brussels",
+    "category": "cafe",
+    "name": "Starbucks",
+    "address": "",
+    "coordinates": [
+      50.8470358,
+      4.3519105
+    ],
+    "source_id": "node/3574500900",
+    "url": "https://www.openstreetmap.org/node/3574500900",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V14284192891",
+    "kind": "venue",
+    "code": "brussels",
+    "category": "cafe",
+    "name": "The Sister Brussels Café",
+    "address": "",
+    "coordinates": [
+      50.8472973,
+      4.352745
+    ],
+    "source_id": "node/4284192891",
+    "url": "https://www.openstreetmap.org/node/4284192891",
+    "checked": "2026-11-26",
+    "cuisine": "sandwich"
+  },
+  {
+    "id": "V112919260703",
+    "kind": "venue",
+    "code": "brussels",
+    "category": "cafe",
+    "name": "Bigg Cake",
+    "address": "",
+    "coordinates": [
+      50.8465637,
+      4.3535159
+    ],
+    "source_id": "node/12919260703",
+    "url": "https://www.openstreetmap.org/node/12919260703",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14413802968",
+    "kind": "venue",
+    "code": "brussels",
+    "category": "cafe",
+    "name": "Bubbletearoom.be",
+    "address": "",
+    "coordinates": [
+      50.8467715,
+      4.3537237
+    ],
+    "source_id": "node/4413802968",
+    "url": "https://www.openstreetmap.org/node/4413802968",
+    "checked": "2026-11-26",
+    "cuisine": "bubble_tea"
+  },
+  {
+    "id": "V19188136910",
+    "kind": "venue",
+    "code": "brussels",
+    "category": "cafe",
+    "name": "Lloyd Coffee Eatery",
+    "address": "",
+    "coordinates": [
+      50.8471277,
+      4.3538526
+    ],
+    "source_id": "node/9188136910",
+    "url": "https://www.openstreetmap.org/node/9188136910",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13514803687",
+    "kind": "venue",
+    "code": "brussels",
+    "category": "restaurant",
+    "name": "La Maison du Cygne",
+    "address": "",
+    "coordinates": [
+      50.8463192,
+      4.3524059
+    ],
+    "source_id": "node/3514803687",
+    "url": "https://www.openstreetmap.org/node/3514803687",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14440441860",
+    "kind": "venue",
+    "code": "brussels",
+    "category": "restaurant",
+    "name": "Le Paon - De Pauw",
+    "address": "",
+    "coordinates": [
+      50.8471505,
+      4.3524518
+    ],
+    "source_id": "node/4440441860",
+    "url": "https://www.openstreetmap.org/node/4440441860",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13514803688",
+    "kind": "venue",
+    "code": "brussels",
+    "category": "restaurant",
+    "name": "La Rose Blanche",
+    "address": "",
+    "coordinates": [
+      50.8462181,
+      4.3526273
+    ],
+    "source_id": "node/3514803688",
+    "url": "https://www.openstreetmap.org/node/3514803688",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14413933721",
+    "kind": "venue",
+    "code": "brussels",
+    "category": "restaurant",
+    "name": "La Brouette",
+    "address": "",
+    "coordinates": [
+      50.8470798,
+      4.351979
+    ],
+    "source_id": "node/4413933721",
+    "url": "https://www.openstreetmap.org/node/4413933721",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V18914556548",
+    "kind": "venue",
+    "code": "brussels",
+    "category": "restaurant",
+    "name": "Le Cerf",
+    "address": "",
+    "coordinates": [
+      50.8465865,
+      4.353316
+    ],
+    "source_id": "node/8914556548",
+    "url": "https://www.openstreetmap.org/node/8914556548",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V2902793207",
+    "kind": "venue",
+    "code": "brussels",
+    "category": "restaurant",
+    "name": "The Brothers",
+    "address": "",
+    "coordinates": [
+      50.8472246,
+      4.352622
+    ],
+    "source_id": "way/902793207",
+    "url": "https://www.openstreetmap.org/way/902793207",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14844284365",
+    "kind": "venue",
+    "code": "brussels",
+    "category": "apartment",
+    "name": "Le Quinze",
+    "address": "",
+    "coordinates": [
+      50.8462767,
+      4.353066
+    ],
+    "source_id": "node/4844284365",
+    "url": "https://www.openstreetmap.org/node/4844284365",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V110604650127",
+    "kind": "venue",
+    "code": "brussels",
+    "category": "hostel",
+    "name": "2GO4 Grand Place",
+    "address": "",
+    "coordinates": [
+      50.8470053,
+      4.3533565
+    ],
+    "source_id": "node/10604650127",
+    "url": "https://www.openstreetmap.org/node/10604650127",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V110178726958",
+    "kind": "venue",
+    "code": "brussels",
+    "category": "guest_house",
+    "name": "Cocoon",
+    "address": "",
+    "coordinates": [
+      50.8464891,
+      4.3534724
+    ],
+    "source_id": "node/10178726958",
+    "url": "https://www.openstreetmap.org/node/10178726958",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V2224509919",
+    "kind": "venue",
+    "code": "brussels",
+    "category": "hotel",
+    "name": "Hotel Amigo",
+    "address": "",
+    "coordinates": [
+      50.8461743,
+      4.3511704
+    ],
+    "source_id": "way/224509919",
+    "url": "https://www.openstreetmap.org/way/224509919",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V2306856679",
+    "kind": "venue",
+    "code": "brussels",
+    "category": "hotel",
+    "name": "Hotel Aris",
+    "address": "",
+    "coordinates": [
+      50.8472156,
+      4.353927
+    ],
+    "source_id": "way/306856679",
+    "url": "https://www.openstreetmap.org/way/306856679",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V110984414791",
+    "kind": "venue",
+    "code": "brussels",
+    "category": "hotel",
+    "name": "Mozart",
+    "address": "",
+    "coordinates": [
+      50.8455601,
+      4.3531621
+    ],
+    "source_id": "node/10984414791",
+    "url": "https://www.openstreetmap.org/node/10984414791",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V113507514656",
+    "kind": "venue",
+    "code": "athens",
+    "category": "cafe",
+    "name": "Ace",
+    "address": "Όθωνος 4",
+    "coordinates": [
+      37.9748651,
+      23.7344139
+    ],
+    "source_id": "node/13507514656",
+    "url": "https://www.openstreetmap.org/node/13507514656",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V113476276110",
+    "kind": "venue",
+    "code": "athens",
+    "category": "cafe",
+    "name": "Athens Plaza Lounge",
+    "address": "",
+    "coordinates": [
+      37.9763942,
+      23.7346487
+    ],
+    "source_id": "node/13476276110",
+    "url": "https://www.openstreetmap.org/node/13476276110",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V15155920021",
+    "kind": "venue",
+    "code": "athens",
+    "category": "cafe",
+    "name": "Coffee Island",
+    "address": "Βασιλίσσης Αμαλίας 4",
+    "coordinates": [
+      37.9745565,
+      23.7352071
+    ],
+    "source_id": "node/5155920021",
+    "url": "https://www.openstreetmap.org/node/5155920021",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V111264566815",
+    "kind": "venue",
+    "code": "athens",
+    "category": "cafe",
+    "name": "Starbucks",
+    "address": "",
+    "coordinates": [
+      37.9760973,
+      23.7337846
+    ],
+    "source_id": "node/11264566815",
+    "url": "https://www.openstreetmap.org/node/11264566815",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V111527662989",
+    "kind": "venue",
+    "code": "athens",
+    "category": "cafe",
+    "name": "Coffee Lab",
+    "address": "Βασιλίσσης Αμαλίας 4",
+    "coordinates": [
+      37.9744287,
+      23.7351776
+    ],
+    "source_id": "node/11527662989",
+    "url": "https://www.openstreetmap.org/node/11527662989",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V13951032973",
+    "kind": "venue",
+    "code": "athens",
+    "category": "cafe",
+    "name": "Public cafe",
+    "address": "",
+    "coordinates": [
+      37.9762001,
+      23.7337623
+    ],
+    "source_id": "node/3951032973",
+    "url": "https://www.openstreetmap.org/node/3951032973",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V16892865335",
+    "kind": "venue",
+    "code": "athens",
+    "category": "restaurant",
+    "name": "Chunxi",
+    "address": "Όθωνος 10",
+    "coordinates": [
+      37.9747991,
+      23.7350729
+    ],
+    "source_id": "node/6892865335",
+    "url": "https://www.openstreetmap.org/node/6892865335",
+    "checked": "2026-11-26",
+    "cuisine": "chinese"
+  },
+  {
+    "id": "V14560289850",
+    "kind": "venue",
+    "code": "athens",
+    "category": "restaurant",
+    "name": "Grande Bretagne Roof Garden",
+    "address": "",
+    "coordinates": [
+      37.9762127,
+      23.7354138
+    ],
+    "source_id": "node/4560289850",
+    "url": "https://www.openstreetmap.org/node/4560289850",
+    "checked": "2026-11-26",
+    "cuisine": "mediterranean"
+  },
+  {
+    "id": "V110582845552",
+    "kind": "venue",
+    "code": "athens",
+    "category": "restaurant",
+    "name": "Tudor Hall",
+    "address": "",
+    "coordinates": [
+      37.9763252,
+      23.7349368
+    ],
+    "source_id": "node/10582845552",
+    "url": "https://www.openstreetmap.org/node/10582845552",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14682121557",
+    "kind": "venue",
+    "code": "athens",
+    "category": "restaurant",
+    "name": "Tarka",
+    "address": "Φιλελλήνων 4",
+    "coordinates": [
+      37.9746657,
+      23.7338856
+    ],
+    "source_id": "node/4682121557",
+    "url": "https://www.openstreetmap.org/node/4682121557",
+    "checked": "2026-11-26",
+    "cuisine": "indian"
+  },
+  {
+    "id": "V14729929897",
+    "kind": "venue",
+    "code": "athens",
+    "category": "restaurant",
+    "name": "Da Panda",
+    "address": "",
+    "coordinates": [
+      37.9760667,
+      23.7334748
+    ],
+    "source_id": "node/4729929897",
+    "url": "https://www.openstreetmap.org/node/4729929897",
+    "checked": "2026-11-26",
+    "cuisine": "asian"
+  },
+  {
+    "id": "V113506165372",
+    "kind": "venue",
+    "code": "athens",
+    "category": "restaurant",
+    "name": "Ο Κώστας",
+    "address": "",
+    "coordinates": [
+      37.9743251,
+      23.7341119
+    ],
+    "source_id": "node/13506165372",
+    "url": "https://www.openstreetmap.org/node/13506165372",
+    "checked": "2026-11-26",
+    "cuisine": "greek"
+  },
+  {
+    "id": "V223183770",
+    "kind": "venue",
+    "code": "athens",
+    "category": "hotel",
+    "name": "King George, a Luxury Collection Hotel, Athens",
+    "address": "Βασιλέως Γεωργίου Α' 3",
+    "coordinates": [
+      37.9763874,
+      23.7349527
+    ],
+    "source_id": "way/23183770",
+    "url": "https://www.openstreetmap.org/way/23183770",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V2193583983",
+    "kind": "venue",
+    "code": "athens",
+    "category": "apartment",
+    "name": "V 1935",
+    "address": "Βουλής 29",
+    "coordinates": [
+      37.975012,
+      23.7324906
+    ],
+    "source_id": "way/193583983",
+    "url": "https://www.openstreetmap.org/way/193583983",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V113761572701",
+    "kind": "venue",
+    "code": "athens",
+    "category": "hostel",
+    "name": "Athens Eleven Apartments",
+    "address": "",
+    "coordinates": [
+      37.9774211,
+      23.7320667
+    ],
+    "source_id": "node/13761572701",
+    "url": "https://www.openstreetmap.org/node/13761572701",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V112135170951",
+    "kind": "venue",
+    "code": "athens",
+    "category": "guest_house",
+    "name": "Acro&Polis",
+    "address": "",
+    "coordinates": [
+      37.9729632,
+      23.7289656
+    ],
+    "source_id": "node/12135170951",
+    "url": "https://www.openstreetmap.org/node/12135170951",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V2132030844",
+    "kind": "venue",
+    "code": "athens",
+    "category": "hotel",
+    "name": "Athens Plaza",
+    "address": "Κολοκοτρώνη 2",
+    "coordinates": [
+      37.9765087,
+      23.734712
+    ],
+    "source_id": "way/132030844",
+    "url": "https://www.openstreetmap.org/way/132030844",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V223183765",
+    "kind": "venue",
+    "code": "athens",
+    "category": "hotel",
+    "name": "Μεγάλη Βρεταννία",
+    "address": "Βασιλέως Γεωργίου Α' 1",
+    "coordinates": [
+      37.9765752,
+      23.7352599
+    ],
+    "source_id": "way/23183765",
+    "url": "https://www.openstreetmap.org/way/23183765",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V110058620638",
+    "kind": "venue",
+    "code": "budapest",
+    "category": "cafe",
+    "name": "Muse",
+    "address": "Sütő utca 2",
+    "coordinates": [
+      47.4967985,
+      19.0539836
+    ],
+    "source_id": "node/10058620638",
+    "url": "https://www.openstreetmap.org/node/10058620638",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V111762095549",
+    "kind": "venue",
+    "code": "budapest",
+    "category": "cafe",
+    "name": "INSULA Kávézó",
+    "address": "Deák Ferenc tér 4",
+    "coordinates": [
+      47.4968735,
+      19.0541821
+    ],
+    "source_id": "node/11762095549",
+    "url": "https://www.openstreetmap.org/node/11762095549",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13929194012",
+    "kind": "venue",
+    "code": "budapest",
+    "category": "cafe",
+    "name": "Starbucks",
+    "address": "Deák Ferenc utca 23",
+    "coordinates": [
+      47.4972104,
+      19.0537531
+    ],
+    "source_id": "node/3929194012",
+    "url": "https://www.openstreetmap.org/node/3929194012",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V110049022798",
+    "kind": "venue",
+    "code": "budapest",
+    "category": "cafe",
+    "name": "Velvet Bar & Café",
+    "address": "Erzsébet tér 9-10",
+    "coordinates": [
+      47.4974591,
+      19.0530003
+    ],
+    "source_id": "node/10049022798",
+    "url": "https://www.openstreetmap.org/node/10049022798",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V110044223639",
+    "kind": "venue",
+    "code": "budapest",
+    "category": "cafe",
+    "name": "Delizia Gourmet & More",
+    "address": "Bécsi utca 6",
+    "coordinates": [
+      47.4967049,
+      19.051753
+    ],
+    "source_id": "node/10044223639",
+    "url": "https://www.openstreetmap.org/node/10044223639",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1264117979",
+    "kind": "venue",
+    "code": "budapest",
+    "category": "cafe",
+    "name": "À la Maison",
+    "address": "Szervita tér 3",
+    "coordinates": [
+      47.4953643,
+      19.0526831
+    ],
+    "source_id": "node/264117979",
+    "url": "https://www.openstreetmap.org/node/264117979",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V113629737637",
+    "kind": "venue",
+    "code": "budapest",
+    "category": "restaurant",
+    "name": "Pasta Bro's",
+    "address": "Bárczy István utca 10",
+    "coordinates": [
+      47.4969008,
+      19.0545799
+    ],
+    "source_id": "node/13629737637",
+    "url": "https://www.openstreetmap.org/node/13629737637",
+    "checked": "2026-11-26",
+    "cuisine": "pasta"
+  },
+  {
+    "id": "V1276505600",
+    "kind": "venue",
+    "code": "budapest",
+    "category": "restaurant",
+    "name": "Ottimo",
+    "address": "Erzsébet tér 9-10",
+    "coordinates": [
+      47.4972381,
+      19.0533605
+    ],
+    "source_id": "node/276505600",
+    "url": "https://www.openstreetmap.org/node/276505600",
+    "checked": "2026-11-26",
+    "cuisine": "italian;pizza"
+  },
+  {
+    "id": "V11864214280",
+    "kind": "venue",
+    "code": "budapest",
+    "category": "restaurant",
+    "name": "Fehér Hajó Étterem",
+    "address": "Fehér Hajó utca 5",
+    "coordinates": [
+      47.4961193,
+      19.0533992
+    ],
+    "source_id": "node/1864214280",
+    "url": "https://www.openstreetmap.org/node/1864214280",
+    "checked": "2026-11-26",
+    "cuisine": "regional"
+  },
+  {
+    "id": "V12305088667",
+    "kind": "venue",
+    "code": "budapest",
+    "category": "restaurant",
+    "name": "D-15",
+    "address": "Deák Ferenc utca 15",
+    "coordinates": [
+      47.4966019,
+      19.0526805
+    ],
+    "source_id": "node/2305088667",
+    "url": "https://www.openstreetmap.org/node/2305088667",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V112122678420",
+    "kind": "venue",
+    "code": "budapest",
+    "category": "restaurant",
+    "name": "BadBurger and More",
+    "address": "Fehér Hajó utca 8-10",
+    "coordinates": [
+      47.4960763,
+      19.0530437
+    ],
+    "source_id": "node/12122678420",
+    "url": "https://www.openstreetmap.org/node/12122678420",
+    "checked": "2026-11-26",
+    "cuisine": "burger"
+  },
+  {
+    "id": "V1276507786",
+    "kind": "venue",
+    "code": "budapest",
+    "category": "restaurant",
+    "name": "ÉS Bisztró",
+    "address": "Deák Ferenc utca 12-14",
+    "coordinates": [
+      47.4968677,
+      19.0523303
+    ],
+    "source_id": "node/276507786",
+    "url": "https://www.openstreetmap.org/node/276507786",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V224051069",
+    "kind": "venue",
+    "code": "budapest",
+    "category": "hotel",
+    "name": "Al Habtoor Palace, Budapest",
+    "address": "Erzsébet tér 9-10",
+    "coordinates": [
+      47.4972975,
+      19.0532922
+    ],
+    "source_id": "way/24051069",
+    "url": "https://www.openstreetmap.org/way/24051069",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V16374468448",
+    "kind": "venue",
+    "code": "budapest",
+    "category": "apartment",
+    "name": "Hi5 Apartments Budapest",
+    "address": "Fehér Hajó utca 8-10",
+    "coordinates": [
+      47.4961937,
+      19.0528956
+    ],
+    "source_id": "node/6374468448",
+    "url": "https://www.openstreetmap.org/node/6374468448",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V19214872097",
+    "kind": "venue",
+    "code": "budapest",
+    "category": "hostel",
+    "name": "2B Hostel & Rooms",
+    "address": "",
+    "coordinates": [
+      47.4959029,
+      19.0521209
+    ],
+    "source_id": "node/9214872097",
+    "url": "https://www.openstreetmap.org/node/9214872097",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V15098816121",
+    "kind": "venue",
+    "code": "budapest",
+    "category": "guest_house",
+    "name": "Stunning View near Synagogue AIRBNB",
+    "address": "",
+    "coordinates": [
+      47.4952758,
+      19.0631775
+    ],
+    "source_id": "node/5098816121",
+    "url": "https://www.openstreetmap.org/node/5098816121",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V224051070",
+    "kind": "venue",
+    "code": "budapest",
+    "category": "hotel",
+    "name": "Kempinski Hotel Corvinus Budapest",
+    "address": "Erzsébet tér 7-8",
+    "coordinates": [
+      47.4970472,
+      19.0523428
+    ],
+    "source_id": "way/24051070",
+    "url": "https://www.openstreetmap.org/way/24051070",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V19214872099",
+    "kind": "venue",
+    "code": "budapest",
+    "category": "hotel",
+    "name": "The Loft Budapest",
+    "address": "",
+    "coordinates": [
+      47.4957815,
+      19.0519754
+    ],
+    "source_id": "node/9214872099",
+    "url": "https://www.openstreetmap.org/node/9214872099",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14857093621",
+    "kind": "venue",
+    "code": "warsaw",
+    "category": "cafe",
+    "name": "Green Caffè Nero",
+    "address": "Krakowskie Przedmieście 81",
+    "coordinates": [
+      52.2465297,
+      21.013218
+    ],
+    "source_id": "node/4857093621",
+    "url": "https://www.openstreetmap.org/node/4857093621",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1370891467",
+    "kind": "venue",
+    "code": "warsaw",
+    "category": "cafe",
+    "name": "Costa",
+    "address": "Miodowa 1",
+    "coordinates": [
+      52.2459572,
+      21.0133476
+    ],
+    "source_id": "node/370891467",
+    "url": "https://www.openstreetmap.org/node/370891467",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V21576323051",
+    "kind": "venue",
+    "code": "warsaw",
+    "category": "cafe",
+    "name": "Sexy Matcha",
+    "address": "",
+    "coordinates": [
+      52.2457327,
+      21.014007
+    ],
+    "source_id": "way/1576323051",
+    "url": "https://www.openstreetmap.org/way/1576323051",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V1416560095",
+    "kind": "venue",
+    "code": "warsaw",
+    "category": "cafe",
+    "name": "Cafe Zamek",
+    "address": "",
+    "coordinates": [
+      52.2483484,
+      21.0149785
+    ],
+    "source_id": "node/416560095",
+    "url": "https://www.openstreetmap.org/node/416560095",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V110012107751",
+    "kind": "venue",
+    "code": "warsaw",
+    "category": "cafe",
+    "name": "Olsza",
+    "address": "Krakowskie Przedmieście 65",
+    "coordinates": [
+      52.2454997,
+      21.0134597
+    ],
+    "source_id": "node/10012107751",
+    "url": "https://www.openstreetmap.org/node/10012107751",
+    "checked": "2026-11-26",
+    "cuisine": "cake"
+  },
+  {
+    "id": "V111197814802",
+    "kind": "venue",
+    "code": "warsaw",
+    "category": "cafe",
+    "name": "Miodowa Cafe",
+    "address": "Senatorska 13/15",
+    "coordinates": [
+      52.2459269,
+      21.0122388
+    ],
+    "source_id": "node/11197814802",
+    "url": "https://www.openstreetmap.org/node/11197814802",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1309749922",
+    "kind": "venue",
+    "code": "warsaw",
+    "category": "restaurant",
+    "name": "Literatka",
+    "address": "Krakowskie Przedmieście 87/89",
+    "coordinates": [
+      52.2467829,
+      21.0131939
+    ],
+    "source_id": "node/309749922",
+    "url": "https://www.openstreetmap.org/node/309749922",
+    "checked": "2026-11-26",
+    "cuisine": "polish"
+  },
+  {
+    "id": "V15075251364",
+    "kind": "venue",
+    "code": "warsaw",
+    "category": "restaurant",
+    "name": "360⁰",
+    "address": "Krakowskie Przedmieście 79",
+    "coordinates": [
+      52.2462197,
+      21.0132772
+    ],
+    "source_id": "node/5075251364",
+    "url": "https://www.openstreetmap.org/node/5075251364",
+    "checked": "2026-11-26",
+    "cuisine": "italian"
+  },
+  {
+    "id": "V14048216351",
+    "kind": "venue",
+    "code": "warsaw",
+    "category": "restaurant",
+    "name": "Miele Miele",
+    "address": "Miodowa 2",
+    "coordinates": [
+      52.2464365,
+      21.0128727
+    ],
+    "source_id": "node/4048216351",
+    "url": "https://www.openstreetmap.org/node/4048216351",
+    "checked": "2026-11-26",
+    "cuisine": "italian"
+  },
+  {
+    "id": "V15076967449",
+    "kind": "venue",
+    "code": "warsaw",
+    "category": "restaurant",
+    "name": "La Dolce Vita",
+    "address": "Plac Zamkowy 15/19",
+    "coordinates": [
+      52.2479518,
+      21.0134504
+    ],
+    "source_id": "node/5076967449",
+    "url": "https://www.openstreetmap.org/node/5076967449",
+    "checked": "2026-11-26",
+    "cuisine": "pizza;italian"
+  },
+  {
+    "id": "V18846412855",
+    "kind": "venue",
+    "code": "warsaw",
+    "category": "restaurant",
+    "name": "Królewski",
+    "address": "Plac Zamkowy 1/13",
+    "coordinates": [
+      52.2479174,
+      21.0131962
+    ],
+    "source_id": "node/8846412855",
+    "url": "https://www.openstreetmap.org/node/8846412855",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1416560093",
+    "kind": "venue",
+    "code": "warsaw",
+    "category": "restaurant",
+    "name": "Trattoria Rucola",
+    "address": "Miodowa 1",
+    "coordinates": [
+      52.2459967,
+      21.0130479
+    ],
+    "source_id": "node/416560093",
+    "url": "https://www.openstreetmap.org/node/416560093",
+    "checked": "2026-11-26",
+    "cuisine": "italian;pizza"
+  },
+  {
+    "id": "V15571588756",
+    "kind": "venue",
+    "code": "warsaw",
+    "category": "hotel",
+    "name": "Dom Literatury",
+    "address": "Krakowskie Przedmieście 87/89",
+    "coordinates": [
+      52.2468266,
+      21.0131814
+    ],
+    "source_id": "node/5571588756",
+    "url": "https://www.openstreetmap.org/node/5571588756",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V114003085701",
+    "kind": "venue",
+    "code": "warsaw",
+    "category": "apartment",
+    "name": "Heart of the Old Town",
+    "address": "Podwale 3",
+    "coordinates": [
+      52.2471809,
+      21.0123399
+    ],
+    "source_id": "node/14003085701",
+    "url": "https://www.openstreetmap.org/node/14003085701",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14238243799",
+    "kind": "venue",
+    "code": "warsaw",
+    "category": "hostel",
+    "name": "Safestay Warsaw",
+    "address": "Krakowskie Przedmieście 55",
+    "coordinates": [
+      52.2450412,
+      21.013651
+    ],
+    "source_id": "node/4238243799",
+    "url": "https://www.openstreetmap.org/node/4238243799",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V18977727441",
+    "kind": "venue",
+    "code": "warsaw",
+    "category": "guest_house",
+    "name": "Apple Inn",
+    "address": "",
+    "coordinates": [
+      52.2321407,
+      21.0147913
+    ],
+    "source_id": "node/8977727441",
+    "url": "https://www.openstreetmap.org/node/8977727441",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13129302636",
+    "kind": "venue",
+    "code": "warsaw",
+    "category": "hotel",
+    "name": "Castle Inn",
+    "address": "Świętojańska 2",
+    "coordinates": [
+      52.248216,
+      21.0139399
+    ],
+    "source_id": "node/3129302636",
+    "url": "https://www.openstreetmap.org/node/3129302636",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V110178824194",
+    "kind": "venue",
+    "code": "warsaw",
+    "category": "hotel",
+    "name": "Verte",
+    "address": "Podwale 3/5",
+    "coordinates": [
+      52.2467921,
+      21.0113847
+    ],
+    "source_id": "node/10178824194",
+    "url": "https://www.openstreetmap.org/node/10178824194",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1672945364",
+    "kind": "venue",
+    "code": "stockholm",
+    "category": "cafe",
+    "name": "Grillska huset",
+    "address": "",
+    "coordinates": [
+      59.325025,
+      18.0713714
+    ],
+    "source_id": "node/672945364",
+    "url": "https://www.openstreetmap.org/node/672945364",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1418249649",
+    "kind": "venue",
+    "code": "stockholm",
+    "category": "cafe",
+    "name": "Sten Sture",
+    "address": "",
+    "coordinates": [
+      59.3252765,
+      18.0700617
+    ],
+    "source_id": "node/418249649",
+    "url": "https://www.openstreetmap.org/node/418249649",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11815123226",
+    "kind": "venue",
+    "code": "stockholm",
+    "category": "cafe",
+    "name": "Grillska Brödboden",
+    "address": "",
+    "coordinates": [
+      59.3249279,
+      18.071223
+    ],
+    "source_id": "node/1815123226",
+    "url": "https://www.openstreetmap.org/node/1815123226",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1418260300",
+    "kind": "venue",
+    "code": "stockholm",
+    "category": "cafe",
+    "name": "Chokladkoppen",
+    "address": "",
+    "coordinates": [
+      59.324956,
+      18.0703012
+    ],
+    "source_id": "node/418260300",
+    "url": "https://www.openstreetmap.org/node/418260300",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1418261868",
+    "kind": "venue",
+    "code": "stockholm",
+    "category": "cafe",
+    "name": "Kaffekoppen",
+    "address": "",
+    "coordinates": [
+      59.3248905,
+      18.0703407
+    ],
+    "source_id": "node/418261868",
+    "url": "https://www.openstreetmap.org/node/418261868",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11814125821",
+    "kind": "venue",
+    "code": "stockholm",
+    "category": "cafe",
+    "name": "Misteln",
+    "address": "",
+    "coordinates": [
+      59.324808,
+      18.0703904
+    ],
+    "source_id": "node/1814125821",
+    "url": "https://www.openstreetmap.org/node/1814125821",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11814125820",
+    "kind": "venue",
+    "code": "stockholm",
+    "category": "restaurant",
+    "name": "KaffeGillet",
+    "address": "Trångsund 4",
+    "coordinates": [
+      59.3255097,
+      18.0697883
+    ],
+    "source_id": "node/1814125820",
+    "url": "https://www.openstreetmap.org/node/1814125820",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1418255053",
+    "kind": "venue",
+    "code": "stockholm",
+    "category": "restaurant",
+    "name": "Stacks",
+    "address": "",
+    "coordinates": [
+      59.3250237,
+      18.0702565
+    ],
+    "source_id": "node/418255053",
+    "url": "https://www.openstreetmap.org/node/418255053",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11793148685",
+    "kind": "venue",
+    "code": "stockholm",
+    "category": "restaurant",
+    "name": "Pharmarium",
+    "address": "",
+    "coordinates": [
+      59.324869,
+      18.0709908
+    ],
+    "source_id": "node/1793148685",
+    "url": "https://www.openstreetmap.org/node/1793148685",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1418267188",
+    "kind": "venue",
+    "code": "stockholm",
+    "category": "restaurant",
+    "name": "Stortorgskällaren",
+    "address": "",
+    "coordinates": [
+      59.3247837,
+      18.07071
+    ],
+    "source_id": "node/418267188",
+    "url": "https://www.openstreetmap.org/node/418267188",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13396035263",
+    "kind": "venue",
+    "code": "stockholm",
+    "category": "restaurant",
+    "name": "Restaurang Tradition",
+    "address": "",
+    "coordinates": [
+      59.3259334,
+      18.0737623
+    ],
+    "source_id": "node/3396035263",
+    "url": "https://www.openstreetmap.org/node/3396035263",
+    "checked": "2026-11-26",
+    "cuisine": "swedish"
+  },
+  {
+    "id": "V15107934655",
+    "kind": "venue",
+    "code": "stockholm",
+    "category": "restaurant",
+    "name": "Petit Pastis",
+    "address": "",
+    "coordinates": [
+      59.3251163,
+      18.0732367
+    ],
+    "source_id": "node/5107934655",
+    "url": "https://www.openstreetmap.org/node/5107934655",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V12391655745",
+    "kind": "venue",
+    "code": "stockholm",
+    "category": "hotel",
+    "name": "Gyllene Geten",
+    "address": "",
+    "coordinates": [
+      59.3251707,
+      18.07015
+    ],
+    "source_id": "node/2391655745",
+    "url": "https://www.openstreetmap.org/node/2391655745",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13836021162",
+    "kind": "venue",
+    "code": "stockholm",
+    "category": "hostel",
+    "name": "Castanea Old Town Hostel",
+    "address": "",
+    "coordinates": [
+      59.3247393,
+      18.0727208
+    ],
+    "source_id": "node/3836021162",
+    "url": "https://www.openstreetmap.org/node/3836021162",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V111167627005",
+    "kind": "venue",
+    "code": "stockholm",
+    "category": "apartment",
+    "name": "Forenom Service Apartments",
+    "address": "Johannesgatan 12",
+    "coordinates": [
+      59.3379905,
+      18.0661138
+    ],
+    "source_id": "node/11167627005",
+    "url": "https://www.openstreetmap.org/node/11167627005",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1418243352",
+    "kind": "venue",
+    "code": "stockholm",
+    "category": "hotel",
+    "name": "Lady Hamilton Hotel",
+    "address": "",
+    "coordinates": [
+      59.3257152,
+      18.0693072
+    ],
+    "source_id": "node/418243352",
+    "url": "https://www.openstreetmap.org/node/418243352",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11779515442",
+    "kind": "venue",
+    "code": "stockholm",
+    "category": "hotel",
+    "name": "Lord Nelson",
+    "address": "",
+    "coordinates": [
+      59.3253003,
+      18.0689702
+    ],
+    "source_id": "node/1779515442",
+    "url": "https://www.openstreetmap.org/node/1779515442",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11477543914",
+    "kind": "venue",
+    "code": "stockholm",
+    "category": "hotel",
+    "name": "Hotel Sven Vintappare",
+    "address": "",
+    "coordinates": [
+      59.3248058,
+      18.0687837
+    ],
+    "source_id": "node/1477543914",
+    "url": "https://www.openstreetmap.org/node/1477543914",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V2506513940",
+    "kind": "venue",
+    "code": "oslo",
+    "category": "cafe",
+    "name": "Steam kaffebar",
+    "address": "",
+    "coordinates": [
+      59.910826,
+      10.7512722
+    ],
+    "source_id": "way/506513940",
+    "url": "https://www.openstreetmap.org/way/506513940",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V2506513941",
+    "kind": "venue",
+    "code": "oslo",
+    "category": "cafe",
+    "name": "Kanelsnurren",
+    "address": "",
+    "coordinates": [
+      59.9107757,
+      10.7515209
+    ],
+    "source_id": "way/506513941",
+    "url": "https://www.openstreetmap.org/way/506513941",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V17118275595",
+    "kind": "venue",
+    "code": "oslo",
+    "category": "cafe",
+    "name": "Espresso House Oslo S Hovedhallen",
+    "address": "",
+    "coordinates": [
+      59.9111158,
+      10.7522759
+    ],
+    "source_id": "node/7118275595",
+    "url": "https://www.openstreetmap.org/node/7118275595",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V13132157590",
+    "kind": "venue",
+    "code": "oslo",
+    "category": "cafe",
+    "name": "Kjøkken og kaffe",
+    "address": "",
+    "coordinates": [
+      59.9109443,
+      10.7528523
+    ],
+    "source_id": "node/3132157590",
+    "url": "https://www.openstreetmap.org/node/3132157590",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V17233878602",
+    "kind": "venue",
+    "code": "oslo",
+    "category": "cafe",
+    "name": "Espresso House Byporten",
+    "address": "",
+    "coordinates": [
+      59.9118327,
+      10.7520131
+    ],
+    "source_id": "node/7233878602",
+    "url": "https://www.openstreetmap.org/node/7233878602",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V17233878614",
+    "kind": "venue",
+    "code": "oslo",
+    "category": "cafe",
+    "name": "Espresso House Byporten Plan 2",
+    "address": "",
+    "coordinates": [
+      59.9118271,
+      10.7520436
+    ],
+    "source_id": "node/7233878614",
+    "url": "https://www.openstreetmap.org/node/7233878614",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V112968899187",
+    "kind": "venue",
+    "code": "oslo",
+    "category": "restaurant",
+    "name": "Gladkokken Restaurant",
+    "address": "",
+    "coordinates": [
+      59.9108793,
+      10.7514151
+    ],
+    "source_id": "node/12968899187",
+    "url": "https://www.openstreetmap.org/node/12968899187",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V2506513936",
+    "kind": "venue",
+    "code": "oslo",
+    "category": "restaurant",
+    "name": "Bella Bambina",
+    "address": "",
+    "coordinates": [
+      59.9107452,
+      10.7509441
+    ],
+    "source_id": "way/506513936",
+    "url": "https://www.openstreetmap.org/way/506513936",
+    "checked": "2026-11-26",
+    "cuisine": "italian"
+  },
+  {
+    "id": "V2506513943",
+    "kind": "venue",
+    "code": "oslo",
+    "category": "restaurant",
+    "name": "Yo! Sushi",
+    "address": "",
+    "coordinates": [
+      59.9107142,
+      10.7514161
+    ],
+    "source_id": "way/506513943",
+    "url": "https://www.openstreetmap.org/way/506513943",
+    "checked": "2026-11-26",
+    "cuisine": "sushi"
+  },
+  {
+    "id": "V13566985693",
+    "kind": "venue",
+    "code": "oslo",
+    "category": "restaurant",
+    "name": "Gladkokken",
+    "address": "",
+    "coordinates": [
+      59.9108016,
+      10.7519284
+    ],
+    "source_id": "node/3566985693",
+    "url": "https://www.openstreetmap.org/node/3566985693",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V15315431323",
+    "kind": "venue",
+    "code": "oslo",
+    "category": "restaurant",
+    "name": "Olivia",
+    "address": "",
+    "coordinates": [
+      59.9104989,
+      10.7512005
+    ],
+    "source_id": "node/5315431323",
+    "url": "https://www.openstreetmap.org/node/5315431323",
+    "checked": "2026-11-26",
+    "cuisine": "pizza;italian;pasta"
+  },
+  {
+    "id": "V110268538991",
+    "kind": "venue",
+    "code": "oslo",
+    "category": "restaurant",
+    "name": "Hard Rock Cafe",
+    "address": "",
+    "coordinates": [
+      59.9115,
+      10.7514766
+    ],
+    "source_id": "node/10268538991",
+    "url": "https://www.openstreetmap.org/node/10268538991",
+    "checked": "2026-11-26",
+    "cuisine": "american"
+  },
+  {
+    "id": "V13566976493",
+    "kind": "venue",
+    "code": "oslo",
+    "category": "hotel",
+    "name": "Comfort Hotel Grand Central",
+    "address": "",
+    "coordinates": [
+      59.910641,
+      10.7507
+    ],
+    "source_id": "node/3566976493",
+    "url": "https://www.openstreetmap.org/node/3566976493",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V16817579802",
+    "kind": "venue",
+    "code": "oslo",
+    "category": "apartment",
+    "name": "Forenom Aparthotel Oslo",
+    "address": "",
+    "coordinates": [
+      59.9138482,
+      10.7600141
+    ],
+    "source_id": "node/6817579802",
+    "url": "https://www.openstreetmap.org/node/6817579802",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1475861369",
+    "kind": "venue",
+    "code": "oslo",
+    "category": "hostel",
+    "name": "Anker Hostel",
+    "address": "",
+    "coordinates": [
+      59.917048,
+      10.75765
+    ],
+    "source_id": "node/475861369",
+    "url": "https://www.openstreetmap.org/node/475861369",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V16836659194",
+    "kind": "venue",
+    "code": "oslo",
+    "category": "guest_house",
+    "name": "NH Kontrast",
+    "address": "",
+    "coordinates": [
+      59.922974,
+      10.751106
+    ],
+    "source_id": "node/6836659194",
+    "url": "https://www.openstreetmap.org/node/6836659194",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V16817579807",
+    "kind": "venue",
+    "code": "oslo",
+    "category": "hotel",
+    "name": "Amerikalinjen",
+    "address": "",
+    "coordinates": [
+      59.9107333,
+      10.7496017
+    ],
+    "source_id": "node/6817579807",
+    "url": "https://www.openstreetmap.org/node/6817579807",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V16817579806",
+    "kind": "venue",
+    "code": "oslo",
+    "category": "hotel",
+    "name": "Scandic Byporten",
+    "address": "",
+    "coordinates": [
+      59.9118823,
+      10.7515141
+    ],
+    "source_id": "node/6817579806",
+    "url": "https://www.openstreetmap.org/node/6817579806",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V113142823061",
+    "kind": "venue",
+    "code": "helsinki",
+    "category": "cafe",
+    "name": "Wohveli Café",
+    "address": "",
+    "coordinates": [
+      60.1697672,
+      24.9416836
+    ],
+    "source_id": "node/13142823061",
+    "url": "https://www.openstreetmap.org/node/13142823061",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V111771650439",
+    "kind": "venue",
+    "code": "helsinki",
+    "category": "cafe",
+    "name": "Shin Café",
+    "address": "",
+    "coordinates": [
+      60.1701194,
+      24.9413614
+    ],
+    "source_id": "node/11771650439",
+    "url": "https://www.openstreetmap.org/node/11771650439",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V111089376426",
+    "kind": "venue",
+    "code": "helsinki",
+    "category": "cafe",
+    "name": "Chatime",
+    "address": "",
+    "coordinates": [
+      60.1697452,
+      24.9417703
+    ],
+    "source_id": "node/11089376426",
+    "url": "https://www.openstreetmap.org/node/11089376426",
+    "checked": "2026-11-26",
+    "cuisine": "bubble_tea"
+  },
+  {
+    "id": "V15566807323",
+    "kind": "venue",
+    "code": "helsinki",
+    "category": "cafe",
+    "name": "Espresso House",
+    "address": "Kaivokatu 8",
+    "coordinates": [
+      60.1701594,
+      24.9415295
+    ],
+    "source_id": "node/5566807323",
+    "url": "https://www.openstreetmap.org/node/5566807323",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V16328879941",
+    "kind": "venue",
+    "code": "helsinki",
+    "category": "cafe",
+    "name": "Fazer Café",
+    "address": "",
+    "coordinates": [
+      60.1696963,
+      24.9417617
+    ],
+    "source_id": "node/6328879941",
+    "url": "https://www.openstreetmap.org/node/6328879941",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V111093307442",
+    "kind": "venue",
+    "code": "helsinki",
+    "category": "cafe",
+    "name": "Seastea",
+    "address": "",
+    "coordinates": [
+      60.1696691,
+      24.9407915
+    ],
+    "source_id": "node/11093307442",
+    "url": "https://www.openstreetmap.org/node/11093307442",
+    "checked": "2026-11-26",
+    "cuisine": "bubble_tea"
+  },
+  {
+    "id": "V15906657572",
+    "kind": "venue",
+    "code": "helsinki",
+    "category": "restaurant",
+    "name": "Bangkok9",
+    "address": "Kaivokatu 8",
+    "coordinates": [
+      60.1699391,
+      24.9414296
+    ],
+    "source_id": "node/5906657572",
+    "url": "https://www.openstreetmap.org/node/5906657572",
+    "checked": "2026-11-26",
+    "cuisine": "thai"
+  },
+  {
+    "id": "V111093303830",
+    "kind": "venue",
+    "code": "helsinki",
+    "category": "restaurant",
+    "name": "Biang!",
+    "address": "",
+    "coordinates": [
+      60.1698449,
+      24.9414346
+    ],
+    "source_id": "node/11093303830",
+    "url": "https://www.openstreetmap.org/node/11093303830",
+    "checked": "2026-11-26",
+    "cuisine": "asian"
+  },
+  {
+    "id": "V16326871950",
+    "kind": "venue",
+    "code": "helsinki",
+    "category": "restaurant",
+    "name": "Döner Harju",
+    "address": "",
+    "coordinates": [
+      60.1697878,
+      24.9414384
+    ],
+    "source_id": "node/6326871950",
+    "url": "https://www.openstreetmap.org/node/6326871950",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V111771717314",
+    "kind": "venue",
+    "code": "helsinki",
+    "category": "restaurant",
+    "name": "Aito Fresh",
+    "address": "",
+    "coordinates": [
+      60.1700792,
+      24.9414233
+    ],
+    "source_id": "node/11771717314",
+    "url": "https://www.openstreetmap.org/node/11771717314",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V111771752799",
+    "kind": "venue",
+    "code": "helsinki",
+    "category": "restaurant",
+    "name": "Naked Taco",
+    "address": "",
+    "coordinates": [
+      60.1701144,
+      24.9415388
+    ],
+    "source_id": "node/11771752799",
+    "url": "https://www.openstreetmap.org/node/11771752799",
+    "checked": "2026-11-26",
+    "cuisine": "mexican"
+  },
+  {
+    "id": "V16326877371",
+    "kind": "venue",
+    "code": "helsinki",
+    "category": "restaurant",
+    "name": "Sushibar+wine",
+    "address": "",
+    "coordinates": [
+      60.1697112,
+      24.9417234
+    ],
+    "source_id": "node/6326877371",
+    "url": "https://www.openstreetmap.org/node/6326877371",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11369465695",
+    "kind": "venue",
+    "code": "helsinki",
+    "category": "hotel",
+    "name": "Hotelli NH Collection Helsinki Grand Hansa",
+    "address": "Mannerheimintie 5",
+    "coordinates": [
+      60.1693307,
+      24.9402136
+    ],
+    "source_id": "node/1369465695",
+    "url": "https://www.openstreetmap.org/node/1369465695",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V19801684394",
+    "kind": "venue",
+    "code": "helsinki",
+    "category": "hostel",
+    "name": "The YARD Hostel",
+    "address": "Kalevankatu 3A",
+    "coordinates": [
+      60.1680664,
+      24.9396246
+    ],
+    "source_id": "node/9801684394",
+    "url": "https://www.openstreetmap.org/node/9801684394",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V112444488771",
+    "kind": "venue",
+    "code": "helsinki",
+    "category": "apartment",
+    "name": "Bob W Kluuvi",
+    "address": "Vuorikatu 12",
+    "coordinates": [
+      60.1712036,
+      24.9473631
+    ],
+    "source_id": "node/12444488771",
+    "url": "https://www.openstreetmap.org/node/12444488771",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11369465692",
+    "kind": "venue",
+    "code": "helsinki",
+    "category": "hotel",
+    "name": "Original Sokos Hotel Vaakuna",
+    "address": "Asema-Aukio 2",
+    "coordinates": [
+      60.1705952,
+      24.9390173
+    ],
+    "source_id": "node/1369465692",
+    "url": "https://www.openstreetmap.org/node/1369465692",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V111802454998",
+    "kind": "venue",
+    "code": "helsinki",
+    "category": "hotel",
+    "name": "Hotel Bastian",
+    "address": "",
+    "coordinates": [
+      60.1680486,
+      24.9390169
+    ],
+    "source_id": "node/11802454998",
+    "url": "https://www.openstreetmap.org/node/11802454998",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11225404530",
+    "kind": "venue",
+    "code": "helsinki",
+    "category": "hotel",
+    "name": "Hotel Finn",
+    "address": "Kalevankatu 3 B",
+    "coordinates": [
+      60.1679056,
+      24.939323
+    ],
+    "source_id": "node/1225404530",
+    "url": "https://www.openstreetmap.org/node/1225404530",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14439314891",
+    "kind": "venue",
+    "code": "copenhagen",
+    "category": "cafe",
+    "name": "Emmery's",
+    "address": "",
+    "coordinates": [
+      55.6776559,
+      12.5703741
+    ],
+    "source_id": "node/4439314891",
+    "url": "https://www.openstreetmap.org/node/4439314891",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V110807087540",
+    "kind": "venue",
+    "code": "copenhagen",
+    "category": "cafe",
+    "name": "Coffee Industry Sweden Ströget",
+    "address": "",
+    "coordinates": [
+      55.6775064,
+      12.5714577
+    ],
+    "source_id": "node/10807087540",
+    "url": "https://www.openstreetmap.org/node/10807087540",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V112913519840",
+    "kind": "venue",
+    "code": "copenhagen",
+    "category": "cafe",
+    "name": "Pantella City",
+    "address": "",
+    "coordinates": [
+      55.6775712,
+      12.571576
+    ],
+    "source_id": "node/12913519840",
+    "url": "https://www.openstreetmap.org/node/12913519840",
+    "checked": "2026-11-26",
+    "cuisine": "desserts"
+  },
+  {
+    "id": "V110669078527",
+    "kind": "venue",
+    "code": "copenhagen",
+    "category": "cafe",
+    "name": "Espresso House",
+    "address": "",
+    "coordinates": [
+      55.6772622,
+      12.5713469
+    ],
+    "source_id": "node/10669078527",
+    "url": "https://www.openstreetmap.org/node/10669078527",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V14536881149",
+    "kind": "venue",
+    "code": "copenhagen",
+    "category": "cafe",
+    "name": "The Dellie",
+    "address": "",
+    "coordinates": [
+      55.6769333,
+      12.5716636
+    ],
+    "source_id": "node/4536881149",
+    "url": "https://www.openstreetmap.org/node/4536881149",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V16763892423",
+    "kind": "venue",
+    "code": "copenhagen",
+    "category": "cafe",
+    "name": "Taarnet på Nytorv",
+    "address": "",
+    "coordinates": [
+      55.6779111,
+      12.5728163
+    ],
+    "source_id": "node/6763892423",
+    "url": "https://www.openstreetmap.org/node/6763892423",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V112917889935",
+    "kind": "venue",
+    "code": "copenhagen",
+    "category": "restaurant",
+    "name": "Restaurant Gabrielle",
+    "address": "",
+    "coordinates": [
+      55.6779728,
+      12.5712054
+    ],
+    "source_id": "node/12917889935",
+    "url": "https://www.openstreetmap.org/node/12917889935",
+    "checked": "2026-11-26",
+    "cuisine": "french"
+  },
+  {
+    "id": "V11596794742",
+    "kind": "venue",
+    "code": "copenhagen",
+    "category": "restaurant",
+    "name": "Cafe Gl. Torv",
+    "address": "",
+    "coordinates": [
+      55.6780117,
+      12.5714461
+    ],
+    "source_id": "node/1596794742",
+    "url": "https://www.openstreetmap.org/node/1596794742",
+    "checked": "2026-11-26",
+    "cuisine": "smørrebrød"
+  },
+  {
+    "id": "V13799572491",
+    "kind": "venue",
+    "code": "copenhagen",
+    "category": "restaurant",
+    "name": "Husmanns Vinstue",
+    "address": "",
+    "coordinates": [
+      55.6778099,
+      12.570144
+    ],
+    "source_id": "node/3799572491",
+    "url": "https://www.openstreetmap.org/node/3799572491",
+    "checked": "2026-11-26",
+    "cuisine": "danish"
+  },
+  {
+    "id": "V14018777293",
+    "kind": "venue",
+    "code": "copenhagen",
+    "category": "restaurant",
+    "name": "Hereford Village",
+    "address": "",
+    "coordinates": [
+      55.6770249,
+      12.5707796
+    ],
+    "source_id": "node/4018777293",
+    "url": "https://www.openstreetmap.org/node/4018777293",
+    "checked": "2026-11-26",
+    "cuisine": "steak"
+  },
+  {
+    "id": "V1280466425",
+    "kind": "venue",
+    "code": "copenhagen",
+    "category": "restaurant",
+    "name": "L'education Nationale",
+    "address": "",
+    "coordinates": [
+      55.678228,
+      12.569743
+    ],
+    "source_id": "node/280466425",
+    "url": "https://www.openstreetmap.org/node/280466425",
+    "checked": "2026-11-26",
+    "cuisine": "french"
+  },
+  {
+    "id": "V1280466297",
+    "kind": "venue",
+    "code": "copenhagen",
+    "category": "restaurant",
+    "name": "La Galette",
+    "address": "",
+    "coordinates": [
+      55.6778757,
+      12.5695321
+    ],
+    "source_id": "node/280466297",
+    "url": "https://www.openstreetmap.org/node/280466297",
+    "checked": "2026-11-26",
+    "cuisine": "galette"
+  },
+  {
+    "id": "V12363337466",
+    "kind": "venue",
+    "code": "copenhagen",
+    "category": "hotel",
+    "name": "Scandic Palace Hotel",
+    "address": "",
+    "coordinates": [
+      55.6762339,
+      12.5703021
+    ],
+    "source_id": "node/2363337466",
+    "url": "https://www.openstreetmap.org/node/2363337466",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1415895215",
+    "kind": "venue",
+    "code": "copenhagen",
+    "category": "hostel",
+    "name": "Copenhagen Downtown Hostel",
+    "address": "",
+    "coordinates": [
+      55.6759488,
+      12.5742396
+    ],
+    "source_id": "node/415895215",
+    "url": "https://www.openstreetmap.org/node/415895215",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V112954791129",
+    "kind": "venue",
+    "code": "copenhagen",
+    "category": "guest_house",
+    "name": "Mar-k Waterside",
+    "address": "",
+    "coordinates": [
+      55.670626,
+      12.5807653
+    ],
+    "source_id": "node/12954791129",
+    "url": "https://www.openstreetmap.org/node/12954791129",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V112097446278",
+    "kind": "venue",
+    "code": "copenhagen",
+    "category": "hotel",
+    "name": "Hotel Bella Grande",
+    "address": "",
+    "coordinates": [
+      55.6775123,
+      12.5676777
+    ],
+    "source_id": "node/12097446278",
+    "url": "https://www.openstreetmap.org/node/12097446278",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V2133041576",
+    "kind": "venue",
+    "code": "copenhagen",
+    "category": "hotel",
+    "name": "Motel One Copenhagen",
+    "address": "",
+    "coordinates": [
+      55.6752804,
+      12.5727071
+    ],
+    "source_id": "way/133041576",
+    "url": "https://www.openstreetmap.org/way/133041576",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1388246510",
+    "kind": "venue",
+    "code": "copenhagen",
+    "category": "hotel",
+    "name": "Hotel SP34",
+    "address": "",
+    "coordinates": [
+      55.6787261,
+      12.566462
+    ],
+    "source_id": "node/388246510",
+    "url": "https://www.openstreetmap.org/node/388246510",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14386295875",
+    "kind": "venue",
+    "code": "dublin",
+    "category": "cafe",
+    "name": "Umi Falafel",
+    "address": "Dame Street 13",
+    "coordinates": [
+      53.3440395,
+      -6.2655397
+    ],
+    "source_id": "node/4386295875",
+    "url": "https://www.openstreetmap.org/node/4386295875",
+    "checked": "2026-11-26",
+    "cuisine": "falafel"
+  },
+  {
+    "id": "V12692373402",
+    "kind": "venue",
+    "code": "dublin",
+    "category": "cafe",
+    "name": "Frank and Honest Coffee",
+    "address": "Dame Street 56",
+    "coordinates": [
+      53.344286,
+      -6.2645776
+    ],
+    "source_id": "node/2692373402",
+    "url": "https://www.openstreetmap.org/node/2692373402",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V13676943504",
+    "kind": "venue",
+    "code": "dublin",
+    "category": "cafe",
+    "name": "Cafe 28",
+    "address": "Dame Street",
+    "coordinates": [
+      53.3440535,
+      -6.2642601
+    ],
+    "source_id": "node/3676943504",
+    "url": "https://www.openstreetmap.org/node/3676943504",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1559854621",
+    "kind": "venue",
+    "code": "dublin",
+    "category": "cafe",
+    "name": "Bear Markt Coffee",
+    "address": "George's Street Great South 3",
+    "coordinates": [
+      53.3438151,
+      -6.2642572
+    ],
+    "source_id": "node/559854621",
+    "url": "https://www.openstreetmap.org/node/559854621",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V12692373399",
+    "kind": "venue",
+    "code": "dublin",
+    "category": "cafe",
+    "name": "KC Peaches",
+    "address": "Dame Street 54",
+    "coordinates": [
+      53.3442784,
+      -6.2643271
+    ],
+    "source_id": "node/2692373399",
+    "url": "https://www.openstreetmap.org/node/2692373399",
+    "checked": "2026-11-26",
+    "cuisine": "regional"
+  },
+  {
+    "id": "V16214536095",
+    "kind": "venue",
+    "code": "dublin",
+    "category": "cafe",
+    "name": "The Right Place",
+    "address": "Exchange Court",
+    "coordinates": [
+      53.3439496,
+      -6.2670481
+    ],
+    "source_id": "node/6214536095",
+    "url": "https://www.openstreetmap.org/node/6214536095",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V2228966389",
+    "kind": "venue",
+    "code": "dublin",
+    "category": "restaurant",
+    "name": "Noble House",
+    "address": "Dame Street 17",
+    "coordinates": [
+      53.3439836,
+      -6.2650605
+    ],
+    "source_id": "way/228966389",
+    "url": "https://www.openstreetmap.org/way/228966389",
+    "checked": "2026-11-26",
+    "cuisine": "chinese;thai"
+  },
+  {
+    "id": "V2228966390",
+    "kind": "venue",
+    "code": "dublin",
+    "category": "restaurant",
+    "name": "Kathmandu Kitchen",
+    "address": "Dame Street 18",
+    "coordinates": [
+      53.3439832,
+      -6.2649581
+    ],
+    "source_id": "way/228966390",
+    "url": "https://www.openstreetmap.org/way/228966390",
+    "checked": "2026-11-26",
+    "cuisine": "nepalese;indian"
+  },
+  {
+    "id": "V16258704969",
+    "kind": "venue",
+    "code": "dublin",
+    "category": "restaurant",
+    "name": "Shawarma",
+    "address": "Dame Street 63",
+    "coordinates": [
+      53.3442715,
+      -6.2653366
+    ],
+    "source_id": "node/6258704969",
+    "url": "https://www.openstreetmap.org/node/6258704969",
+    "checked": "2026-11-26",
+    "cuisine": "shawarma;oriental"
+  },
+  {
+    "id": "V13125979848",
+    "kind": "venue",
+    "code": "dublin",
+    "category": "restaurant",
+    "name": "Dalang Korean Restaurant",
+    "address": "Dame Street 65",
+    "coordinates": [
+      53.3442744,
+      -6.2655032
+    ],
+    "source_id": "node/3125979848",
+    "url": "https://www.openstreetmap.org/node/3125979848",
+    "checked": "2026-11-26",
+    "cuisine": "korean;japanese"
+  },
+  {
+    "id": "V12783587541",
+    "kind": "venue",
+    "code": "dublin",
+    "category": "restaurant",
+    "name": "Pitt Bros",
+    "address": "George's Street Great South 84-86",
+    "coordinates": [
+      53.3435344,
+      -6.2646731
+    ],
+    "source_id": "node/2783587541",
+    "url": "https://www.openstreetmap.org/node/2783587541",
+    "checked": "2026-11-26",
+    "cuisine": "barbecue"
+  },
+  {
+    "id": "V16113672804",
+    "kind": "venue",
+    "code": "dublin",
+    "category": "restaurant",
+    "name": "PI",
+    "address": "South Great George's Street 73-78",
+    "coordinates": [
+      53.3435104,
+      -6.2646742
+    ],
+    "source_id": "node/6113672804",
+    "url": "https://www.openstreetmap.org/node/6113672804",
+    "checked": "2026-11-26",
+    "cuisine": "pizza"
+  },
+  {
+    "id": "V2281354641",
+    "kind": "venue",
+    "code": "dublin",
+    "category": "apartment",
+    "name": "Sutcliffe House",
+    "address": "Eustace Street 3",
+    "coordinates": [
+      53.3444917,
+      -6.2649713
+    ],
+    "source_id": "way/281354641",
+    "url": "https://www.openstreetmap.org/way/281354641",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V2281357157",
+    "kind": "venue",
+    "code": "dublin",
+    "category": "hostel",
+    "name": "Apache Hostel",
+    "address": "Eustace Street 29",
+    "coordinates": [
+      53.3444132,
+      -6.264596
+    ],
+    "source_id": "way/281357157",
+    "url": "https://www.openstreetmap.org/way/281357157",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V2281357164",
+    "kind": "venue",
+    "code": "dublin",
+    "category": "hotel",
+    "name": "Riverhouse Hotel",
+    "address": "Eustace Street 26",
+    "coordinates": [
+      53.3445855,
+      -6.2646187
+    ],
+    "source_id": "way/281357164",
+    "url": "https://www.openstreetmap.org/way/281357164",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V112035318327",
+    "kind": "venue",
+    "code": "dublin",
+    "category": "guest_house",
+    "name": "The Merchant House",
+    "address": "Eustace Street",
+    "coordinates": [
+      53.3447168,
+      -6.265055
+    ],
+    "source_id": "node/12035318327",
+    "url": "https://www.openstreetmap.org/node/12035318327",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V16177177264",
+    "kind": "venue",
+    "code": "dublin",
+    "category": "hotel",
+    "name": "The Mercantile",
+    "address": "Dame Street 28",
+    "coordinates": [
+      53.3440643,
+      -6.2638575
+    ],
+    "source_id": "node/6177177264",
+    "url": "https://www.openstreetmap.org/node/6177177264",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V2281669753",
+    "kind": "venue",
+    "code": "dublin",
+    "category": "hotel",
+    "name": "Dublin Citi Hotel",
+    "address": "Dame Street",
+    "coordinates": [
+      53.3443649,
+      -6.2634801
+    ],
+    "source_id": "way/281669753",
+    "url": "https://www.openstreetmap.org/way/281669753",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V15748819621",
+    "kind": "venue",
+    "code": "madrid",
+    "category": "cafe",
+    "name": "Cafe Europa",
+    "address": "Calle del Carmen",
+    "coordinates": [
+      40.41737,
+      -3.7035117
+    ],
+    "source_id": "node/5748819621",
+    "url": "https://www.openstreetmap.org/node/5748819621",
+    "checked": "2026-11-26",
+    "cuisine": "spanish;chicken;fine_dining;diner;fish;fish_and_chips"
+  },
+  {
+    "id": "V15431727961",
+    "kind": "venue",
+    "code": "madrid",
+    "category": "cafe",
+    "name": "Cafetería Armenia",
+    "address": "Calle del Carmen 3",
+    "coordinates": [
+      40.417695,
+      -3.7038202
+    ],
+    "source_id": "node/5431727961",
+    "url": "https://www.openstreetmap.org/node/5431727961",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V114088141330",
+    "kind": "venue",
+    "code": "madrid",
+    "category": "cafe",
+    "name": "Hey My Coffee!",
+    "address": "",
+    "coordinates": [
+      40.4177609,
+      -3.7033849
+    ],
+    "source_id": "node/14088141330",
+    "url": "https://www.openstreetmap.org/node/14088141330",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V13644961945",
+    "kind": "venue",
+    "code": "madrid",
+    "category": "cafe",
+    "name": "Starbucks",
+    "address": "",
+    "coordinates": [
+      40.4175437,
+      -3.7027855
+    ],
+    "source_id": "node/3644961945",
+    "url": "https://www.openstreetmap.org/node/3644961945",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V15431727958",
+    "kind": "venue",
+    "code": "madrid",
+    "category": "cafe",
+    "name": "Café & Té",
+    "address": "Calle del Carmen 7",
+    "coordinates": [
+      40.4178835,
+      -3.7039567
+    ],
+    "source_id": "node/5431727958",
+    "url": "https://www.openstreetmap.org/node/5431727958",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V114087618401",
+    "kind": "venue",
+    "code": "madrid",
+    "category": "cafe",
+    "name": "Arabay",
+    "address": "Calle del Marqués Viudo de Pontejos 1",
+    "coordinates": [
+      40.4156434,
+      -3.7043186
+    ],
+    "source_id": "node/14087618401",
+    "url": "https://www.openstreetmap.org/node/14087618401",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14993898021",
+    "kind": "venue",
+    "code": "madrid",
+    "category": "restaurant",
+    "name": "Puerta al sol by Chicote",
+    "address": "",
+    "coordinates": [
+      40.4170232,
+      -3.7043301
+    ],
+    "source_id": "node/4993898021",
+    "url": "https://www.openstreetmap.org/node/4993898021",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V15745919321",
+    "kind": "venue",
+    "code": "madrid",
+    "category": "restaurant",
+    "name": "La Adriana",
+    "address": "Calle del Correo 2",
+    "coordinates": [
+      40.4163539,
+      -3.7043354
+    ],
+    "source_id": "node/5745919321",
+    "url": "https://www.openstreetmap.org/node/5745919321",
+    "checked": "2026-11-26",
+    "cuisine": "argentinian"
+  },
+  {
+    "id": "V13412523839",
+    "kind": "venue",
+    "code": "madrid",
+    "category": "restaurant",
+    "name": "All U Can Eat",
+    "address": "",
+    "coordinates": [
+      40.4176371,
+      -3.7034443
+    ],
+    "source_id": "node/3412523839",
+    "url": "https://www.openstreetmap.org/node/3412523839",
+    "checked": "2026-11-26",
+    "cuisine": "spanish"
+  },
+  {
+    "id": "V19881399617",
+    "kind": "venue",
+    "code": "madrid",
+    "category": "restaurant",
+    "name": "La Arepera Resto-bar",
+    "address": "Calle de Tetuán 20",
+    "coordinates": [
+      40.4176922,
+      -3.7034029
+    ],
+    "source_id": "node/9881399617",
+    "url": "https://www.openstreetmap.org/node/9881399617",
+    "checked": "2026-11-26",
+    "cuisine": "arepa"
+  },
+  {
+    "id": "V14358898496",
+    "kind": "venue",
+    "code": "madrid",
+    "category": "restaurant",
+    "name": "Vips",
+    "address": "Plaza de la Puerta del Sol 3",
+    "coordinates": [
+      40.4166065,
+      -3.7025024
+    ],
+    "source_id": "node/4358898496",
+    "url": "https://www.openstreetmap.org/node/4358898496",
+    "checked": "2026-11-26",
+    "cuisine": "international"
+  },
+  {
+    "id": "V13976300417",
+    "kind": "venue",
+    "code": "madrid",
+    "category": "restaurant",
+    "name": "Wok Sun",
+    "address": "Calle de Tetuán 24",
+    "coordinates": [
+      40.4178277,
+      -3.7033283
+    ],
+    "source_id": "node/3976300417",
+    "url": "https://www.openstreetmap.org/node/3976300417",
+    "checked": "2026-11-26",
+    "cuisine": "asian"
+  },
+  {
+    "id": "V19369769171",
+    "kind": "venue",
+    "code": "madrid",
+    "category": "hostel",
+    "name": "Hostal Americano",
+    "address": "Plaza de la Puerta del Sol 11",
+    "coordinates": [
+      40.4172241,
+      -3.7038471
+    ],
+    "source_id": "node/9369769171",
+    "url": "https://www.openstreetmap.org/node/9369769171",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13981547225",
+    "kind": "venue",
+    "code": "madrid",
+    "category": "guest_house",
+    "name": "Hostal Riesco",
+    "address": "Calle del Correo 2",
+    "coordinates": [
+      40.4164253,
+      -3.7043503
+    ],
+    "source_id": "node/3981547225",
+    "url": "https://www.openstreetmap.org/node/3981547225",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V1184049280",
+    "kind": "venue",
+    "code": "madrid",
+    "category": "hotel",
+    "name": "Hotel Europa",
+    "address": "Calle del Carmen 4",
+    "coordinates": [
+      40.4175269,
+      -3.7035489
+    ],
+    "source_id": "node/184049280",
+    "url": "https://www.openstreetmap.org/node/184049280",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14953243521",
+    "kind": "venue",
+    "code": "madrid",
+    "category": "apartment",
+    "name": "Blume Cruz Suites",
+    "address": "Calle de la Cruz 35",
+    "coordinates": [
+      40.4148093,
+      -3.7026848
+    ],
+    "source_id": "node/4953243521",
+    "url": "https://www.openstreetmap.org/node/4953243521",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V12701094012",
+    "kind": "venue",
+    "code": "madrid",
+    "category": "guest_house",
+    "name": "Hostal Victoria II",
+    "address": "Calle de Carretas 3",
+    "coordinates": [
+      40.4164716,
+      -3.7030606
+    ],
+    "source_id": "node/2701094012",
+    "url": "https://www.openstreetmap.org/node/2701094012",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V12701094013",
+    "kind": "venue",
+    "code": "madrid",
+    "category": "guest_house",
+    "name": "Hostal Victoria I",
+    "address": "Calle de Carretas 7",
+    "coordinates": [
+      40.4163213,
+      -3.7030556
+    ],
+    "source_id": "node/2701094013",
+    "url": "https://www.openstreetmap.org/node/2701094013",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V111968450324",
+    "kind": "venue",
+    "code": "istanbul",
+    "category": "cafe",
+    "name": "Topkapı Cafe",
+    "address": "",
+    "coordinates": [
+      41.0087682,
+      28.9812046
+    ],
+    "source_id": "node/11968450324",
+    "url": "https://www.openstreetmap.org/node/11968450324",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13090853855",
+    "kind": "venue",
+    "code": "istanbul",
+    "category": "cafe",
+    "name": "Green Corner",
+    "address": "",
+    "coordinates": [
+      41.0088295,
+      28.9787688
+    ],
+    "source_id": "node/3090853855",
+    "url": "https://www.openstreetmap.org/node/3090853855",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V15113620683",
+    "kind": "venue",
+    "code": "istanbul",
+    "category": "cafe",
+    "name": "Sebil Cafe",
+    "address": "Ayasofya Meydanı",
+    "coordinates": [
+      41.0074984,
+      28.9796339
+    ],
+    "source_id": "node/5113620683",
+    "url": "https://www.openstreetmap.org/node/5113620683",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V13499195653",
+    "kind": "venue",
+    "code": "istanbul",
+    "category": "cafe",
+    "name": "Ottoman Haimam Cafe",
+    "address": "",
+    "coordinates": [
+      41.0070731,
+      28.981424
+    ],
+    "source_id": "node/3499195653",
+    "url": "https://www.openstreetmap.org/node/3499195653",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V15113620685",
+    "kind": "venue",
+    "code": "istanbul",
+    "category": "cafe",
+    "name": "Sur Cafe",
+    "address": "Alemdar Caddesi",
+    "coordinates": [
+      41.010311,
+      28.9791791
+    ],
+    "source_id": "node/5113620685",
+    "url": "https://www.openstreetmap.org/node/5113620685",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V15108843112",
+    "kind": "venue",
+    "code": "istanbul",
+    "category": "cafe",
+    "name": "Palmiye Cafe",
+    "address": "Şeftali Sokak",
+    "coordinates": [
+      41.0084835,
+      28.9775176
+    ],
+    "source_id": "node/5108843112",
+    "url": "https://www.openstreetmap.org/node/5108843112",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11784925344",
+    "kind": "venue",
+    "code": "istanbul",
+    "category": "restaurant",
+    "name": "Karakol Restaurant",
+    "address": "",
+    "coordinates": [
+      41.0092963,
+      28.9810833
+    ],
+    "source_id": "node/1784925344",
+    "url": "https://www.openstreetmap.org/node/1784925344",
+    "checked": "2026-11-26",
+    "cuisine": "turkish"
+  },
+  {
+    "id": "V15113620603",
+    "kind": "venue",
+    "code": "istanbul",
+    "category": "restaurant",
+    "name": "Matbah",
+    "address": "",
+    "coordinates": [
+      41.0093013,
+      28.9792031
+    ],
+    "source_id": "node/5113620603",
+    "url": "https://www.openstreetmap.org/node/5113620603",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11784925351",
+    "kind": "venue",
+    "code": "istanbul",
+    "category": "restaurant",
+    "name": "Sofia",
+    "address": "",
+    "coordinates": [
+      41.0097888,
+      28.9794451
+    ],
+    "source_id": "node/1784925351",
+    "url": "https://www.openstreetmap.org/node/1784925351",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11784925350",
+    "kind": "venue",
+    "code": "istanbul",
+    "category": "restaurant",
+    "name": "Sarnic Restaurant",
+    "address": "",
+    "coordinates": [
+      41.0098698,
+      28.9795524
+    ],
+    "source_id": "node/1784925350",
+    "url": "https://www.openstreetmap.org/node/1784925350",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11914160119",
+    "kind": "venue",
+    "code": "istanbul",
+    "category": "restaurant",
+    "name": "Cistern Restaurant",
+    "address": "",
+    "coordinates": [
+      41.0099971,
+      28.9794755
+    ],
+    "source_id": "node/1914160119",
+    "url": "https://www.openstreetmap.org/node/1914160119",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V19609786052",
+    "kind": "venue",
+    "code": "istanbul",
+    "category": "restaurant",
+    "name": "Alemdar Restaurant",
+    "address": "",
+    "coordinates": [
+      41.0095299,
+      28.9785281
+    ],
+    "source_id": "node/9609786052",
+    "url": "https://www.openstreetmap.org/node/9609786052",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V15113620687",
+    "kind": "venue",
+    "code": "istanbul",
+    "category": "hotel",
+    "name": "Merih Hotel",
+    "address": "Alemdar Caddesi",
+    "coordinates": [
+      41.0097481,
+      28.9788317
+    ],
+    "source_id": "node/5113620687",
+    "url": "https://www.openstreetmap.org/node/5113620687",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V2335422573",
+    "kind": "venue",
+    "code": "istanbul",
+    "category": "hostel",
+    "name": "Cheers Hostel",
+    "address": "Zeynepsultan Camii Sokağı 21",
+    "coordinates": [
+      41.0101848,
+      28.977996
+    ],
+    "source_id": "way/335422573",
+    "url": "https://www.openstreetmap.org/way/335422573",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V19225745817",
+    "kind": "venue",
+    "code": "istanbul",
+    "category": "apartment",
+    "name": "Mir suites",
+    "address": "Salkımsoğüt Sokağı 8-1",
+    "coordinates": [
+      41.0098548,
+      28.9774371
+    ],
+    "source_id": "node/9225745817",
+    "url": "https://www.openstreetmap.org/node/9225745817",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V15113623113",
+    "kind": "venue",
+    "code": "istanbul",
+    "category": "guest_house",
+    "name": "Terace Guesthouse",
+    "address": "Kutlugun sokak",
+    "coordinates": [
+      41.0059089,
+      28.9800614
+    ],
+    "source_id": "node/5113623113",
+    "url": "https://www.openstreetmap.org/node/5113623113",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V2530509362",
+    "kind": "venue",
+    "code": "istanbul",
+    "category": "hotel",
+    "name": "The Empress Theodora",
+    "address": "Alemdar Caddesi 22",
+    "coordinates": [
+      41.0099308,
+      28.978964
+    ],
+    "source_id": "way/530509362",
+    "url": "https://www.openstreetmap.org/way/530509362",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V2405680368",
+    "kind": "venue",
+    "code": "istanbul",
+    "category": "hotel",
+    "name": "Dongyang Hotel",
+    "address": "Alemdar Caddesi 7",
+    "coordinates": [
+      41.009563,
+      28.9784272
+    ],
+    "source_id": "way/405680368",
+    "url": "https://www.openstreetmap.org/way/405680368",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V113907937928",
+    "kind": "venue",
+    "code": "tbilisi",
+    "category": "cafe",
+    "name": "11:11",
+    "address": "",
+    "coordinates": [
+      41.6929452,
+      44.8004796
+    ],
+    "source_id": "node/13907937928",
+    "url": "https://www.openstreetmap.org/node/13907937928",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V113912797935",
+    "kind": "venue",
+    "code": "tbilisi",
+    "category": "cafe",
+    "name": "გლეიზ",
+    "address": "",
+    "coordinates": [
+      41.6940401,
+      44.8023441
+    ],
+    "source_id": "node/13912797935",
+    "url": "https://www.openstreetmap.org/node/13912797935",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V15251852224",
+    "kind": "venue",
+    "code": "tbilisi",
+    "category": "cafe",
+    "name": "პოლ",
+    "address": "",
+    "coordinates": [
+      41.6924631,
+      44.8010473
+    ],
+    "source_id": "node/5251852224",
+    "url": "https://www.openstreetmap.org/node/5251852224",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V19393777817",
+    "kind": "venue",
+    "code": "tbilisi",
+    "category": "cafe",
+    "name": "დეილი გრაინდი",
+    "address": "",
+    "coordinates": [
+      41.6931841,
+      44.8028664
+    ],
+    "source_id": "node/9393777817",
+    "url": "https://www.openstreetmap.org/node/9393777817",
+    "checked": "2026-11-26",
+    "cuisine": "coffee_shop"
+  },
+  {
+    "id": "V113276049101",
+    "kind": "venue",
+    "code": "tbilisi",
+    "category": "cafe",
+    "name": "სანტინო",
+    "address": "",
+    "coordinates": [
+      41.6924026,
+      44.8010582
+    ],
+    "source_id": "node/13276049101",
+    "url": "https://www.openstreetmap.org/node/13276049101",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V111245580513",
+    "kind": "venue",
+    "code": "tbilisi",
+    "category": "cafe",
+    "name": "ხინკალი",
+    "address": "",
+    "coordinates": [
+      41.6922675,
+      44.8021267
+    ],
+    "source_id": "node/11245580513",
+    "url": "https://www.openstreetmap.org/node/11245580513",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V14690568192",
+    "kind": "venue",
+    "code": "tbilisi",
+    "category": "restaurant",
+    "name": "ხინკლის ფაბრიკა",
+    "address": "",
+    "coordinates": [
+      41.6936675,
+      44.8023056
+    ],
+    "source_id": "node/4690568192",
+    "url": "https://www.openstreetmap.org/node/4690568192",
+    "checked": "2026-11-26",
+    "cuisine": "georgian;regional"
+  },
+  {
+    "id": "V110748884475",
+    "kind": "venue",
+    "code": "tbilisi",
+    "category": "restaurant",
+    "name": "ოცი ნაბიჯი თავისუფლებამდე",
+    "address": "კოტე აფხაზის ქუჩა 4",
+    "coordinates": [
+      41.6930712,
+      44.802473
+    ],
+    "source_id": "node/10748884475",
+    "url": "https://www.openstreetmap.org/node/10748884475",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V110748977380",
+    "kind": "venue",
+    "code": "tbilisi",
+    "category": "restaurant",
+    "name": "ქარაბაქ",
+    "address": "",
+    "coordinates": [
+      41.6939445,
+      44.8023243
+    ],
+    "source_id": "node/10748977380",
+    "url": "https://www.openstreetmap.org/node/10748977380",
+    "checked": "2026-11-26",
+    "cuisine": "turkish"
+  },
+  {
+    "id": "V16681482085",
+    "kind": "venue",
+    "code": "tbilisi",
+    "category": "restaurant",
+    "name": "ბადაგონის სახლი",
+    "address": "თავისუფლების მოედანი 4",
+    "coordinates": [
+      41.6940237,
+      44.8007697
+    ],
+    "source_id": "node/6681482085",
+    "url": "https://www.openstreetmap.org/node/6681482085",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V19891897203",
+    "kind": "venue",
+    "code": "tbilisi",
+    "category": "restaurant",
+    "name": "Barmaglot",
+    "address": "",
+    "coordinates": [
+      41.6926176,
+      44.8009097
+    ],
+    "source_id": "node/9891897203",
+    "url": "https://www.openstreetmap.org/node/9891897203",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V11279039757",
+    "kind": "venue",
+    "code": "tbilisi",
+    "category": "restaurant",
+    "name": "ველიამინოვი",
+    "address": "შალვა დადიანის ქუჩა 8",
+    "coordinates": [
+      41.6924223,
+      44.8021201
+    ],
+    "source_id": "node/1279039757",
+    "url": "https://www.openstreetmap.org/node/1279039757",
+    "checked": "2026-11-26",
+    "cuisine": "georgian"
+  },
+  {
+    "id": "V110748977383",
+    "kind": "venue",
+    "code": "tbilisi",
+    "category": "hotel",
+    "name": "მონოგრაფი",
+    "address": "ალექსანდრე პუშკინის ქუჩა 5-7",
+    "coordinates": [
+      41.6935817,
+      44.8022868
+    ],
+    "source_id": "node/10748977383",
+    "url": "https://www.openstreetmap.org/node/10748977383",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V110727374334",
+    "kind": "venue",
+    "code": "tbilisi",
+    "category": "guest_house",
+    "name": "Hillside",
+    "address": "",
+    "coordinates": [
+      41.6933527,
+      44.8002412
+    ],
+    "source_id": "node/10727374334",
+    "url": "https://www.openstreetmap.org/node/10727374334",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V111245563926",
+    "kind": "venue",
+    "code": "tbilisi",
+    "category": "hostel",
+    "name": "Lucky Hotel",
+    "address": "",
+    "coordinates": [
+      41.6924176,
+      44.799868
+    ],
+    "source_id": "node/11245563926",
+    "url": "https://www.openstreetmap.org/node/11245563926",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V111245563935",
+    "kind": "venue",
+    "code": "tbilisi",
+    "category": "apartment",
+    "name": "ფასქუნჯი",
+    "address": "",
+    "coordinates": [
+      41.6917007,
+      44.8010076
+    ],
+    "source_id": "node/11245563935",
+    "url": "https://www.openstreetmap.org/node/11245563935",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V278004776",
+    "kind": "venue",
+    "code": "tbilisi",
+    "category": "hotel",
+    "name": "Courtyard Marriott",
+    "address": "",
+    "coordinates": [
+      41.693382,
+      44.8006632
+    ],
+    "source_id": "way/78004776",
+    "url": "https://www.openstreetmap.org/way/78004776",
+    "checked": "2026-11-26"
+  },
+  {
+    "id": "V111375421815",
+    "kind": "venue",
+    "code": "tbilisi",
+    "category": "hotel",
+    "name": "ბადაგონი ბუტიკ სასტუმრო",
+    "address": "",
+    "coordinates": [
+      41.6939926,
+      44.8007101
+    ],
+    "source_id": "node/11375421815",
+    "url": "https://www.openstreetmap.org/node/11375421815",
+    "checked": "2026-11-26"
+  }
+]

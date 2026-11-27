@@ -29,15 +29,27 @@ function destinationCards(criteria){
  (criteria.matches||[]).filter(match=>DESTINATIONS[match.city]).forEach(match=>{
   const card=document.createElement('article');card.className='destination-offer';const name=document.createElement('h3');name.textContent=DESTINATIONS[match.city].name;const country=document.createElement('span');country.textContent=DESTINATIONS[match.city].country;const reason=document.createElement('p');reason.textContent=match.reason;
   const button=document.createElement('button');button.type='button';button.className='secondary';button.disabled=busy;button.textContent='Выбрать и собрать маршрут ↗';
-  button.onclick=()=>{if(busy)return;cancelForecast();if(state.city!==match.city){state.plan=[];state.packing.weather=null;}state.city=match.city;changeTripLength(criteria.days);state.day=0;if(criteria.calm)state.pace='slow';ask('Составь маршрут: '+DESTINATIONS[match.city].name+' на '+criteria.days+' дня');};
+  button.onclick=()=>{if(busy)return;cancelForecast();if(state.city!==match.city){state.plan=[];state.packing.weather=null;}state.city=match.city;changeTripLength(criteria.days);state.day=0;if(criteria.calm)state.pace='slow';ask('Составь маршрут: '+DESTINATIONS[match.city].name+' на '+criteria.days+' дня',{command:true});};
   card.append(country,name,reason,button);wrapper.append(card);
  });return wrapper;
 }
-function handleDestinationRequest(text){
- if(/чек.?лист|сборы|что взять|собрать чемодан/i.test(text)){state.messages.push({role:'assistant',content:state.plan.length?(state.dates.start?'Чек-лист готов на даты вашей поездки. В сборах — погода, рекомендации по одежде и отмечаемый список вещей.':'Чек-лист готов. Когда зададите общие даты поездки, добавим погодные советы по одежде.'):'Сначала выберем город поездки, затем подготовим сборы.',kind:state.plan.length?'packing':undefined});return true;}
- if(!/подбери (?:город|направление)|подобрать (?:город|направление)|куда поехать|(?:море|пляж).*(?:евро|€)/i.test(text))return false;
- const criteria=Companion.search(text);
+async function handleDestinationRequest(text,intent,origin,preference=null){
+ if(intent==='packing'){state.messages.push({role:'assistant',content:state.plan.length?(state.dates.start?'Чек-лист готов на даты вашей поездки. В сборах — погода, рекомендации по одежде и отмечаемый список вещей.':'Чек-лист готов. Когда зададите общие даты поездки, добавим погодные советы по одежде.'):'Сначала выберем город поездки, затем подготовим сборы.',kind:state.plan.length?'packing':undefined});return true;}
+ if(intent!=='destinations')return false;
+ const mentioned=Object.keys(DESTINATIONS).filter(city=>DESTINATIONS[city].keys.some(key=>text.toLowerCase().includes(key)));
+ const departure=origin||(mentioned.length===1?mentioned[0]:null);
+ const month=Companion.travelMonth(text);
+ if(preference&&!month){
+  state.messages.push({role:'assistant',content:'На какой месяц планируете поездку? Сравню дневную температуру в городах за этот месяц по архиву погоды.',climateRequest:{query:text,origin:departure,preference}});
+  return true;
+ }
+ const criteria=Companion.search(text,departure,preference?Infinity:3);
+ if(preference){
+  try{criteria.matches=await Companion.climateMatches(criteria.matches,month,preference);}
+  catch{state.messages.push({role:'assistant',content:'Не удалось получить архив температур для сравнения городов. Попробуйте повторить запрос позже.'});return true;}
+ }
  let reply='Вот направления, которые подходят по описанию. Выберите город — продолжим с маршрутом.';
+ if(preference)reply='Сравнение по архиву погоды за один год. '+({cool:'Сначала самые прохладные города выборки.',hot:'Сначала самые жаркие города выборки.',warm:'Сначала города с дневной температурой ближе к +23 °C.'}[preference]);
  if(criteria.budget!==null)reply+='\n\nВаш ориентир: до '+criteria.budget+' € за '+criteria.requestedDays+' дн. Цены на ваши даты ещё не проверены. Уточните в чате, откуда едете и входит ли дорога в эту сумму.';
  if(criteria.requestedDays>3)reply+='\n\nСейчас пример маршрута можно собрать на 1–3 дня.';
  state.messages.push({role:'assistant',content:reply,kind:'destinations',criteria});return true;

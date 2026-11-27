@@ -93,10 +93,10 @@ function replacementRequest(question,context){
  return {...matches[0],replacementId:replacements[0].id};
 }
 
-async function requestChat(messages,context,advice){
+async function requestChat(messages,context,advice,endpoint='/api/chat',purpose){
  const history=messages.slice(-8).map(m=>({role:m.role,content:m.content.slice(0,3000)}));
- const response=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},
-   body:JSON.stringify({messages:history,city:context.city,advice}),signal:AbortSignal.timeout(105000)});
+ const response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},
+   body:JSON.stringify({messages:history,city:context.city,advice,purpose}),signal:AbortSignal.timeout(105000)});
  if(!response.ok)throw new Error('Ассистент недоступен');
  return response.json();
 }
@@ -126,8 +126,25 @@ function barcelonaTicketQuestion(text){
  return mentionedPlaces(options,text);
 }
 
+function isEventRequest(messages){
+ const question=messages.at(-1)?.content.toLowerCase() ?? '';
+ if(/(?:^|[^\p{L}])(?:матч|футбол|стадион|театр|спектакл|опер[ауые]|мюзикл|балет)/u.test(question))return true;
+ const previous=messages.at(-2);
+ if(previous?.role!=='assistant')return false;
+ if(/^(ФК «Барселона»|Какой матч хотите)/.test(previous.content)){
+  return /^(?:а\s+)?(?:когда(?: ближайший)?|где(?: он проходит)?|(?:есть )?билеты|сколько стоят билеты|завтра|на\s+\d[\p{L}\d./ -]*|барс[аыуе]|\d[\p{L}\d./ -]*)[.!?]?$/u.test(question.trim());
+ }
+ return previous.content.startsWith('В каком городе хотите сходить в театр') &&
+  /^(?:(?:в|во)\s+)?[\p{L}-]+[.!?]?$/u.test(question.trim());
+}
+
 async function getReply(messages,context){
  const q=messages[messages.length-1].content.toLowerCase();
+ if(isEventRequest(messages)){
+  const searchContext=context.plan?.length?context:{...context,city:''};
+  const data=await requestChat(messages,searchContext);
+  return {reply:data.reply,sources:data.sources,reference:true,city:null,action:null};
+ }
  const ticketPlaces=barcelonaTicketQuestion(q);
  if(ticketPlaces.length){
   return {reference:true,city:'barcelona',ticketLookup:true,reply:
@@ -156,10 +173,12 @@ async function getReply(messages,context){
  const outsideRoute=!city && /маршрут.*(?: по | в )/i.test(q);
  const routeCommand=/маршрут|составь план|почему.*план|инстаграм|instagram|больше бесплатного|сделай спокойнее|замени музеи|замен.*на прогул|без музеев/.test(q);
  const newDestination=!city && /(?:еду|хочу|поеду) в |поездка в /.test(q);
- const factual=/куда сходить|что посетить|что интересного|расскажи|путеводител|кухн|что попробовать|что посмотреть|достопримечательност|куда съездить|адрес|наход|как найти|координат|тематик|располож|сайт|музе|орсе|лувр|событи|афиш|выставк|мастер.класс|концерт|мероприяти|коллекци|источник|откуда|билет|скидк|цен[ауые]|расписан|открыт|там/.test(q);
- const clarifying=/^(Уточните название|Какой из упомянутых)/.test(messages.at(-2)?.content || "");
+ const venues=/кафе|кофейн|где .*кофе|ресторан|отел|гостиниц|хостел|гостев\w* дом|апартамент|жиль[еяё]|проживани|ночлег|остановиться|переночевать|поселиться|где (?:там |можно |лучше )?(?:поесть|перекусить|пообедать|поужинать|позавтракать)/.test(q);
+ const factual=venues||/куда сходить|что посетить|что интересного|расскажи|путеводител|кухн|что попробовать|что посмотреть|достопримечательност|куда съездить|адрес|наход|как найти|координат|тематик|располож|сайт|музе|орсе|лувр|событи|афиш|выставк|мастер.класс|концерт|мероприяти|коллекци|источник|откуда|билет|скидк|цен[ауые]|расписан|открыт|там/.test(q);
+ const clarifying=/^(Уточните название|Уточните город|Какой из упомянутых)/.test(messages.at(-2)?.content || "");
  if(outsideRoute || newDestination || (!routeCommand && (factual || clarifying))){
-   const data=await requestChat(messages,context);
+   const searchContext=venues&&!context.plan?.length?{...context,city:''}:context;
+   const data=await requestChat(messages,searchContext);
    const reply=outsideRoute && data.status==="answered" ? "По путеводителю для этого направления можно рассмотреть следующие места.\n"+data.reply : data.reply;
    return {reply,sources:data.sources,reference:true,city:null,action:null};
  }

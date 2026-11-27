@@ -1,0 +1,28 @@
+[
+  {
+    "id": "V01",
+    "kind": "venue",
+    "code": "barcelona",
+    "category": "restaurant",
+    "name": "7 Portes",
+    "address": "Passeig d’Isabel II, 14",
+    "cuisine": "catalan;mediterranean",
+    "source_id": "7-portes",
+    "url": "https://7portes.com/en/7-portes-restaurant/restaurant/",
+    "credit": "Официальный сайт 7 Portes",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "V02",
+    "kind": "venue",
+    "code": "barcelona",
+    "category": "restaurant",
+    "name": "Can Culleretes",
+    "address": "Carrer d’en Quintana, 5",
+    "cuisine": "catalan",
+    "source_id": "can-culleretes",
+    "url": "https://ajuntament.barcelona.cat/comerc/sites/default/files/2024-06/guia-2024-premis-restauracio-barcelona.pdf",
+    "credit": "Гастрономический справочник Барселоны",
+    "checked": "2026-11-27"
+  }
+]

@@ -4,13 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Попутчик — Чат</title>
-  <link rel="stylesheet" href="styles.css?v=live-tickets-11"><link rel="stylesheet" href="features.css"><link rel="stylesheet" href="companion.css"><link rel="stylesheet" href="atlantic.css?v=timed-route-8">
+  <link rel="stylesheet" href="styles.css?v=copy-icon"><link rel="stylesheet" href="features.css"><link rel="stylesheet" href="companion.css"><link rel="stylesheet" href="atlantic.css?v=timed-route-8">
 </head>
 <body>
   <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
     <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-8 8H4l1.3-4A8 8 0 1 1 20 11.5Z"/><path d="M8 9h8m-8 4h5"/></symbol>
     <symbol id="icon-route" viewBox="0 0 24 24"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 6h8a4 4 0 0 1 0 8H9a2 2 0 0 0 0 4h8"/></symbol>
     <symbol id="icon-book" viewBox="0 0 24 24"><path d="M12 6C9 4 6 4 3 5v14c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1Zm0 0v14"/></symbol>
+    <symbol id="icon-copy" viewBox="0 0 24 24"><path d="M8 8V6a3 3 0 0 1 3-3h7a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3h-2"/><rect x="3" y="8" width="13" height="13" rx="3"/></symbol>
     <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol>
   </defs></svg>
   <aside class="sidebar">
@@ -45,8 +46,7 @@
             <button id="city-finder" class="instagram-prompt" type="button"><svg class="finder-pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 10c0 5-8 10-8 10S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Подобрать город по описанию</button>
           </div>
         </div>
-        <form id="chat-form"><label class="sr-only" for="input">Сообщение ассистенту</label><textarea id="input" rows="2" placeholder="Например: еду в Лиссабон на три дня. С чего начать?"></textarea><div class="composer-bottom"><div class="composer-settings"><button id="open-wishlist" type="button" class="wishlist-trigger">♡ Хочу сюда <span id="wishlist-count">0</span></button><details id="trip-preferences" class="trip-preferences"><summary><span aria-hidden="true">☷</span> Настройки поездки <span id="preference-summary"></span></summary><div class="preferences-panel"><div class="preferences-title"><strong>Что вам подходит?</strong><span>Выберите варианты, затем отправьте их в чат.</span></div><div id="preference-options"></div><button id="preferences-done" type="button">Отправить в чат</button></div></details></div><button id="send" type="submit" aria-label="Отправить сообщение">↑</button></div></form>
-        <p class="composer-note"><span>Shift + Enter — новая строка</span><span>Enter — отправить <b>↵</b></span></p>
+        <form id="chat-form"><label class="sr-only" for="input">Сообщение ассистенту</label><textarea id="input" rows="2" placeholder="Напишите Ваши пожелания по поездке"></textarea><div class="composer-bottom"><div class="composer-settings"><button id="open-wishlist" type="button" class="wishlist-trigger">♡ Хочу сюда <span id="wishlist-count">0</span></button><details id="trip-preferences" class="trip-preferences"><summary><span aria-hidden="true">☷</span> Настройки поездки <span id="preference-summary"></span></summary><div class="preferences-panel"><div class="preferences-title"><strong>Что вам подходит?</strong><span>Выберите варианты, затем отправьте их в чат.</span></div><div id="preference-options"></div><button id="preferences-done" type="button">Отправить в чат</button></div></details></div><button id="send" type="submit" aria-label="Отправить сообщение">↑</button></div></form>
       </div>
     </main>
     <main id="trips-page" class="page feature-page trips-page" hidden>
@@ -78,6 +78,6 @@
   <dialog id="trip-dates-dialog" class="companion-dialog"><button type="button" class="dialog-close" data-close="trip-dates-dialog" aria-label="Закрыть">×</button><span class="eyebrow">ОДИН РАЗ ДЛЯ ВСЕЙ ПОЕЗДКИ</span><h2>Когда отправляемся?</h2><p>Эти даты используются в маршруте, погоде и сборах. Сейчас планируем короткие поездки на 1–3 дня.</p><form id="trip-dates-form" class="shared-dates-form"><label>Первый день<input id="trip-start" type="date" required></label><label>Последний день<input id="trip-end" type="date" required></label><p id="trip-dates-error" role="status"></p><button type="submit" class="primary-action">Сохранить даты ↗</button></form></dialog>
   <dialog id="delete-dialog" class="companion-dialog delete-dialog"><button type="button" class="dialog-close" data-close="delete-dialog" aria-label="Закрыть">×</button><span class="eyebrow">УПРАВЛЕНИЕ ПОЕЗДКОЙ</span><h2 id="delete-title"></h2><p id="delete-description"></p><div class="delete-dialog-actions"><button type="button" id="delete-cancel" class="secondary">Отмена</button><button type="button" id="delete-confirm" class="danger-action">Удалить</button></div></dialog>
   <div id="toast" role="status"></div>
-  <script src="companion.js?v=timed-route-8"></script><script src="travel-tools.js?v=barcelona-walks-15"></script><script src="budget.js"></script><script src="planner.js?v=barcelona-walks-15"></script><script src="companion-ui.js?v=barcelona-walks-15"></script><script src="app.js?v=barcelona-walks-15"></script>
+  <script src="companion.js?v=climate-24"></script><script src="travel-tools.js?v=barcelona-walks-15"></script><script src="budget.js"></script><script src="planner.js?v=transport"></script><script src="companion-ui.js?v=climate-24"></script><script src="app.js?v=transport"></script>
 
 </body></html>

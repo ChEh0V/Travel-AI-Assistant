@@ -1,0 +1,866 @@
+[
+  {
+    "id": "C01",
+    "kind": "city_context",
+    "topic": "football",
+    "code": "barcelona",
+    "name": "ФК «Барселона»",
+    "aliases": [
+      "барса",
+      "барсы",
+      "барсу",
+      "барселоны",
+      "fc barcelona",
+      "camp nou",
+      "камп ноу"
+    ],
+    "summary": "Домашняя арена — Spotify Camp Nou (Камп Ноу) в районе Лес-Кортс. Для даты, стадиона конкретной игры и билетов откройте календарь клуба.",
+    "url": "https://www.fcbarcelona.com/en/club/getting-here/spotify-camp-nou/match-day",
+    "checked": "2026-11-27",
+    "calendar": "https://www.fcbarcelona.com/en/tickets/football/"
+  },
+  {
+    "id": "C02",
+    "kind": "city_context",
+    "topic": "football",
+    "code": "barcelona",
+    "name": "«Эспаньол»",
+    "aliases": [
+      "эспаньол",
+      "эспаньола",
+      "espanyol",
+      "rcde stadium"
+    ],
+    "summary": "Домашние матчи проходят на RCDE Stadium в Корнелья-де-Льобрегат рядом с Барселоной.",
+    "url": "https://www.laliga.com/es-GB/clubes/rcd-espanyol",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C03",
+    "kind": "city_context",
+    "topic": "football",
+    "code": "madrid",
+    "name": "«Реал Мадрид»",
+    "aliases": [
+      "реал",
+      "реала",
+      "real madrid",
+      "бернабеу"
+    ],
+    "summary": "Клуб принимает соперников на «Сантьяго Бернабеу». В дни без матча можно посмотреть музей клуба во время тура по стадиону.",
+    "url": "https://www.laliga.com/en-US/news/madrid-the-capital-of-world-football",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C04",
+    "kind": "city_context",
+    "topic": "football",
+    "code": "madrid",
+    "name": "«Атлетико Мадрид»",
+    "aliases": [
+      "атлетико",
+      "atletico",
+      "метрополитано"
+    ],
+    "summary": "Домашняя арена — Riyadh Air Metropolitano. Стадион принимал финал Лиги чемпионов 2019 года, у западного фасада есть аллея игроков, сыгравших за клуб не меньше 100 официальных матчей.",
+    "url": "https://en.atleticodemadrid.com/atm/3-d-visit",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C05",
+    "kind": "city_context",
+    "topic": "football",
+    "code": "paris",
+    "name": "«Пари Сен-Жермен»",
+    "aliases": [
+      "псж",
+      "psg",
+      "парк де пренс"
+    ],
+    "summary": "ПСЖ играет на «Парк де Пренс» в 16-м округе. Тур клуба даёт возможность увидеть раздевалку, скамейку запасных и стену трофеев.",
+    "url": "https://www.psg.fr/en/the-club/facilities/parc-des-princes",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C06",
+    "kind": "city_context",
+    "topic": "football",
+    "code": "rome",
+    "name": "«Рома»",
+    "aliases": [
+      "рома",
+      "ромы",
+      "as roma",
+      "олимпико"
+    ],
+    "summary": "Домашняя арена — «Стадио Олимпико» в спортивном комплексе Foro Italico на севере Рима. У стадиона есть отдельный экскурсионный маршрут.",
+    "url": "https://www.asroma.com/en/stadium",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C07",
+    "kind": "city_context",
+    "topic": "football",
+    "code": "london",
+    "name": "«Арсенал»",
+    "aliases": [
+      "арсенал",
+      "арсенала",
+      "arsenal",
+      "эмирейтс"
+    ],
+    "summary": "Домашние матчи проходят на Emirates Stadium.",
+    "url": "https://www.premierleague.com/en/news/4725666/all-you-need-to-know-about-the-20-premier-league-stadiums/",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C08",
+    "kind": "city_context",
+    "topic": "football",
+    "code": "london",
+    "name": "«Челси»",
+    "aliases": [
+      "челси",
+      "chelsea",
+      "стэмфорд бридж"
+    ],
+    "summary": "Домашняя арена — Stamford Bridge на западе Лондона.",
+    "url": "https://www.premierleague.com/en/news/4725666/all-you-need-to-know-about-the-20-premier-league-stadiums/",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C09",
+    "kind": "city_context",
+    "topic": "football",
+    "code": "london",
+    "name": "«Тоттенхэм»",
+    "aliases": [
+      "тоттенхэм",
+      "тоттенхэма",
+      "tottenham"
+    ],
+    "summary": "Домашняя арена — Tottenham Hotspur Stadium.",
+    "url": "https://www.premierleague.com/en/news/4725666/all-you-need-to-know-about-the-20-premier-league-stadiums/",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C10",
+    "kind": "city_context",
+    "topic": "football",
+    "code": "liverpool",
+    "name": "«Ливерпуль»",
+    "aliases": [
+      "ливерпуль",
+      "ливерпуля",
+      "liverpool fc",
+      "энфилд",
+      "anfield"
+    ],
+    "summary": "Домашняя арена — Anfield. Здесь клуб оформил чемпионство сезона 2024/25.",
+    "url": "https://www.premierleague.com/en/news/4725666/all-you-need-to-know-about-the-20-premier-league-stadiums/",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C11",
+    "kind": "city_context",
+    "topic": "football",
+    "code": "manchester",
+    "name": "«Манчестер Сити»",
+    "aliases": [
+      "манчестер сити",
+      "manchester city",
+      "этихад"
+    ],
+    "summary": "Домашние матчи проходят на Etihad Stadium.",
+    "url": "https://www.premierleague.com/en/news/4725666/all-you-need-to-know-about-the-20-premier-league-stadiums/",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C12",
+    "kind": "city_context",
+    "topic": "football",
+    "code": "manchester",
+    "name": "«Манчестер Юнайтед»",
+    "aliases": [
+      "манчестер юнайтед",
+      "manchester united",
+      "олд траффорд"
+    ],
+    "summary": "Домашняя арена — Old Trafford в Стретфорде, в Большом Манчестере.",
+    "url": "https://www.premierleague.com/en/news/4725666/all-you-need-to-know-about-the-20-premier-league-stadiums/",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C13",
+    "kind": "city_context",
+    "topic": "football",
+    "code": "munich",
+    "name": "«Бавария»",
+    "aliases": [
+      "бавария",
+      "баварии",
+      "bayern",
+      "альянц арена"
+    ],
+    "summary": "Клуб играет на Allianz Arena с сезона 2005/06, когда переехал с Олимпийского стадиона.",
+    "url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C14",
+    "kind": "city_context",
+    "topic": "football",
+    "code": "dortmund",
+    "name": "«Боруссия Дортмунд»",
+    "aliases": [
+      "боруссия",
+      "боруссии",
+      "borussia dortmund",
+      "сигнал идуна парк"
+    ],
+    "summary": "Домашние матчи проходят на Signal Iduna Park, крупнейшем футбольном стадионе Германии.",
+    "url": "https://www.bundesliga.com/en/bundesliga/news/stadiums-germany-2026-27-munich-dortmund-37962",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C15",
+    "kind": "city_context",
+    "topic": "music",
+    "code": "barcelona",
+    "name": "Palau de la Música Catalana",
+    "aliases": [
+      "палау",
+      "дворец каталонской музыки"
+    ],
+    "summary": "Концертный зал каталонского модернизма входит в список ЮНЕСКО. Архитектуру можно рассмотреть на экскурсии или с аудиогидом.",
+    "url": "https://www.palaumusica.cat/en/discover-the-palau_1633301/",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C16",
+    "kind": "city_context",
+    "topic": "music",
+    "code": "paris",
+    "name": "Музей музыки Парижской филармонии",
+    "aliases": [
+      "филармония",
+      "музей музыки",
+      "музыкальные инструменты"
+    ],
+    "summary": "В постоянной коллекции собраны инструменты из Европы, Африки, Азии, Океании и обеих Америк.",
+    "url": "https://philharmoniedeparis.fr/en/musee-de-la-musique",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C17",
+    "kind": "city_context",
+    "topic": "music",
+    "code": "vienna",
+    "name": "Haus der Musik",
+    "aliases": [
+      "дом музыки",
+      "дирижировать",
+      "венский филармонический оркестр"
+    ],
+    "summary": "В венском Доме музыки можно попробовать себя в роли дирижёра филармонического оркестра и пройти по звуковой лестнице.",
+    "url": "https://www.hdm.at/en/",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C18",
+    "kind": "city_context",
+    "topic": "music",
+    "code": "lisbon",
+    "name": "Museu do Fado",
+    "aliases": [
+      "фаду",
+      "музей фаду",
+      "португальская гитара"
+    ],
+    "summary": "Музей знакомит с историей фаду. У него есть цифровой звуковой архив и мастерская португальской гитары.",
+    "url": "https://www.museudofado.pt/en",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C19",
+    "kind": "city_context",
+    "topic": "music",
+    "code": "prague",
+    "name": "Рудольфинум",
+    "aliases": [
+      "рудольфинум",
+      "дворжак",
+      "чешская филармония"
+    ],
+    "summary": "В зале Дворжака выступает Чешская филармония. В афише встречаются финальные репетиции и концерты.",
+    "url": "https://www.rudolfinum.cz/en/",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C20",
+    "kind": "city_context",
+    "topic": "music",
+    "code": "rome",
+    "name": "Auditorium Parco della Musica",
+    "aliases": [
+      "парко делла музика",
+      "морриконе",
+      "ренцо пьяно"
+    ],
+    "summary": "Ренцо Пьяно спроектировал три концертных зала, похожих на огромные лютни. Здесь базируется Академия Санта-Чечилия.",
+    "url": "https://www.auditorium.com/en/auditorium-rooms-and-spaces/",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C21",
+    "kind": "city_context",
+    "topic": "film",
+    "code": "vienna",
+    "name": "Вена по следам «Третьего человека»",
+    "aliases": [
+      "третий человек",
+      "третьего человека",
+      "орсон уэллс",
+      "пратер"
+    ],
+    "summary": "В фильме можно узнать колесо обозрения Пратера и площади старого города. Городское турбюро собрало места съёмок и музей фильма.",
+    "url": "https://www.wien.info/en/see-do/discover-vienna/hidden-gems/third-man-361288",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C22",
+    "kind": "city_context",
+    "topic": "engineering",
+    "code": "lisbon",
+    "name": "Pilar 7 Bridge Experience",
+    "aliases": [
+      "мост 25 апреля",
+      "опора моста",
+      "смотровая площадка"
+    ],
+    "summary": "В районе Алкантара можно зайти внутрь опоры моста 25 Апреля, узнать, как строили мост, и подняться на лифте к панораме Тежу.",
+    "url": "https://www.visitlisboa.com/en/places/pilar-7-bridge-experience",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C23",
+    "kind": "city_context",
+    "topic": "engineering",
+    "code": "rome",
+    "name": "Чентрале Монтемартини",
+    "aliases": [
+      "монтемартини",
+      "электростанция",
+      "античные скульптуры"
+    ],
+    "summary": "Первую городскую электростанцию Рима превратили в музей. Античные скульптуры и мозаики выставлены в индустриальных залах.",
+    "url": "https://centralemontemartini.org/en/node/1011799",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C24",
+    "kind": "city_context",
+    "topic": "engineering",
+    "code": "paris",
+    "name": "Как построили Эйфелеву башню",
+    "aliases": [
+      "эйфелева башня",
+      "эйфелеву башню",
+      "эйфелевой башни",
+      "всемирная выставка"
+    ],
+    "summary": "Башню построили для Всемирной выставки 1889 года. Её собрали из 18 038 металлических деталей за два года, два месяца и пять дней.",
+    "url": "https://www.toureiffel.paris/en/the-monument/history",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C25",
+    "kind": "city_context",
+    "topic": "history",
+    "code": "prague",
+    "name": "Пражский Орлой",
+    "aliases": [
+      "орлой",
+      "орлоя",
+      "астрономические часы",
+      "ратуша"
+    ],
+    "summary": "При бое часов на Староместской ратуше появляются фигурки двенадцати апостолов. На экскурсии по ратуше можно увидеть старые интерьеры и подземелья.",
+    "url": "https://prague.eu/en/objevujte/old-town-hall-with-astronomical-clock-staromestska-radnice-s-orlojem",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C26",
+    "kind": "city_context",
+    "topic": "architecture",
+    "code": "prague",
+    "name": "Клементинум",
+    "aliases": [
+      "клементинум",
+      "барочная библиотека",
+      "астрономическая башня"
+    ],
+    "summary": "Экскурсия включает вид на барочную библиотеку, зал меридиана и подъём в астрономическую башню.",
+    "url": "https://prague.eu/en/objevujte/the-clementinum-astronomical-tower-and-baroque-library/",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C27",
+    "kind": "city_context",
+    "topic": "history",
+    "code": "barcelona",
+    "name": "Туро-де-ла-Ровира",
+    "aliases": [
+      "туро де ла ровира",
+      "бункеры кармель",
+      "смотровая площадка"
+    ],
+    "summary": "На холме с панорамой Барселоны сохранились остатки зенитной батареи времён Гражданской войны. Историю места рассказывает городской музей MUHBA.",
+    "url": "https://guia.barcelona.cat/ca/detall/document_99400267435.html",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C28",
+    "kind": "city_context",
+    "topic": "history",
+    "code": "berlin",
+    "name": "Berliner Unterwelten",
+    "aliases": [
+      "подземный берлин",
+      "бункеры",
+      "туннели",
+      "берлинер унтервельтен"
+    ],
+    "summary": "На экскурсиях можно увидеть исторические бункеры и тоннели под Берлином. Выставка общества находится в бывшем бункере у транспортного узла Gesundbrunnen.",
+    "url": "https://www.visitberlin.de/en/berliner-unterwelten",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C29",
+    "kind": "city_context",
+    "topic": "football",
+    "code": "milan",
+    "name": "«Интер»",
+    "aliases": [
+      "интер",
+      "интера",
+      "inter milan",
+      "сан сиро",
+      "джузеппе меацца"
+    ],
+    "summary": "«Интер» играет на стадионе «Джузеппе Меацца». Его также называют «Сан-Сиро» по имени миланского района. При стадионе работает музей.",
+    "url": "https://www.inter.it/en/club/stadium",
+    "checked": "2026-11-27",
+    "calendar": "https://www.inter.it/en/tickets"
+  },
+  {
+    "id": "C30",
+    "kind": "city_context",
+    "topic": "football",
+    "code": "amsterdam",
+    "name": "«Аякс»",
+    "aliases": [
+      "аякс",
+      "аякса",
+      "ajax",
+      "йохан крёйф арена"
+    ],
+    "summary": "Домашняя арена клуба — Johan Cruijff ArenA. На экскурсии в день матча можно пройти через туннель игроков, для неё нужен билет на игру.",
+    "url": "https://english.ajax.nl/fans/matchday-tour",
+    "checked": "2026-11-27",
+    "calendar": "https://english.ajax.nl/fans/visitajax"
+  },
+  {
+    "id": "C31",
+    "kind": "city_context",
+    "topic": "football",
+    "code": "lisbon",
+    "name": "«Бенфика»",
+    "aliases": [
+      "бенфика",
+      "бенфики",
+      "benfica",
+      "эштадиу да луш"
+    ],
+    "summary": "Домашняя арена — Estádio da Luz. Клуб проводит экскурсии по стадиону и принимает посетителей в музее имени Косме Дамиана.",
+    "url": "https://www.slbenfica.pt/en-us/loja/bilhetes/estadio-e-museu",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C32",
+    "kind": "city_context",
+    "topic": "architecture",
+    "code": "lisbon",
+    "name": "Национальный музей азулежу",
+    "aliases": [
+      "азулежу",
+      "музей плитки",
+      "керамика"
+    ],
+    "summary": "В бывшем монастыре Мадре-де-Деуш собрали португальскую расписную плитку начиная с XV века.",
+    "url": "https://www.visitlisboa.com/en/places/national-tile-museum",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C33",
+    "kind": "city_context",
+    "topic": "airport",
+    "code": "vienna",
+    "name": "Вена-Швехат",
+    "aliases": [
+      "VIE",
+      "швехат",
+      "schwechat",
+      "vienna airport"
+    ],
+    "iata": "VIE",
+    "summary": "Поезда S7 и Railjet связывают аэропорт с Веной. К платформам можно пройти из зала прилёта.",
+    "url": "https://viennaairport.com/en/passengers/arrival__parking/s-bahn__suburban_railway",
+    "checked": "2026-11-27",
+    "flight_board": "https://viennaairport.com/departures"
+  },
+  {
+    "id": "C34",
+    "kind": "city_context",
+    "topic": "airport",
+    "code": "paris",
+    "name": "Париж — Шарль-де-Голль",
+    "aliases": [
+      "CDG",
+      "шарль де голль",
+      "шарля де голля",
+      "руасси",
+      "charles de gaulle"
+    ],
+    "iata": "CDG",
+    "summary": "До Парижа ходит поезд RER B. При посадке в сторону аэропорта проверьте, что поезд идёт по ветке до Charles de Gaulle.",
+    "url": "https://www.iledefrance-mobilites.fr/en/acceder-aux-aeroports-franciliens-",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C35",
+    "kind": "city_context",
+    "topic": "airport",
+    "code": "paris",
+    "name": "Париж — Орли",
+    "aliases": [
+      "ORY",
+      "орли",
+      "orly"
+    ],
+    "iata": "ORY",
+    "summary": "До города идёт метро линии 14. Есть также пересадка с Orlyval на RER B на станции Antony.",
+    "url": "https://www.iledefrance-mobilites.fr/en/acceder-aux-aeroports-franciliens-",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C36",
+    "kind": "city_context",
+    "topic": "airport",
+    "code": "barcelona",
+    "name": "Барселона — Эль-Прат",
+    "aliases": [
+      "BCN",
+      "эль прат",
+      "el prat"
+    ],
+    "iata": "BCN",
+    "summary": "Метро L9 Sud обслуживает терминалы T1 и T2. Дальнейшую пересадку выбирайте по адресу назначения.",
+    "url": "https://www.tmb.cat/en/visit-barcelona/public-transport/metro-airport",
+    "checked": "2026-11-27",
+    "flight_board": "https://www.aena.es/en/flight-info.html?iata=BCN"
+  },
+  {
+    "id": "C37",
+    "kind": "city_context",
+    "topic": "airport",
+    "code": "madrid",
+    "name": "Мадрид — Барахас",
+    "aliases": [
+      "MAD",
+      "барахас",
+      "barajas"
+    ],
+    "iata": "MAD",
+    "summary": "Линия метро 8 связывает Nuevos Ministerios со станциями аэропорта для T1–T3 и T4.",
+    "url": "https://www.aena.es/en/adolfo-suarez-madrid-barajas/getting-there/underground.html",
+    "checked": "2026-11-27",
+    "flight_board": "https://www.aena.es/en/flight-info.html?iata=MAD"
+  },
+  {
+    "id": "C38",
+    "kind": "city_context",
+    "topic": "airport",
+    "code": "rome",
+    "name": "Рим — Фьюмичино",
+    "aliases": [
+      "FCO",
+      "фьюмичино",
+      "fiumicino"
+    ],
+    "iata": "FCO",
+    "summary": "Leonardo Express идёт без остановок между аэропортом и Roma Termini.",
+    "url": "https://www.trenitalia.com/en/services/connections-to-and-from-rome-fiumicino-airport.html",
+    "checked": "2026-11-27"
+  },
+  {
+    "id": "C39",
+    "kind": "city_context",
+    "topic": "airport",
+    "code": "prague",
+    "name": "Аэропорт Праги имени Вацлава Гавела",
+    "aliases": [
+      "PRG",
+      "вацлава гавела",
+      "рузине",
+      "vaclav havel airport"
+    ],
+    "iata": "PRG",
+    "summary": "Троллейбус 59 идёт до Nádraží Veleslavín, где можно пересесть на метро A.",
+    "url": "https://www.prg.aero/en/public-transport-buses",
+    "checked": "2026-11-27",
+    "flight_board": "https://www.prg.aero/en/flight-information"
+  },
+  {
+    "id": "C40",
+    "kind": "city_context",
+    "topic": "airport",
+    "code": "lisbon",
+    "name": "Аэропорт Лиссабона имени Умберту Делгаду",
+    "aliases": [
+      "LIS",
+      "умберту делгаду",
+      "humberto delgado",
+      "портела"
+    ],
+    "iata": "LIS",
+    "summary": "У аэропорта есть станция Aeroporto красной линии метро.",
+    "url": "https://www.lisbonairport.pt/en/lis/access-parking/getting-to-and-from-the-airport/public-transportation",
+    "checked": "2026-11-27",
+    "flight_board": "https://www.lisbonairport.pt/en/lis/flights-destinations/find-flights/departures"
+  },
+  {
+    "id": "C41",
+    "kind": "city_context",
+    "topic": "airport",
+    "code": "london",
+    "name": "Лондон — Хитроу",
+    "aliases": [
+      "LHR",
+      "хитроу",
+      "heathrow"
+    ],
+    "iata": "LHR",
+    "summary": "До Лондона идут Elizabeth line и метро Piccadilly line. Проверяйте, к какому терминалу идёт поезд.",
+    "url": "https://tfl.gov.uk/help-with-travel/ways-to-travel/london-airports",
+    "checked": "2026-11-27",
+    "flight_board": "https://www.heathrow.com/departures"
+  },
+  {
+    "id": "C42",
+    "kind": "city_context",
+    "topic": "airport",
+    "code": "london",
+    "name": "Лондон — Гатвик",
+    "aliases": [
+      "LGW",
+      "гатвик",
+      "gatwick"
+    ],
+    "iata": "LGW",
+    "summary": "До Лондона ходят Gatwick Express, Southern и Thameslink. Выбирайте поезд по нужному вокзалу.",
+    "url": "https://tfl.gov.uk/help-with-travel/ways-to-travel/london-airports",
+    "checked": "2026-11-27",
+    "flight_board": "https://www.gatwickairport.com/flights"
+  },
+  {
+    "id": "C43",
+    "kind": "city_context",
+    "topic": "airport",
+    "code": "amsterdam",
+    "name": "Амстердам — Схипхол",
+    "aliases": [
+      "AMS",
+      "схипхол",
+      "схипхола",
+      "скипхол",
+      "schiphol"
+    ],
+    "iata": "AMS",
+    "summary": "Железнодорожная станция находится под Schiphol Plaza. Есть поезда до Amsterdam Centraal.",
+    "url": "https://www.schiphol.nl/en/from-to-schiphol/by-public-transport/",
+    "checked": "2026-11-27",
+    "flight_board": "https://www.schiphol.nl/en/departures/"
+  },
+  {
+    "id": "C44",
+    "kind": "city_context",
+    "topic": "airport",
+    "code": "berlin",
+    "name": "Берлин-Бранденбург",
+    "aliases": [
+      "BER",
+      "бранденбург",
+      "berlin brandenburg"
+    ],
+    "iata": "BER",
+    "summary": "С аэропортом связан Airport Express (FEX). Также ходят региональные поезда, актуальные пересадки проверяйте в расписании.",
+    "url": "https://ber.berlin-airport.de/en/orientation/getting-here/public-transport.html/",
+    "checked": "2026-11-27",
+    "flight_board": "https://ber.berlin-airport.de/en/fliegen/abfluege-ankuenfte.html?startdate=now"
+  },
+  {
+    "id": "C45",
+    "kind": "city_context",
+    "topic": "airport",
+    "code": "munich",
+    "name": "Аэропорт Мюнхена",
+    "aliases": [
+      "MUC",
+      "munich airport",
+      "франца йозефа штрауса"
+    ],
+    "iata": "MUC",
+    "summary": "Поезда S-Bahn S1 и S8 идут в центр Мюнхена разными маршрутами.",
+    "url": "https://www.munich-airport.com/public-transport-260822",
+    "checked": "2026-11-27",
+    "flight_board": "https://www.munich-airport.com/flight-search-260487"
+  },
+  {
+    "id": "C46",
+    "kind": "city_context",
+    "topic": "airport",
+    "code": "brussels",
+    "name": "Брюссель — Завентем",
+    "aliases": [
+      "BRU",
+      "завентем",
+      "zaventem"
+    ],
+    "iata": "BRU",
+    "summary": "От станции Brussels Airport-Zaventem ходят прямые поезда до Bruxelles-Central, Bruxelles-Nord и Bruxelles-Midi.",
+    "url": "https://www.brusselsairport.be/en/passenger/mobility/public-transport/train",
+    "checked": "2026-11-27",
+    "flight_board": "https://www.brusselsairport.be/en/passenger/flights/departing"
+  },
+  {
+    "id": "C47",
+    "kind": "city_context",
+    "topic": "airport",
+    "code": "stockholm",
+    "name": "Стокгольм — Арланда",
+    "aliases": [
+      "ARN",
+      "арланда",
+      "арланды",
+      "arlanda"
+    ],
+    "iata": "ARN",
+    "summary": "Arlanda Express идёт без остановок до Stockholm Central. Пригородные поезда останавливаются на Arlanda Central в SkyCity между терминалами 4 и 5.",
+    "url": "https://www.swedavia.com/arlanda/trains",
+    "checked": "2026-11-27",
+    "flight_board": "https://www.swedavia.com/arlanda/departures"
+  },
+  {
+    "id": "C48",
+    "kind": "city_context",
+    "topic": "airport",
+    "code": "helsinki",
+    "name": "Хельсинки — Вантаа",
+    "aliases": [
+      "HEL",
+      "вантаа",
+      "vantaa",
+      "helsinki airport"
+    ],
+    "iata": "HEL",
+    "summary": "Пригородные поезда I и P соединяют аэропорт с центральным вокзалом Хельсинки.",
+    "url": "https://www.finavia.fi/en/airports/helsinki-airport/access",
+    "checked": "2026-11-27",
+    "flight_board": "https://www.finavia.fi/en/airports/helsinki-airport/flights"
+  },
+  {
+    "id": "C49",
+    "kind": "city_context",
+    "topic": "airport",
+    "code": "budapest",
+    "name": "Аэропорт Будапешта имени Ференца Листа",
+    "aliases": [
+      "BUD",
+      "ференца листа",
+      "liszt ferenc"
+    ],
+    "iata": "BUD",
+    "summary": "Автобус 100E Airport Express идёт до Deák Ferenc tér в центре Пешта. Для этой линии нужен специальный билет.",
+    "url": "https://www.bud.hu/en/parking-transport/transportation/public-transportation/public-transportation-by-bus/100e-airport-express-your-direct-link-between-liszt-ferenc-international-airport-and-budapest-city-centre.html",
+    "checked": "2026-11-27",
+    "flight_board": "https://www.bud.hu/en/departures"
+  },
+  {
+    "id": "C50",
+    "kind": "city_context",
+    "topic": "airport",
+    "code": "oslo",
+    "name": "Осло — Гардермуэн",
+    "aliases": [
+      "OSL",
+      "гардермуэн",
+      "gardermoen"
+    ],
+    "iata": "OSL",
+    "summary": "До Oslo S можно добраться на Airport Express Train (Flytoget) или на поездах Vy.",
+    "url": "https://www.avinor.no/en/airport/oslo/info/public-transportation/",
+    "checked": "2026-11-27",
+    "flight_board": "https://www.avinor.no/en/airport/oslo/flight-times/"
+  },
+  {
+    "id": "C51",
+    "kind": "city_context",
+    "topic": "airport",
+    "code": "dublin",
+    "name": "Аэропорт Дублина",
+    "aliases": [
+      "DUB",
+      "dublin airport"
+    ],
+    "iata": "DUB",
+    "summary": "До города идут автобусы разных перевозчиков. На сайте аэропорта можно сравнить остановки и расписания.",
+    "url": "https://www.dublinairport.com/to-from-the-airport/by-bus/dublin-buses",
+    "checked": "2026-11-27",
+    "flight_board": "https://www.dublinairport.com/flight-information/live-departures"
+  },
+  {
+    "id": "C52",
+    "kind": "city_context",
+    "topic": "airport",
+    "code": "athens",
+    "name": "Аэропорт Афин имени Элефтериоса Венизелоса",
+    "aliases": [
+      "ATH",
+      "венизелоса",
+      "venizelos"
+    ],
+    "iata": "ATH",
+    "summary": "С аэропортом связаны линия 3 метро, пригородная железная дорога и автобусы. Сверяйте конкретный маршрут на сайте аэропорта.",
+    "url": "https://www.aia.gr/en/traveller/transportation-airport",
+    "checked": "2026-11-27",
+    "flight_board": "https://archive.aia.gr/en/traveler/flight-info/rtfi"
+  },
+  {
+    "id": "C53",
+    "kind": "city_context",
+    "topic": "airport",
+    "code": "copenhagen",
+    "name": "Копенгаген — Каструп",
+    "aliases": [
+      "CPH",
+      "каструп",
+      "kastrup"
+    ],
+    "iata": "CPH",
+    "summary": "До центра можно доехать на метро M2. Станция метро расположена у терминала 3.",
+    "url": "https://www.cph.dk/en/parking-transport/bus-train-metro-taxi/metro",
+    "checked": "2026-11-27",
+    "flight_board": "https://public.cph.dk/en/flight-information/departures"
+  }
+]

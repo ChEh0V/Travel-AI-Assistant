@@ -10,7 +10,7 @@ from search import Index
 
 BENCH = HERE.parent/"benchmark"
 def run(llm=False,course=False):
-    documents=snapshot()
+    documents=snapshot(include_venues=False,include_context=False)
     if course:
         cases=json.loads((BENCH/"course.json").read_text(encoding="utf-8"))
         ids={key for case in cases for key in case["relevant"]}
